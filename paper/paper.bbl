@@ -1,0 +1,107 @@
+\begin{thebibliography}{10}
+
+\bibitem{application_layer_protocols}
+Application layer protocol examples.
+\newblock \url{http://en.wikipedia.org/wiki/Application_Layer}.
+
+\bibitem{BitTorrent}
+{BitTorrent Protocol}.
+\newblock \url{http://www.bittorrent.com}.
+
+\bibitem{stork_paper}
+{\sc Cappos, J., Baker, S., Plichta, J., Nyugen, D., Hardies, J., Borgard, M.,
+  Johnston, J., and Hartman, J.~H.}
+\newblock {Stork: Package Management for Distributed VM Environments}.
+\newblock In {\em Proc.\ 21st~Systems Administration Conference\ (LISA '07)\/}
+  (Dallas,\ TX, Nov 2007), pp.~79--94.
+
+\bibitem{cappos_security_paper}
+{\sc Cappos, J., Samuel, J., Baker, S., and Hartman, J.~H.}
+\newblock Package management security.
+\newblock Tech. Rep. 08-02, University of Arizona, 2008.
+
+\bibitem{cherrypy}
+{CherryPy: a pythonic, object-oriented HTTP framework}.
+\newblock \url{http://www.cherrypy.org}.
+
+\bibitem{cisco_vni_study}
+{\sc {Cisco Systems}}.
+\newblock {Cisco Visual Networking Index: Usage Study}.
+\newblock White paper, Cisco Systems, Inc., Oct 2009.
+
+\bibitem{debian}
+{Debian: The Universal Operating System}.
+\newblock \url{http://www.debian.org}.
+
+\bibitem{fedora}
+{Fedora Project}.
+\newblock \url{http://fedoraproject.org}.
+
+\bibitem{giFT}
+{giFT: Internet File Transfer}.
+\newblock \url{http://gift.sourceforge.net/}.
+
+\bibitem{conduits_paper}
+{\sc {H\"uni}, H., Johnson, R., and Engel, R.}
+\newblock {A Framework for Network Protocol Software}.
+\newblock In {\em ACM SIGPLAN Notices\/} (Oct 1995), pp.~358--369.
+
+\bibitem{jigdo}
+{Jigsaw Download}.
+\newblock \url{http://atterer.net/jigdo/}.
+
+\bibitem{microsoft_iis_throttling}
+{\sc Microsoft IIS}.
+\newblock {\em Bit Rate Throttling}, 2010.
+\newblock \url{http://www.iis.net/download/bitratethrottling}.
+
+\bibitem{libtorrent}
+{\sc Norberg, A., Jonsson, M., Wallin, D., and Nelson, C.}
+\newblock {BitTorrent Implementation}.
+\newblock \url{http://www.rasterbar.com/products/libtorrent/index.html}.
+
+\bibitem{planetlab}
+{Planet-Lab}.
+\newblock \url{http://www.planet-lab.org}.
+
+\bibitem{python_gil}
+{\sc Python}.
+\newblock {\em {Initialization, Finalization, and Threads}}, 2.6.5~ed., 2010.
+\newblock \url{http://docs.python.org/c-api/init.html}.
+
+\bibitem{naivebayes}
+{\sc Rish, I.}
+\newblock {An empirical study of the naive Bayes classifier}.
+\newblock Research report, IBM, Yorktown\ Heights, NY, Nov 2001.
+
+\bibitem{base_paper}
+{\sc Rodrigues, R., Castro, M., and Liskov, B.}
+\newblock {BASE: Using Abstraction to Improve Fault Tolerance}.
+\newblock In {\em Proc.\ 18th SOSP\/} (Banff, Alberta, Canada, Oct 2001),
+  pp.~15---28.
+
+\bibitem{slurpie_paper}
+{\sc Sherwood, R., Braud, R., and Bhattacharjee, B.}
+\newblock {Slurpie: A Cooperative Bulk Data Transfer Protocol}.
+\newblock In {\em Proc.\ INFOCOM 2004\/} (Hong Kong, Mar 2004).
+
+\bibitem{xmlrpc_book}
+{\sc {St.Laurent}, S., Johnston, J., Dumbill, E., and Winer, D.}
+\newblock {\em {Programming Web Services with XML-RPC}}.
+\newblock O'Reilly Media. {O'Reilly \& Associates, Inc.}, Sebastopol,\ CA,
+  2001, pp.~1--32.
+
+\bibitem{dot_paper}
+{\sc Tolia, N., Kaminsky, M., Andersen, D.~G., and Patil, S.}
+\newblock {An Architecture for Internet Data Transfer}.
+\newblock In {\em Proc.\ 3rd NSDI\/} (San Jose,\ CA, May 2006).
+
+\bibitem{ubuntu}
+{Ubuntu}.
+\newblock \url{http://www.ubuntu.com}.
+
+\bibitem{urllib2_code}
+urllib2 source code.
+\newblock \url{http://code.reddit.com/docs/urllib2-pysrc.html}.
+
+\end{thebibliography}

@@ -1,0 +1,88 @@
+<iftd>
+
+   <filechunks path="/tmp/iftd/files/"/>
+   <send_files path="/tmp/iftd-send" />
+   <recv_files path="/tmp/iftd-recv" />
+
+   <xmlrpc port="4000" dir="RPC2"/>
+   <stats retrain_freq="25" classifier="NaiveBayes" />
+
+   <protocol name="http">
+      <sender>
+         <setup type="int"  PROTO_PORTNUM="8000"/>
+      </sender>
+      <receiver>
+         <setup type="int" PROTO_PORTNUM="80"/>
+      </receiver>
+   </protocol>
+
+   
+   <protocol name="bittorrent">
+      <sender>
+      </sender>
+      <receiver>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_LOW="6500"/>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_HIGH="6700"/>
+         <setup type="bool" IFTBITTORRENT_USE_DHT="True"/>
+      </receiver>
+   </protocol>
+   <protocol name="iftcache">
+      <sender>
+         <setup type="str" IFTCACHE_BASEDIR="/tmp/iftd-recv/iftd_cache"/>
+      </sender>
+      <receiver>
+         <setup type="int" IFTCACHE_SQUID_PORTNUM="31128"/>
+      </receiver>
+   </protocol>
+
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_https"/>
+         <setup type="str" RAVEN_TRANSFER_PACKAGE_DIR="/home/jude/raven/2.0/python/"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_coblitz"/>
+         <setup type="str" RAVEN_TRANSFER_PACKAGE_DIR="/home/jude/raven/2.0/python/"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_coral"/>
+         <setup type="str" RAVEN_TRANSFER_PACKAGE_DIR="/home/jude/raven/2.0/python/"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_s3"/>
+         <setup type="str" RAVEN_TRANSFER_PACKAGE_DIR="/home/jude/raven/2.0/python/"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="iftsocket">
+      <sender>
+         <setup type="int" PROTO_PORTNUM="8081"/>
+      </sender>
+      <receiver>
+         <setup type="int" PROTO_PORTNUM="8081"/>
+         <setup type="float" IFTSOCKET_TIMEOUT="0.5"/>
+      </receiver>
+   </protocol>
+   
+</iftd>

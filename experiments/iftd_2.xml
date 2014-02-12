@@ -1,0 +1,100 @@
+<iftd>
+
+   <filechunks path="/tmp/iftd-experiments/files" />
+   <xmlrpc port="4000" dir="RPC2"/>
+   <stats retrain_freq="5" classifier="NaiveBayes" />
+
+   <protocol name="http2_1">
+      <sender>
+         <setup type="int"  PROTO_PORTNUM="8001"/>
+      </sender>
+      <receiver>
+         <setup type="int" PROTO_PORTNUM="8001"/>
+      </receiver>
+   </protocol>
+
+   <protocol name="http">
+      <sender>
+         <setup type="int"  PROTO_PORTNUM="8000"/>
+      </sender>
+      <receiver>
+         <setup type="int" PROTO_PORTNUM="8000"/>
+      </receiver>
+   </protocol>
+   <!--
+   <protocol name="bittorrent">
+      <sender>
+      </sender>
+      <receiver>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_LOW="6500"/>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_HIGH="6700"/>
+         <setup type="bool" IFTBITTORRENT_USE_DHT="True"/>
+      </receiver>
+   </protocol>
+   <protocol name="iftcache">
+      <sender>
+         <setup type="str" IFTCACHE_BASEDIR="/tmp/test_iftcache"/>
+      </sender>
+      <receiver>
+         <setup type="int" IFTCACHE_SQUID_PORTNUM="3128"/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <sender>
+      </sender>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_http"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_https"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_coblitz"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_coral"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="raven">
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_s3"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   <protocol name="iftsocket">
+      <sender>
+         <setup type="int" PROTO_PORTNUM="8081"/>
+      </sender>
+      <receiver>
+         <setup type="int" PROTO_PORTNUM="8081"/>
+      </receiver>
+   </protocol>
+   -->
+</iftd>

@@ -1,0 +1,174 @@
+#!/usr/bin/python
+
+import os
+import sys
+import getopt
+import time
+import copy
+import signal
+
+import cPickle
+
+sys.path.append("/usr/local/lib/python2.5/site-packages/iftd")
+
+import iftlog
+import iftstats
+
+import iftutil
+from iftdata import *
+import iftloader
+
+import threading
+import thread
+
+import iftapi
+
+from iftfile import *
+
+import urllib2
+
+
+sys.path.append( iftloader.PROTOCOLS_DIR )
+
+
+# usage statement and die
+def usage():
+   print "Usage: " + sys.argv[0] + " [-c|--config=CONFIG] [-P|--port=PORTNUM] [-R:--rpc=RPCDIR] [-s|--send] [-r|--recv] [-t|--timeout] [-n|--nestmode] ARG [ARG...]"
+   exit(0)
+   
+
+"""
+Parse arguments and return a tuple containing the formatted values
+
+@return
+   If it returns (it will call usage() on error), it returns a tuple containing the following, in this order:
+      verbose value (greater than or equal to 0; defaults to iftlog.LOG_MAX_THRESHOLD)
+      Protocol CSV (or None to indicate that iftd should use every known protocol)
+      File list
+"""
+def parse_args():
+   supported_short_args = 'c:srP:R:t:n'
+   supported_long_args = ['config=', 'send', 'recv', 'port=', 'rpc=', 'timeout=', 'nestmode']
+   
+   try:
+      options, args = getopt.gnu_getopt( sys.argv[1:], supported_short_args, supported_long_args )
+   except:
+      usage()
+      
+   # default values
+   config = None
+   send = False
+   recv = False
+   port = 4001
+   rpc = "/RPC2"
+   wait = True
+   timeout = 60000
+   nestmode = False
+
+   for opt, arg in options:
+      if opt in ('-c', '--config'):
+         config = arg
+      elif opt in ('-r', '--recv'):
+         recv = True
+      elif opt in ('-s', '--send'):
+         send = True
+      elif opt in ('-P', '--port'):
+         port = int(arg)
+      elif opt in ('-R', '--rpc'):
+         rpc = arg
+      elif opt in ('-t', '--timeout'):
+         timeout = int(arg)
+      elif opt in ('-n', '--nestmode'):
+         nestmode = True
+   
+   return (config, send, recv, port, rpc, timeout, args, nestmode)
+
+
+def Main():
+   config, send, recv, port, rpc, timeout, args, nestmode = parse_args()
+   config_buff = ''
+   
+   # assume recv if neither send or recv is given
+   if not (send or recv):
+      recv = True
+   
+   # parse the file
+   fd = open( config, "r" )
+   for line in fd:
+      config_buff += line.strip("\n") + " "
+   
+   fd.close()
+   
+   job_attrs = {}
+   connect_attrs = {}
+   try:
+      for a in args:
+         exec(a)
+      exec( config_buff )
+      
+      job_attrs = job
+      connect_attrs = connect
+   except Exception, inst:
+      iftlog.exception( "iftool: could not read config " + str(config), inst )
+      sys.exit(1)
+   
+   rc = 0
+   if not nestmode:
+      server_api = iftapi.make_XMLRPC_client()
+      rc = server_api.begin_ift( job_attrs, connect_attrs, send, recv, port, rpc,  timeout )
+
+   else:
+      if recv:
+         connect_attrs[ iftapi.CONNECT_ATTR_REMOTE_PORT ] = port
+         connect_attrs[ iftapi.CONNECT_ATTR_REMOTE_RPC ] = rpc
+         connect_attrs[ iftapi.CONNECT_ATTR_USER_TIMEOUT ] = timeout
+
+         packed_job_attrs = cPickle.dumps( job_attrs )
+         packed_connect_args = cPickle.dumps( connect_attrs )
+        
+         tmp = "%r" % packed_job_attrs
+         tmp = tmp[1:-1]
+         packed_job_attrs = tmp
+
+         tmp = "%r" % packed_connect_args
+         tmp = tmp[1:-1]
+         packed_connect_args = tmp
+
+         req = urllib2.Request("http://127.0.0.1:6650" + job_attrs.get( JOB_ATTR_SRC_NAME ) + "?job_attrs=" + packed_job_attrs + "&connect_args=" + packed_connect_args)
+         print req.get_full_url()
+         print req.get_host()
+         try:
+            resp = urllib2.urlopen( req )
+            if resp.code != 200:
+               iftlog.log(5, 'could not GET, HTTP code = ' + str(resp.code))
+               rc = -8
+         
+         except Exception, inst:
+            iftlog.exception( 'ERROR: could not get response', inst )
+            rc = -16
+
+   """
+   rc = 0
+   if recv:
+      
+      req = urllib2.Request("http://127.0.0.1" + job_attrs.get( JOB_ATTR_SRC_NAME ) )
+      req.add_header( "Pragma", iftapi.pack_attrs( job_attrs, connect_attrs ) )
+      
+      try:
+         # perform the request
+         resp = urllib2.urlopen( req )
+         if resp.code != 200:
+            iftlog.log(5, "Could not GET, HTTP code " + str(resp.status))
+            rc = -8
+            
+      except Exception, inst:
+         iftlog.exception("ERROR: could not get response", inst )
+         rc = -16
+   
+   """
+   print "rc = " + str(rc)
+   return rc
+
+
+if __name__ == "__main__":
+   Main()

@@ -1,0 +1,15 @@
+job = {
+   JOB_ATTR_DEST_HOST:"localhost",
+   JOB_ATTR_DEST_NAME:"/tmp/output2",
+   JOB_ATTR_SRC_HOST:"localhost",
+   JOB_ATTR_SRC_NAME:"/tmp/output",
+   JOB_ATTR_FILE_SIZE:53966,
+   JOB_ATTR_PROTOS:["iftcache_receiver","iftcache_sender"]
+};
+
+connect = {
+   "iftcache_sender" : {},
+   "iftcache_receiver" : {},
+   "http_sender" : {},
+   "http_receiver" : job
+};

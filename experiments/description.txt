@@ -1,0 +1,147 @@
+Description of Possible Experiments
+
+Needed tools and data:
+* Python tool to throttle given ports (arbitrarily many ports)
+* Python proxy to record bandwidth across an arbitrary list of ports
+* Python implementations of dumb HTTP, BitTorrent, CoBlitz, scp, etc. receivers (can create from arizonatransfer protocol modules)
+* Implementations of anything the above dumb receivers talk to (tracker, HTTP server, sshd, etc) (use Pythonic implementations as much as possible to get a fair comparison)
+* 50-100 feature vectors for each iftd receiver protocol, where each receiver was deemed to be the fastest protocol in that transmission
+    * can be created once and re-used
+    * fix the chunk size
+    * for each feature vector, have the file type be randomly selected from a pool of 5 different MIME types
+
+
+"iftd vs protocol"
+0. compare iftd-http vs http direct
+
+TODO:
+--see DOT paper to get an idea of how they did experiments
+--get acccess to the cluster (ask Dr. Hartman to send email)
+--force the file to be in memory (tmpfs, cache)
+--write client program to compare urllib2, iftd, arizonatransfer
+--Modify arizonatransfer and iftd to record bandwidth, and use these numbers instead of the Python proxy (or find a way to get the kernel to do this)
+--make IFTD round-robin between protocols until it has enough data
+--find protocols that are fast for small files and slow for large files, and vice versa
+--make sunrpc protocol (or some UDP protocol)
+--OR, make two http protocols with different responsiveness and bandwidth
+----see if apache can bandwidth-throttle or response-throttle
+
+
+"arizonatransfer vs IFTD Between 2 Hosts":  measure how much overhead there is for receiving files with iftd as compared to arizonatransfer implementations (no classification is to be done here)
+0. Pick two hosts (PlanetLab or otherwise), start iftd on both
+1. Create files between 10KB and 50MB in size (double each time?)
+2. Train iftd with the feature vectors corresponding to the file's MIME type
+3. For each protocol we have a dumb receiver for, transfer each file from one host to another ~5 times by having them connect through the Python proxy, and record:
+   * how long it takes for the transfer to complete
+   * min/max/mean/median bandwidth at 1-second intervals (using the Python proxy)
+4. Use iftd to transfer each file from one host to another about (5 * # protocols) times by having them connect through the Python proxy, and record:
+   * how long it takes for the transfer to complete
+   * min/max/mean/median bandwidth at 1-second intervals (using the Python proxy)
+
+We expect IFTD to be no worse than arizonatransfer in terms of overall file transmission time, since iftd can switch protocols based on bandwidth
+* we expect IFTD to do way better than arizonatransfer in exceptional cases, such as ISP mischief or other inter-host connection interference
+
+
+
+"Simulated Non-Net-Neutral ISP Between 2 Hosts":  measure how well iftd can handle protocol throttling for one sender/receiver pair
+0. Pick two hosts (PlanetLab or otherwise), start iftd on both
+1. Create a file of fixed size (i.e. 10MB) of type application/text-plain or similar (something the classifier has data for)
+2. Train the classifiers with all of the feature vectors
+3. After a short amount of time, throttle the favored protocol down to beneath a favorable threshold while attempting to transfer the file.  Do this ~5 different times while connecting through the Python proxy
+   * record the combined transfer speed--we expect the speed to decrease at first, but to increase again once the protocol is disfavored by iftd
+
+We expect iftd to switch protocols once the bandwidth becomes too slow
+* this experiment provides empirical evidence of this
+--use only HTTP, have two HTTP protocols (different ports), no server IFTD (only server HTTP)
+
+* do this with SCP with remote IFTD instance as well, to demonstrate IFTD's emulated resumability
+--demonstrate IFTD's ability to add resumability
+--don't compare against arizonatransfer or raw scp (we get it by now)
+
+
+NO: "Relevance of Protocol Port Between 2 Hosts":  measure how well two PlanetLab nodes can communicate if they change their protocol's default port
+NOTE: this has less to do with IFTD itself as it does with using IFTD to measure these things
+0. Pick two PlanetLab hosts that are rather remote geographically, start iftd on both
+1. Create a file of fixed size (i.e. 10MB) of fixed type
+2. Transfer the file ~5 times between the hosts using each protocol with default port settings
+   * record mean/min/max/median bandwidth using the Python proxy tool
+3. Transfer the file ~5 times between the hosts using each protocol with nonstandard port settings
+   * record mean/min/max/median bandwidth using the Python proxy tool
+
+We expect that if the ISP is doing some sort of port-based throttling, there will be a difference in speed
+
+
+
+NO: "File Size and Protocol Between Many Hosts":  measure how well iftd correlates file size to protocols for many receivers
+NOTE: this is probably more relevant to Raven than "File Size and Protocol Between 2 Hosts" (see below) 
+0. Pick ~20 hosts, start iftd on all
+1. Create files in 100 MB increments from 100 MB to 1000 MB, fill with random noise
+2. Transfer each file from the source host to the others ~10 times by providing iftd with enough information to use any protocol (excluding cache), and create a feature vector for each
+3. Train the classifier with the accumulated feature vectors
+4. Measure which protocols were (a) the fastest and (b) the most reliable for each size (i.e. dump out the classifier data)
+
+If anything, we expect the fastest and most reliable protocols to include http and iftsocket (just a bytestream over TCP) for small files since there is no encryption involved and no need for a 3rd party entity such as a tracker or certificate authority that needs to be contacted.  Also, we expect bittorrent and gush to become increasingly reliable and quick for larger files, since they do some additional inter-peer communication to exchange data.
+
+
+
+NO: "File Type and Protocol Between Many Hosts":  measure how well iftd correlates file type to protocols for many receivers
+NOTE: this is probably more relevant to Raven than "File Type and Protocol Between 2 Hosts" (see below)
+0. Pick ~20 hosts, start iftd on all
+1. Create a file of 100 MB, filled with random noise, but with a MIME type of one of the five pre-chosen types
+2. Transfer the file from the PlanetLab host to the other ~10 times for each chosen type by providing iftd with enough information to use any protocol (excluding cache), and accumulate a feature vector for each transfer
+3. Train the classifier with the accumulated feature vectors
+4. Measure which protocols were (a) the fastest and (b) the most reliable for each type
+
+Unless the ISP is doing something really shady like DPI, we expect no significant correlations
+
+
+NO: "Time of Day and Protocol Between Many Hosts":  measure how well iftd correlates the time of day (in 1/8th day intervals) to protocols for one sender/receiver pair
+NOTE: this is probably more relevant to Raven than "Time of Day and Protocol Between 2 Hosts" (see below)
+0. Pick ~20 hosts, start iftd on all
+1. Create a file of 50 MB, filled with random noise
+2. Transfer the file from the source host to the others ~3 times for each day octant by providing iftd with enough information to use any protocol (excluding cache)
+3. Train the classifier with the accumulated feature vectors
+4. Measure which protocols were (a) the fastest and (b) the most reliable for each day octant
+
+We expect the overall bandwidth to remain relatively stable, depending on the geography of the nodes
+* we can graph how many times a protocol failed and how fast it was in sending its chunks
+
+
+
+YES: "File Size and Protocol Between 2 Hosts":  measure how well iftd correlates file size to protocols for one sender/receiver pair
+0. Pick two hosts (at least one of them on PlanetLab), start iftd on both
+1. Create files in 100 MB increments from 100 MB to 1000 MB, fill with random noise
+2. Transfer each file from the source host to the other ~10 times by providing iftd with enough information to use any protocol (excluding cache), and create a feature vector for each
+3. Train the classifier with the accumulated feature vectors
+4. Measure which protocols were (a) the fastest and (b) the most reliable for each size (i.e. dump out the classifier data)
+
+We expect the fastest and most reliable protocols to include http and iftsocket (just a bytestream over TCP) since there is no encryption involved and no need for a 3rd party entity such as a tracker or certificate authority
+* we can graph how many times a protocol failed and how fast it was in sending its chunks
+--use apache, see TODO:
+
+
+"File Type and Protocol Between 2 Hosts":  measure how well iftd correlates file type to protocols for one sender/receiver pair
+0. Pick two hosts (at least one of them on PlanetLab), start iftd on both
+1. Create a file of 100 MB, filled with random noise, but with a MIME type of one of the five pre-chosen types
+2. Transfer the file from the PlanetLab host to the other ~10 times for each chosen type by providing iftd with enough information to use any protocol (excluding cache), and create a feature vector for each transfer
+3. Train the classifier with the accumulated feature vectors
+4. Measure which protocols were (a) the fastest and (b) the most reliable for each type
+
+I don't know what to expect--probably no significant correlations, unless the ISP suspects us of file-sharing or does some DPI and decides to throttle us.
+* we can graph how many times a protocol failed and how fast it was in sending its chunks
+
+
+
+"Time of Day and Protocol Between 2 Hosts":  measure how well iftd correlates the time of day (in 1/8th day intervals) to protocols for one sender/receiver pair
+0. Pick two hosts (both on PlanetLab, and within a few timezones of one another), start iftd on both
+1. Create a file of 50 MB, filled with random noise
+2. Transfer the file from the PlanetLab host to the other ~3 times for each day octant by providing iftd with enough information to use any protocol (excluding cache)
+3. Train the classifier with the accumulated feature vectors
+4. Measure which protocols were (a) the fastest and (b) the most reliable for each day octant
+
+We expect the overall bandwidth to increase at night
+* we can graph how many times a protocol failed and how fast it was in sending its chunks
+
+
+
+

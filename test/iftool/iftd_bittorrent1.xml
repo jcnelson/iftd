@@ -1,0 +1,20 @@
+<iftd>
+
+   <filechunks path="/tmp/iftd1" />
+   <xmlrpc port="4000" dir="RPC2"/>
+   <stats retrain_freq="50" classifier="NaiveBayes" />
+   <send_files path="/tmp/" />
+   <recv_files path="/tmp/" />
+   <protocol name="bittorrent">
+      <sender>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_LOW="6500"/>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_HIGH="6700"/>
+      </sender>
+      <receiver>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_LOW="6500"/>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_HIGH="6700"/>
+         <setup type="bool" IFTBITTORRENT_USE_DHT="True"/>
+      </receiver>
+   </protocol>
+
+</iftd>

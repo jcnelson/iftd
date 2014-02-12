@@ -1,0 +1,4 @@
+Naming convention:
+
+If the protocol is dependent on iftd for certain capabilities, such as chunking and file I/O, it should begin with ift
+If the protocol is NOT as dependent on iftd, as in, if it does not interface directly with iftd, then it should NOT begin with ift

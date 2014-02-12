@@ -1,0 +1,387 @@
+#!/usr/bin/python2.5
+
+"""
+iftd
+Copyright (c) 2009 Jude Nelson
+
+This is the server proper.
+All of these functions can be called
+via XMLRPC, with the exception of
+parse_args, usage, and Main.
+"""
+
+import os
+import sys
+import getopt
+import time
+import copy
+import signal
+
+sys.path.append("/usr/lib/python2.5/site-packages/iftd")
+
+import iftfile
+import iftlog
+import iftstats
+
+import iftutil
+import iftdata
+import iftloader
+
+import threading
+import thread
+
+import iftapi
+
+from SimpleXMLRPCServer import SimpleXMLRPCServer
+from SimpleXMLRPCServer import SimpleXMLRPCRequestHandler
+
+from BaseHTTPServer import HTTPServer
+from SimpleHTTPServer import SimpleHTTPRequestHandler
+
+sys.path.append( iftloader.PROTOCOLS_DIR )
+
+# usage statement and die
+def usage():
+   print "Usage: " + sys.argv[0] + " [option...]"
+   print ""
+   print "Options:"
+   print "   -v, --verbose=N             Verbosity threashold (lower is more verbose)"
+   print "                                   Default is 10"
+   print "   -p, --protocols=P1,P2,...   Comma-separated list of protocols to use"
+   print "                                   Default is all protocols"
+   print "   -P, --port=PORTNO           Port to listen for application XMLRPC requests(*)"
+   print "   -C, --config=CONF           Path to configuration file"
+   print "                                   Default is /etc/iftd/iftd.xml"
+   print "   -L, --log=LOGFILE           Path to logfile to use"
+   print "                                   Default is /tmp/iftd.log"
+   print "   -N, --no-daemon             Do NOT become a daemon"
+   print "   -k, --lockfile=LOCKFILE     Path to lockfile to use"
+   print "                                   Default is /tmp/iftd.pid"
+   print ""
+   print "(*) IFTD will listen on PORTNO+1 for inter-IFTD XMLRPC requests, so make sure both PORTNO and PORTNO+1 are available"
+   exit(0)
+   
+      
+
+"""
+Parse arguments and return a tuple containing the formatted values
+
+@return
+   If it returns (it will call usage() on error), it returns a tuple containing the following, in this order:
+      verbose value (greater than or equal to 0; defaults to iftlog.LOG_MAX_THRESHOLD)
+      Protocol CSV (or None to indicate that iftd should use every known protocol)
+      File list
+"""
+def parse_args():
+   supported_short_args = 'v:p:P:C:L:Nk:'
+   supported_long_args = ['verbose', 'protocols=', 'config=', 'logfile=', 'no-daemon', 'lockfile=']
+   
+   try:
+      options, args = getopt.gnu_getopt( sys.argv[1:], supported_short_args, supported_long_args )
+   except:
+      usage()
+      
+   # default values
+   verboseness = 10
+   protocol_list = None
+   config = "/etc/iftd/iftd.xml"
+   lockfile = iftdata.LOCKFILE_PATH
+   logfile = None
+   no_daemon = False
+
+   for opt, arg in options:
+      if opt in ('-v', '--verbose'):
+         verboseness = arg
+      elif opt in ('-p', '--protocols'):
+         protocol_list = arg.split(',')
+      elif opt in ('-P', '--port'):
+         USER_PORT = arg
+      elif opt in ('-C', '--config'):
+         config = arg
+      elif opt in ('-L', '--log'):
+         logfile = arg
+      elif opt in ('-N', '--no-daemon'):
+         no_daemon = True
+      elif opt in ('-k', '--lockfile'):
+         lockfile = arg
+         
+   
+   return (verboseness, protocol_list, config, logfile, no_daemon, lockfile)
+   
+
+
+def check_make_lockfile( lockfile_path ):
+   """
+   Create a lockfile to prevent other iftd instances from spawning.
+   This is done atomically by writing this instance's PID to a temporary file,
+   attempting to "mv -n" the temporary file to the lockfile, and then verifying
+   that it's PID is in the lockfile.  If not, then another iftd instance
+   is running and this one should die.
+   """
+   if os.path.exists( lockfile_path ):
+      iftlog.log(5, "Error: " + lockfile_path + " exists, so iftd must be running.")
+      iftlog.log(5, "If it is not running, remove " + lockfile_path + " manually.")
+      return iftdata.E_INVAL
+   
+   pid = os.getpid()
+   
+   # write our PID to a temporary file
+   lockfile = open("/tmp/iftdlock." + str(pid), "wt")
+   lockfile.write( str(os.getpid()) )
+   lockfile.close()
+   
+   # move our lock file to the actual LOCKFILE path, but don't overwrite
+   rc = os.popen("mv /tmp/iftdlock." + str(pid) + " " + lockfile_path ).close()
+   if rc != None:
+      os.remove("/tmp/iftdlock." + str(pid))
+      return iftdata.E_IOERROR     # mv failed
+   
+   rc = os.popen("rm -f /tmp/iftdlock." + str(pid)).close()
+   
+   try:
+      # make sure it's OUR PID that was written
+      lockfile = open(lockfile_path, "rt")
+      dat = lockfile.read()
+      lockfile.close()
+      
+      if int(dat) != pid:
+         iftlog.log(5, "Error: pid = " + str(pid) + ", but lockfile is " + dat )
+         return iftdata.E_INVAL
+   except Exception, inst:
+      iftlog.log(5, "Error: could not open " + lockfile_path + " for reading!")
+      return iftdata.E_IOERROR
+   
+   return pid
+
+
+def die( kill=False ):
+   pid = None
+   if os.path.exists(iftdata.LOCKFILE_PATH):
+      if kill:
+         lockfile = open(iftdata.LOCKFILE_PATH, "rt")
+         pid = lockfile.read()
+         lockfile.close()
+         
+      
+      os.remove( iftdata.LOCKFILE_PATH )
+      
+   # we're dead
+   iftapi.set_alive( False )
+   
+   # kill all protocols
+   for proto in iftapi.PROTOCOLS.keys():
+      try:
+         iftapi.PROTOCOLS[proto].clean()
+         iftapi.PROTOCOLS[proto].kill(None)
+      except Exception, inst:
+         iftlog.exception( "iftd.die(): could not kill " + proto, inst)
+         pass
+   
+   
+   if kill and pid != None:
+      os.popen("kill -9 " + pid)
+   
+   sys.exit(0)
+
+
+def daemonize( old_pid ):
+   """
+   Become a daemon.  Use the double-fork method
+   and update the lockfile with the new PID.  Make sure
+   that the old PID (given) is still in there!
+   """
+   
+   try:
+      pid = os.fork()
+      if pid > 0:
+         sys.exit(0)
+   except Exception, inst:
+      iftlog.exception("Could not become a daemon!", inst)
+      sys.exit(1)
+   
+   os.setsid()
+   os.chdir("/")
+
+   try:
+      pid = os.fork()
+      if pid > 0:
+         sys.exit(0)
+   
+   except Exception, inst:
+      iftlog.exception("Could not become a daemon!", inst)
+      sys.exit(1)
+
+   # make absolutely sure that this is our pid in the lockfile
+   fd = open(iftdata.LOCKFILE_PATH, "rt" )
+   dat = fd.read()
+   fd.close()
+   
+   if dat != str(old_pid):
+      iftlog.log(5, "ERROR: tried to become a daemon and update the lockfile with my PID (" + str(os.getpid()) + "), but my old PID (" + str(old_pid) + ") is not in the lockfile (" + dat + ")!")
+      return iftdata.E_INVAL
+   
+   # update our PID in the lockfile
+   fd = open(iftdata.LOCKFILE_PATH, "wt")
+   fd.write( str(os.getpid()) )
+   fd.close()
+   
+   sys.stdout.flush()
+   sys.stderr.flush()
+   
+   si = file('/dev/null', 'r')
+   so = file('/dev/null', 'a+')
+   se = file('/dev/null', 'a+', 0)
+   
+   os.dup2(si.fileno(), sys.stdin.fileno())
+   os.dup2(so.fileno(), sys.stdout.fileno())
+   os.dup2(se.fileno(), sys.stderr.fileno())
+   
+   return 0
+   
+
+
+def death_handler( sig, frame ):
+   
+   iftlog.log(5, "Signal " + str(sig) + " received; cleaning up")
+   iftfile.shutdown()
+   die(True)
+
+
+def sighup_handler( sig, frame ):
+   """
+   Do nothing on SIGHUP
+   """
+   pass
+
+
+# program execution starts here!
+def Main():
+
+   verboseness, given_protocols, config_file, logfile, no_daemon, lockfile = parse_args()
+   
+   my_pid = check_make_lockfile( lockfile )
+   if my_pid < 0:
+      iftlog.log(5, "Startup failure (check_make_lockfile = " + str(my_pid) + ")")
+      sys.exit(1)
+   
+   iftdata.LOCKFILE_PATH = lockfile
+   
+   if logfile == None and not no_daemon:
+      logfile = "/tmp/iftd.log"
+   
+   if logfile != None:
+      rc = iftlog.set_logging_mode( iftlog.LOGMODE_FILE, filename=logfile)
+      if rc != 0:
+         die()
+   
+   iftlog.set_verbosity( verboseness )
+   
+   # become a daemon?
+   if not no_daemon:
+      rc = daemonize( my_pid )
+      if rc != 0:
+         iftlog.log(5, "Failed to become a daemon (rc = " + str(rc) + ")")
+         die()
+   
+   if given_protocols == None:
+      given_protocols = iftutil.get_available_protocols()
+   
+   # get our configuration
+   rc, extra_config = iftapi.iftd_setup( given_protocols, config_file )
+   if rc != 0:
+      iftlog.log(5, "CRITICAL: could not load " + config_file + " (rc = " + str(rc) + ")")
+      die()
+   
+   # build up our top-level settings dictionary
+   extra_config.setdefault('xmlrpc', {})
+   extra_config.setdefault('filechunks', {})
+   extra_config.setdefault('send_files',{})
+   extra_config.setdefault('recv_files',{})
+   extra_config.setdefault('stats', {})
+   
+   # build up our xmlrpc server settings
+   xmlrpc_conf = extra_config.get('xmlrpc')
+   xmlrpc_conf.setdefault('port', iftdata.USER_PORT)
+   xmlrpc_conf.setdefault('dir', iftdata.RPC_DIR)
+   xmlrpc_conf.setdefault('max_sender_threads', iftutil.MAX_SENDER_THREADS)
+   xmlrpc_conf.setdefault('max_receiver_threads', iftutil.MAX_RECEIVER_THREADS)
+   
+   # build up our statistics settings
+   stats_conf = extra_config.get('stats')
+   stats_conf.setdefault('retrain_freq', 1)
+   stats_conf.setdefault('classifier', "NaiveBayes" )
+   stats_conf.setdefault('num_best_protos', 1 )
+   
+   iftdata.USER_PORT = int(xmlrpc_conf.get('port'))
+   iftdata.RPC_DIR = xmlrpc_conf.get('dir')
+   
+   iftdata.send_dir( extra_config.get('send_files').get('path') )
+   iftdata.recv_dir( extra_config.get('recv_files').get('path') )
+   
+   iftstats.RETRAIN_FREQ = int(stats_conf.get('retrain_freq'))
+   iftstats.CLASSIFIER_TYPE = str(stats_conf.get('classifier'))
+   iftstats.NUM_BEST_PROTOS = int(stats_conf.get('num_best_protos'))
+   
+   iftutil.MAX_SENDER_THREADS = int(xmlrpc_conf.get('max_sender_threads'))
+   iftutil.MAX_RECEIVER_THREADS = int(xmlrpc_conf.get('max_receiver_threads'))
+   
+   # set up stats
+   iftstats.startup( iftapi.list_protocols(), iftstats.RETRAIN_FREQ, iftstats.CLASSIFIER_TYPE, iftstats.NUM_BEST_PROTOS )
+   
+   # fire up file I/O service
+   filechunks_conf = extra_config.get('filechunks')
+   chunks_dir = filechunks_conf.get('path')
+ 
+   # set up file-handling stuff
+   if chunks_dir != None:
+      iftfile.startup( chunks_dir )
+   else:
+      iftfile.startup()
+   
+   # catch sigint
+   signal.signal( signal.SIGINT, death_handler )
+   
+   # catch sigquit
+   signal.signal( signal.SIGQUIT, death_handler )
+   
+   # catch sigterm
+   signal.signal( signal.SIGTERM, death_handler )
+   
+   # catch sighup
+   signal.signal( signal.SIGHUP, sighup_handler )
+   
+   # start thread pools
+   iftutil.init_threadpools( int(xmlrpc_conf.get('max_sender_threads')), int(xmlrpc_conf.get('max_receiver_threads')) )
+   
+   # fire up the XMLRPC server!
+   my_server = iftutil.create_server( iftdata.USER_PORT, [iftapi.hello_world,
+                                                          iftapi.list_protocols,
+                                                          iftapi.begin_ift,
+                                                          iftstats.get_owl_data,
+                                                          iftstats.clear_classifier,
+                                                          iftstats.get_proto_rankings] )
+   
+   my_remote_server = iftutil.create_server( iftdata.USER_PORT+1, [iftapi.recv_iftd_sender_data,
+                                                                   iftapi.get_iftd_sender_data,
+                                                                   iftapi.send_iftd_receiver_choice,
+                                                                   iftapi.ack_sender,
+                                                                   iftapi.hello_world], request_handler = SimpleXMLRPCRequestHandler )
+   
+   # print "external api on port " + str(iftdata.USER_PORT)
+   # print "inter-IFTD api on port " + str(iftdata.USER_PORT+1)
+   
+   #my_http_server = iftutil.iftd_HTTPServer( ("", 80), iftutil.iftd_HTTPServer_handler )
+   
+   thread.start_new_thread( my_remote_server.serve_forever, () )
+   #thread.start_new_thread( my_http_server.serve_forever, () )
+   
+   iftapi.set_alive( True )
+   
+   my_server.serve_forever()
+   
+   # shouldn't get here unless something weird happens
+   iftfile.shutdown()
+   die()
+
+if __name__ == "__main__":
+   Main()

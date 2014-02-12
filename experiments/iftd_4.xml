@@ -1,0 +1,34 @@
+<iftd>
+
+   <filechunks path="/tmp/iftd-experiments/files" />
+   <xmlrpc port="4000" dir="RPC2"/>
+   <stats retrain_freq="50" classifier="NaiveBayes" />
+
+   <protocol name="http5">
+      <sender>
+         <setup type="int"  PROTO_PORTNUM="8000"/>
+      </sender>
+      <receiver>
+         <setup type="int" PROTO_PORTNUM="8000"/>
+      </receiver>
+   </protocol>
+   
+   <protocol name="bittorrent2">
+      <sender>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_LOW="6500"/>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_HIGH="6700"/>
+      </sender>
+      <receiver>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_LOW="6500"/>
+         <setup type="int"  IFTBITTORRENT_PORTRANGE_HIGH="6700"/>
+         <setup type="bool" IFTBITTORRENT_USE_DHT="True"/>
+      </receiver>
+   </protocol>
+
+   <protocol name="iftscp2">
+      <sender>
+      </sender>
+      <receiver>
+      </receiver>
+   </protocol>
+</iftd>

@@ -1,0 +1,15 @@
+job = {
+   JOB_ATTR_DEST_HOST:"localhost",
+   JOB_ATTR_DEST_NAME:"/tmp/output2",
+   JOB_ATTR_SRC_HOST:"localhost",
+   JOB_ATTR_SRC_NAME:"/tmp/output",
+   "IFTBITTORRENT_TORRENT_PATH":"test.torrent"
+};
+
+connect = {
+   "bittorrent_receiver" : {
+      "IFTBITTORRENT_PORTRANGE_LOW":6500,
+      "IFTBITTORRENT_PORTRAINGE_HIGH":6700
+   },
+
+};

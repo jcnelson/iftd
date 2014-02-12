@@ -1,0 +1,1095 @@
+[1272274634.44] iftloader: Loaded protocols.bittorrent2
+[1272274634.44] libtorrent session created!
+[1272274634.44] protocol_setup: set up bittorrent2 as bittorrent2_sender
+[1272274634.44] iftloader: Loaded protocols.bittorrent2
+[1272274634.44] protocol_setup: set up bittorrent2 as bittorrent2_receiver
+[1272274634.47] iftloader: Loaded protocols.http5
+[1272274634.47] protocol_setup: set up http5 as http5_sender
+[1272274634.47] iftloader: Loaded protocols.http5
+[1272274634.47] protocol_setup: set up http5 as http5_receiver
+[1272274634.47] iftloader: Loaded protocols.iftscp2
+[1272274634.47] iftscp_sender.setup: will send on port 22
+[1272274634.47] protocol_setup: set up iftscp2 as iftscp2_sender
+[1272274634.47] iftloader: Loaded protocols.iftscp2
+[1272274634.47] protocol_setup: set up iftscp2 as iftscp2_receiver
+[1272274634.47] ==============
+[1272274634.47] Setup complete
+[1272274634.47] ==============
+[1272274634.47] Available protocols:
+[1272274634.47] ['bittorrent2_receiver', 'bittorrent2_sender', 'http5_receiver', 'http5_sender', 'iftscp2_receiver', 'iftscp2_sender']
+[1272274634.48] Started iftfilewriter
+[1272274636.94] begin_ift: receive 1000000 bytes from /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4 via ['http5', 'iftscp2', 'bittorrent2']
+lolwut?
+o rly?
+http5_receiver: chunking deactivated
+[1272274636.96] http5_receiver: expected file size of 1000000
+[1272274636.96] iftfile: opened /tmp/iftd-experiments/file_1000000 for WRITING, expecting 200 chunks
+[1272274636.96] start_proto: started up protocol http5_receiver
+[1272274636.96] start_proto: started up protocol iftscp2_receiver
+[1272274636.97] start_proto: started up protocol bittorrent2_receiver
+informing senders about ['http5', 'bittorrent2']
+[1272274637.11] http5_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.13] http5_receiver: chunk 0: received 5000 bytes
+[1272274637.13] http5_receiver: saved chunk 0
+[1272274637.13] http5_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.13] iftscp2_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.13] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/2 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/2'
+[1272274637.14] http5_receiver: chunk 1: received 5000 bytes
+[1272274637.14] http5_receiver: saved chunk 1
+[1272274637.14] http5_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.15] http5_receiver: chunk 3: received 5000 bytes
+[1272274637.15] http5_receiver: saved chunk 3
+[1272274637.15] http5_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.17] http5_receiver: chunk 4: received 5000 bytes
+[1272274637.17] http5_receiver: saved chunk 4
+[1272274637.17] http5_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.17] http5_receiver: chunk 5: received 5000 bytes
+[1272274637.18] http5_receiver: saved chunk 5
+[1272274637.18] http5_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.2] http5_receiver: chunk 6: received 5000 bytes
+[1272274637.2] http5_receiver: saved chunk 6
+[1272274637.2] http5_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.21] http5_receiver: chunk 7: received 5000 bytes
+[1272274637.21] http5_receiver: saved chunk 7
+[1272274637.21] http5_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.23] http5_receiver: chunk 8: received 5000 bytes
+[1272274637.23] http5_receiver: saved chunk 8
+[1272274637.24] http5_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.24] http5_receiver: chunk 9: received 5000 bytes
+[1272274637.24] http5_receiver: saved chunk 9
+[1272274637.24] http5_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.26] http5_receiver: chunk 10: received 5000 bytes
+[1272274637.26] http5_receiver: saved chunk 10
+[1272274637.26] http5_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.28] http5_receiver: chunk 11: received 5000 bytes
+[1272274637.28] http5_receiver: saved chunk 11
+[1272274637.28] http5_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.29] http5_receiver: chunk 12: received 5000 bytes
+[1272274637.29] http5_receiver: saved chunk 12
+[1272274637.29] http5_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.3] http5_receiver: chunk 13: received 5000 bytes
+[1272274637.3] http5_receiver: saved chunk 13
+[1272274637.3] http5_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.31] http5_receiver: chunk 14: received 5000 bytes
+[1272274637.31] http5_receiver: saved chunk 14
+[1272274637.31] http5_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.35] http5_receiver: chunk 15: received 5000 bytes
+[1272274637.35] http5_receiver: saved chunk 15
+[1272274637.36] http5_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.37] http5_receiver: chunk 16: received 5000 bytes
+[1272274637.37] http5_receiver: saved chunk 16
+[1272274637.37] http5_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.39] http5_receiver: chunk 17: received 5000 bytes
+[1272274637.39] http5_receiver: saved chunk 17
+[1272274637.39] http5_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.41] http5_receiver: chunk 18: received 5000 bytes
+[1272274637.41] http5_receiver: saved chunk 18
+[1272274637.41] http5_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.41] http5_receiver: chunk 19: received 5000 bytes
+[1272274637.41] http5_receiver: saved chunk 19
+[1272274637.41] http5_receiver: reserved chunk 20 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.44] http5_receiver: chunk 20: received 5000 bytes
+[1272274637.44] http5_receiver: saved chunk 20
+[1272274637.44] http5_receiver: reserved chunk 21 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.45] http5_receiver: chunk 21: received 5000 bytes
+[1272274637.45] http5_receiver: saved chunk 21
+[1272274637.45] http5_receiver: reserved chunk 22 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.45] http5_receiver: chunk 22: received 5000 bytes
+[1272274637.45] http5_receiver: saved chunk 22
+[1272274637.46] http5_receiver: reserved chunk 23 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.48] http5_receiver: chunk 23: received 5000 bytes
+[1272274637.48] http5_receiver: saved chunk 23
+[1272274637.48] http5_receiver: reserved chunk 24 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.49] http5_receiver: chunk 24: received 5000 bytes
+[1272274637.49] http5_receiver: saved chunk 24
+[1272274637.49] http5_receiver: reserved chunk 25 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.5] http5_receiver: chunk 25: received 5000 bytes
+[1272274637.5] http5_receiver: saved chunk 25
+[1272274637.5] http5_receiver: reserved chunk 26 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.51] http5_receiver: chunk 26: received 5000 bytes
+[1272274637.51] http5_receiver: saved chunk 26
+[1272274637.51] http5_receiver: reserved chunk 27 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.52] http5_receiver: chunk 27: received 5000 bytes
+[1272274637.52] http5_receiver: saved chunk 27
+[1272274637.52] http5_receiver: reserved chunk 28 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.54] http5_receiver: chunk 28: received 5000 bytes
+[1272274637.54] http5_receiver: saved chunk 28
+[1272274637.54] http5_receiver: reserved chunk 29 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.55] http5_receiver: chunk 29: received 5000 bytes
+[1272274637.55] http5_receiver: saved chunk 29
+[1272274637.55] http5_receiver: reserved chunk 30 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.56] http5_receiver: chunk 30: received 5000 bytes
+[1272274637.56] http5_receiver: saved chunk 30
+[1272274637.57] iftscp2_receiver: chunk 2: received 5000 bytes
+[1272274637.57] iftscp2_receiver: saved chunk 2
+[1272274637.57] iftscp2_receiver: reserved chunk 31 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.57] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/31 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/31'
+[1272274637.59] http5_receiver: reserved chunk 31 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.6] http5_receiver: chunk 31: received 5000 bytes
+[1272274637.6] http5_receiver: saved chunk 31
+[1272274637.6] http5_receiver: reserved chunk 32 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.61] http5_receiver: chunk 32: received 5000 bytes
+[1272274637.61] http5_receiver: saved chunk 32
+[1272274637.61] http5_receiver: reserved chunk 33 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.64] http5_receiver: chunk 33: received 5000 bytes
+[1272274637.64] http5_receiver: saved chunk 33
+[1272274637.64] http5_receiver: reserved chunk 34 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.65] http5_receiver: chunk 34: received 5000 bytes
+[1272274637.65] http5_receiver: saved chunk 34
+[1272274637.65] http5_receiver: reserved chunk 35 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.66] http5_receiver: chunk 35: received 5000 bytes
+[1272274637.66] http5_receiver: saved chunk 35
+[1272274637.66] http5_receiver: reserved chunk 36 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.67] http5_receiver: chunk 36: received 5000 bytes
+[1272274637.67] http5_receiver: saved chunk 36
+[1272274637.67] http5_receiver: reserved chunk 37 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.7] http5_receiver: chunk 37: received 5000 bytes
+[1272274637.7] http5_receiver: saved chunk 37
+[1272274637.7] http5_receiver: reserved chunk 38 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.73] http5_receiver: chunk 38: received 5000 bytes
+[1272274637.73] http5_receiver: saved chunk 38
+[1272274637.73] http5_receiver: reserved chunk 39 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.74] http5_receiver: chunk 39: received 5000 bytes
+[1272274637.75] http5_receiver: saved chunk 39
+[1272274637.75] http5_receiver: reserved chunk 40 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.76] http5_receiver: chunk 40: received 5000 bytes
+[1272274637.76] http5_receiver: saved chunk 40
+[1272274637.76] http5_receiver: reserved chunk 41 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.78] http5_receiver: chunk 41: received 5000 bytes
+[1272274637.78] http5_receiver: saved chunk 41
+[1272274637.78] http5_receiver: reserved chunk 42 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.79] http5_receiver: chunk 42: received 5000 bytes
+[1272274637.79] http5_receiver: saved chunk 42
+[1272274637.8] http5_receiver: reserved chunk 43 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.8] http5_receiver: chunk 43: received 5000 bytes
+[1272274637.8] http5_receiver: saved chunk 43
+[1272274637.81] http5_receiver: reserved chunk 44 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.82] http5_receiver: chunk 44: received 5000 bytes
+[1272274637.82] http5_receiver: saved chunk 44
+[1272274637.82] http5_receiver: reserved chunk 45 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.84] http5_receiver: chunk 45: received 5000 bytes
+[1272274637.84] http5_receiver: saved chunk 45
+[1272274637.84] http5_receiver: reserved chunk 46 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.85] http5_receiver: chunk 46: received 5000 bytes
+[1272274637.85] http5_receiver: saved chunk 46
+[1272274637.85] http5_receiver: reserved chunk 47 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.86] http5_receiver: chunk 47: received 5000 bytes
+[1272274637.86] http5_receiver: saved chunk 47
+[1272274637.86] http5_receiver: reserved chunk 48 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.89] http5_receiver: chunk 48: received 5000 bytes
+[1272274637.89] http5_receiver: saved chunk 48
+[1272274637.9] http5_receiver: reserved chunk 49 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.91] http5_receiver: chunk 49: received 5000 bytes
+[1272274637.91] http5_receiver: saved chunk 49
+[1272274637.91] http5_receiver: reserved chunk 50 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.91] http5_receiver: chunk 50: received 5000 bytes
+[1272274637.91] http5_receiver: saved chunk 50
+[1272274637.91] http5_receiver: reserved chunk 51 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.93] iftscp2_receiver: chunk 31: received 5000 bytes
+[1272274637.93] iftscp2_receiver: will not write already-received chunk 31
+[1272274637.93] iftscp2_receiver: reserved chunk 52 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.93] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/52 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/52'
+[1272274637.95] http5_receiver: chunk 51: received 5000 bytes
+[1272274637.95] http5_receiver: saved chunk 51
+[1272274637.96] http5_receiver: reserved chunk 53 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.97] http5_receiver: chunk 53: received 5000 bytes
+[1272274637.97] http5_receiver: saved chunk 53
+[1272274637.97] http5_receiver: reserved chunk 54 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274637.99] http5_receiver: chunk 54: received 5000 bytes
+[1272274637.99] http5_receiver: saved chunk 54
+[1272274637.99] http5_receiver: reserved chunk 55 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.0] http5_receiver: chunk 55: received 5000 bytes
+[1272274638.0] http5_receiver: saved chunk 55
+[1272274638.0] http5_receiver: reserved chunk 56 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.02] http5_receiver: chunk 56: received 5000 bytes
+[1272274638.02] http5_receiver: saved chunk 56
+[1272274638.02] http5_receiver: reserved chunk 57 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.03] http5_receiver: chunk 57: received 5000 bytes
+[1272274638.03] http5_receiver: saved chunk 57
+[1272274638.04] http5_receiver: reserved chunk 58 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.05] http5_receiver: chunk 58: received 5000 bytes
+[1272274638.05] http5_receiver: saved chunk 58
+[1272274638.05] http5_receiver: reserved chunk 59 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.06] http5_receiver: chunk 59: received 5000 bytes
+[1272274638.06] http5_receiver: saved chunk 59
+[1272274638.06] http5_receiver: reserved chunk 60 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.09] http5_receiver: chunk 60: received 5000 bytes
+[1272274638.09] http5_receiver: saved chunk 60
+[1272274638.09] http5_receiver: reserved chunk 61 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.12] http5_receiver: chunk 61: received 5000 bytes
+[1272274638.12] http5_receiver: saved chunk 61
+[1272274638.12] http5_receiver: reserved chunk 62 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.14] http5_receiver: chunk 62: received 5000 bytes
+[1272274638.14] http5_receiver: saved chunk 62
+[1272274638.14] http5_receiver: reserved chunk 63 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.14] http5_receiver: chunk 63: received 5000 bytes
+[1272274638.15] http5_receiver: saved chunk 63
+[1272274638.15] http5_receiver: reserved chunk 64 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.16] http5_receiver: chunk 64: received 5000 bytes
+[1272274638.16] http5_receiver: saved chunk 64
+[1272274638.16] http5_receiver: reserved chunk 65 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.18] http5_receiver: chunk 65: received 5000 bytes
+[1272274638.18] http5_receiver: saved chunk 65
+[1272274638.18] http5_receiver: reserved chunk 66 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.19] http5_receiver: chunk 66: received 5000 bytes
+[1272274638.19] http5_receiver: saved chunk 66
+[1272274638.19] http5_receiver: reserved chunk 67 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.19] http5_receiver: done receiving chunks for /tmp/iftd-experiments/file_1000000
+[1272274638.19] http5_receiver: receiver indicates unsuccessful transmission
+[1272274638.19] Transmission took 1.23324418068 ticks
+[1272274638.19] http5_receiver: Got irrecoverable error -4, dying...
+[1272274638.27] iftscp2_receiver: chunk 52: received 5000 bytes
+[1272274638.27] iftscp2_receiver: saved chunk 52
+[1272274638.27] iftscp2_receiver: reserved chunk 67 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.27] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/67 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/67'
+[1272274638.63] iftscp2_receiver: chunk 67: received 5000 bytes
+[1272274638.63] iftscp2_receiver: saved chunk 67
+[1272274638.64] iftscp2_receiver: reserved chunk 68 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274638.64] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/68 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/68'
+[1272274638.67] bittorrent2_receiver: received 171 more chunks
+have now received 171 chunks
+give back 0
+[1272274638.8] bittorrent2_receiver: chunk 0: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 0
+[1272274638.8] bittorrent2_receiver: chunk 1: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 1
+[1272274638.8] bittorrent2_receiver: chunk 2: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 2
+[1272274638.8] bittorrent2_receiver: chunk 3: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 3
+[1272274638.8] bittorrent2_receiver: chunk 4: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 4
+[1272274638.8] bittorrent2_receiver: chunk 5: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 5
+[1272274638.8] bittorrent2_receiver: chunk 6: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 6
+[1272274638.8] bittorrent2_receiver: chunk 7: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 7
+[1272274638.8] bittorrent2_receiver: chunk 9: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 9
+[1272274638.8] bittorrent2_receiver: chunk 11: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 11
+[1272274638.8] bittorrent2_receiver: chunk 12: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 12
+[1272274638.8] bittorrent2_receiver: chunk 13: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 13
+[1272274638.8] bittorrent2_receiver: chunk 14: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 14
+[1272274638.8] bittorrent2_receiver: chunk 15: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 15
+[1272274638.8] bittorrent2_receiver: chunk 16: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 16
+[1272274638.8] bittorrent2_receiver: chunk 17: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 17
+[1272274638.8] bittorrent2_receiver: chunk 18: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 18
+[1272274638.8] bittorrent2_receiver: chunk 19: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 19
+[1272274638.8] bittorrent2_receiver: chunk 20: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 20
+[1272274638.8] bittorrent2_receiver: chunk 21: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 21
+[1272274638.8] bittorrent2_receiver: chunk 22: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 22
+[1272274638.8] bittorrent2_receiver: chunk 23: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 23
+[1272274638.8] bittorrent2_receiver: chunk 24: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 24
+[1272274638.8] bittorrent2_receiver: chunk 26: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 26
+[1272274638.8] bittorrent2_receiver: chunk 27: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 27
+[1272274638.8] bittorrent2_receiver: chunk 28: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 28
+[1272274638.8] bittorrent2_receiver: chunk 30: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 30
+[1272274638.8] bittorrent2_receiver: chunk 31: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 31
+[1272274638.8] bittorrent2_receiver: chunk 32: received 5000 bytes
+[1272274638.8] bittorrent2_receiver: will not write already-received chunk 32
+[1272274638.8] bittorrent2_receiver: chunk 33: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 33
+[1272274638.81] bittorrent2_receiver: chunk 34: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 34
+[1272274638.81] bittorrent2_receiver: chunk 35: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 35
+[1272274638.81] bittorrent2_receiver: chunk 36: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 36
+[1272274638.81] bittorrent2_receiver: chunk 37: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 37
+[1272274638.81] bittorrent2_receiver: chunk 39: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 39
+[1272274638.81] bittorrent2_receiver: chunk 40: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 40
+[1272274638.81] bittorrent2_receiver: chunk 41: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 41
+[1272274638.81] bittorrent2_receiver: chunk 43: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 43
+[1272274638.81] bittorrent2_receiver: chunk 45: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 45
+[1272274638.81] bittorrent2_receiver: chunk 46: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 46
+[1272274638.81] bittorrent2_receiver: chunk 47: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 47
+[1272274638.81] bittorrent2_receiver: chunk 48: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 48
+[1272274638.81] bittorrent2_receiver: chunk 49: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 49
+[1272274638.81] bittorrent2_receiver: chunk 50: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 50
+[1272274638.81] bittorrent2_receiver: chunk 51: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 51
+[1272274638.81] bittorrent2_receiver: chunk 52: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 52
+[1272274638.81] bittorrent2_receiver: chunk 53: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 53
+[1272274638.81] bittorrent2_receiver: chunk 54: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 54
+[1272274638.81] bittorrent2_receiver: chunk 55: received 5000 bytes
+[1272274638.81] bittorrent2_receiver: will not write already-received chunk 55
+[1272274638.83] bittorrent2_receiver: chunk 56: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 56
+[1272274638.83] bittorrent2_receiver: chunk 57: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 57
+[1272274638.83] bittorrent2_receiver: chunk 59: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 59
+[1272274638.83] bittorrent2_receiver: chunk 60: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 60
+[1272274638.83] bittorrent2_receiver: chunk 61: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 61
+[1272274638.83] bittorrent2_receiver: chunk 62: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 62
+[1272274638.83] bittorrent2_receiver: chunk 63: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 63
+[1272274638.83] bittorrent2_receiver: chunk 64: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 64
+[1272274638.83] bittorrent2_receiver: chunk 65: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 65
+[1272274638.83] bittorrent2_receiver: chunk 66: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 66
+[1272274638.83] bittorrent2_receiver: chunk 67: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: will not write already-received chunk 67
+[1272274638.83] bittorrent2_receiver: chunk 68: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 68
+[1272274638.83] bittorrent2_receiver: chunk 69: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 69
+[1272274638.83] bittorrent2_receiver: chunk 70: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 70
+[1272274638.83] bittorrent2_receiver: chunk 71: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 71
+[1272274638.83] bittorrent2_receiver: chunk 72: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 72
+[1272274638.83] bittorrent2_receiver: chunk 73: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 73
+[1272274638.83] bittorrent2_receiver: chunk 74: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 74
+[1272274638.83] bittorrent2_receiver: chunk 75: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 75
+[1272274638.83] bittorrent2_receiver: chunk 76: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 76
+[1272274638.83] bittorrent2_receiver: chunk 78: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 78
+[1272274638.83] bittorrent2_receiver: chunk 79: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 79
+[1272274638.83] bittorrent2_receiver: chunk 80: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 80
+[1272274638.83] bittorrent2_receiver: chunk 81: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 81
+[1272274638.83] bittorrent2_receiver: chunk 82: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 82
+[1272274638.83] bittorrent2_receiver: chunk 84: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 84
+[1272274638.83] bittorrent2_receiver: chunk 85: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 85
+[1272274638.83] bittorrent2_receiver: chunk 88: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 88
+[1272274638.83] bittorrent2_receiver: chunk 89: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 89
+[1272274638.83] bittorrent2_receiver: chunk 90: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 90
+[1272274638.83] bittorrent2_receiver: chunk 91: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 91
+[1272274638.83] bittorrent2_receiver: chunk 92: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 92
+[1272274638.83] bittorrent2_receiver: chunk 93: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 93
+[1272274638.83] bittorrent2_receiver: chunk 94: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 94
+[1272274638.83] bittorrent2_receiver: chunk 95: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 95
+[1272274638.83] bittorrent2_receiver: chunk 96: received 5000 bytes
+[1272274638.83] bittorrent2_receiver: saved chunk 96
+[1272274638.83] bittorrent2_receiver: chunk 97: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 97
+[1272274638.84] bittorrent2_receiver: chunk 98: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 98
+[1272274638.84] bittorrent2_receiver: chunk 99: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 99
+[1272274638.84] bittorrent2_receiver: chunk 100: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 100
+[1272274638.84] bittorrent2_receiver: chunk 101: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 101
+[1272274638.84] bittorrent2_receiver: chunk 103: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 103
+[1272274638.84] bittorrent2_receiver: chunk 104: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 104
+[1272274638.84] bittorrent2_receiver: chunk 106: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 106
+[1272274638.84] bittorrent2_receiver: chunk 107: received 5000 bytes
+[1272274638.84] bittorrent2_receiver: saved chunk 107
+[1272274638.84] bittorrent2_receiver: chunk 109: received 5000 bytes
+[1272274638.86] bittorrent2_receiver: saved chunk 109
+[1272274638.86] bittorrent2_receiver: chunk 110: received 5000 bytes
+[1272274638.86] bittorrent2_receiver: saved chunk 110
+[1272274638.86] bittorrent2_receiver: chunk 111: received 5000 bytes
+[1272274638.86] bittorrent2_receiver: saved chunk 111
+[1272274638.86] bittorrent2_receiver: chunk 112: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 112
+[1272274638.87] bittorrent2_receiver: chunk 113: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 113
+[1272274638.87] bittorrent2_receiver: chunk 114: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 114
+[1272274638.87] bittorrent2_receiver: chunk 115: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 115
+[1272274638.87] bittorrent2_receiver: chunk 117: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 117
+[1272274638.87] bittorrent2_receiver: chunk 118: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 118
+[1272274638.87] bittorrent2_receiver: chunk 119: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 119
+[1272274638.87] bittorrent2_receiver: chunk 120: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 120
+[1272274638.87] bittorrent2_receiver: chunk 121: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 121
+[1272274638.87] bittorrent2_receiver: chunk 122: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 122
+[1272274638.87] bittorrent2_receiver: chunk 123: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 123
+[1272274638.87] bittorrent2_receiver: chunk 124: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 124
+[1272274638.87] bittorrent2_receiver: chunk 126: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 126
+[1272274638.87] bittorrent2_receiver: chunk 127: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 127
+[1272274638.87] bittorrent2_receiver: chunk 128: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 128
+[1272274638.87] bittorrent2_receiver: chunk 129: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 129
+[1272274638.87] bittorrent2_receiver: chunk 130: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 130
+[1272274638.87] bittorrent2_receiver: chunk 131: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 131
+[1272274638.87] bittorrent2_receiver: chunk 132: received 5000 bytes
+[1272274638.87] bittorrent2_receiver: saved chunk 132
+[1272274638.87] bittorrent2_receiver: chunk 133: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 133
+[1272274638.88] bittorrent2_receiver: chunk 134: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 134
+[1272274638.88] bittorrent2_receiver: chunk 135: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 135
+[1272274638.88] bittorrent2_receiver: chunk 137: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 137
+[1272274638.88] bittorrent2_receiver: chunk 138: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 138
+[1272274638.88] bittorrent2_receiver: chunk 139: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 139
+[1272274638.88] bittorrent2_receiver: chunk 140: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 140
+[1272274638.88] bittorrent2_receiver: chunk 141: received 5000 bytes
+[1272274638.88] bittorrent2_receiver: saved chunk 141
+[1272274638.88] bittorrent2_receiver: chunk 142: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 142
+[1272274638.89] bittorrent2_receiver: chunk 143: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 143
+[1272274638.89] bittorrent2_receiver: chunk 144: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 144
+[1272274638.89] bittorrent2_receiver: chunk 146: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 146
+[1272274638.89] bittorrent2_receiver: chunk 147: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 147
+[1272274638.89] bittorrent2_receiver: chunk 148: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 148
+[1272274638.89] bittorrent2_receiver: chunk 150: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 150
+[1272274638.89] bittorrent2_receiver: chunk 151: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 151
+[1272274638.89] bittorrent2_receiver: chunk 153: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 153
+[1272274638.89] bittorrent2_receiver: chunk 154: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 154
+[1272274638.89] bittorrent2_receiver: chunk 155: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 155
+[1272274638.89] bittorrent2_receiver: chunk 156: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 156
+[1272274638.89] bittorrent2_receiver: chunk 157: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 157
+[1272274638.89] bittorrent2_receiver: chunk 158: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 158
+[1272274638.89] bittorrent2_receiver: chunk 159: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 159
+[1272274638.89] bittorrent2_receiver: chunk 160: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 160
+[1272274638.89] bittorrent2_receiver: chunk 161: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 161
+[1272274638.89] bittorrent2_receiver: chunk 162: received 5000 bytes
+[1272274638.89] bittorrent2_receiver: saved chunk 162
+[1272274638.89] bittorrent2_receiver: chunk 163: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 163
+[1272274638.9] bittorrent2_receiver: chunk 165: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 165
+[1272274638.9] bittorrent2_receiver: chunk 166: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 166
+[1272274638.9] bittorrent2_receiver: chunk 167: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 167
+[1272274638.9] bittorrent2_receiver: chunk 168: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 168
+[1272274638.9] bittorrent2_receiver: chunk 170: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 170
+[1272274638.9] bittorrent2_receiver: chunk 171: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 171
+[1272274638.9] bittorrent2_receiver: chunk 172: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 172
+[1272274638.9] bittorrent2_receiver: chunk 173: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 173
+[1272274638.9] bittorrent2_receiver: chunk 174: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 174
+[1272274638.9] bittorrent2_receiver: chunk 176: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 176
+[1272274638.9] bittorrent2_receiver: chunk 177: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 177
+[1272274638.9] bittorrent2_receiver: chunk 180: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 180
+[1272274638.9] bittorrent2_receiver: chunk 181: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 181
+[1272274638.9] bittorrent2_receiver: chunk 182: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 182
+[1272274638.9] bittorrent2_receiver: chunk 183: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 183
+[1272274638.9] bittorrent2_receiver: chunk 185: received 5000 bytes
+[1272274638.9] bittorrent2_receiver: saved chunk 185
+[1272274638.9] bittorrent2_receiver: chunk 186: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 186
+[1272274638.93] bittorrent2_receiver: chunk 188: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 188
+[1272274638.93] bittorrent2_receiver: chunk 190: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 190
+[1272274638.93] bittorrent2_receiver: chunk 191: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 191
+[1272274638.93] bittorrent2_receiver: chunk 192: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 192
+[1272274638.93] bittorrent2_receiver: chunk 193: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 193
+[1272274638.93] bittorrent2_receiver: chunk 194: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 194
+[1272274638.93] bittorrent2_receiver: chunk 195: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 195
+[1272274638.93] bittorrent2_receiver: chunk 196: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 196
+[1272274638.93] bittorrent2_receiver: chunk 197: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 197
+[1272274638.93] bittorrent2_receiver: chunk 198: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 198
+[1272274638.93] bittorrent2_receiver: chunk 199: received 5000 bytes
+[1272274638.93] bittorrent2_receiver: saved chunk 199
+[1272274639.04] iftscp2_receiver: chunk 68: received 5000 bytes
+[1272274639.04] iftscp2_receiver: will not write already-received chunk 68
+[1272274639.04] iftscp2_receiver: reserved chunk 77 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274639.04] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/77 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/77'
+[1272274639.37] iftscp2_receiver: chunk 77: received 5000 bytes
+[1272274639.37] iftscp2_receiver: saved chunk 77
+[1272274639.37] iftscp2_receiver: reserved chunk 83 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274639.37] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/83 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/83'
+[1272274639.72] iftscp2_receiver: chunk 83: received 5000 bytes
+[1272274639.72] iftscp2_receiver: saved chunk 83
+[1272274639.72] iftscp2_receiver: reserved chunk 86 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274639.72] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/86 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/86'
+[1272274640.06] iftscp2_receiver: chunk 86: received 5000 bytes
+[1272274640.06] iftscp2_receiver: saved chunk 86
+[1272274640.06] iftscp2_receiver: reserved chunk 87 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274640.06] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/87 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/87'
+[1272274640.53] iftscp2_receiver: chunk 87: received 5000 bytes
+[1272274640.53] iftscp2_receiver: saved chunk 87
+[1272274640.54] iftscp2_receiver: reserved chunk 102 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274640.54] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/102 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/102'
+[1272274640.87] iftscp2_receiver: chunk 102: received 5000 bytes
+[1272274640.87] iftscp2_receiver: saved chunk 102
+[1272274640.87] iftscp2_receiver: reserved chunk 105 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274640.87] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/105 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/105'
+[1272274641.18] iftscp2_receiver: chunk 105: received 5000 bytes
+[1272274641.18] iftscp2_receiver: saved chunk 105
+[1272274641.18] iftscp2_receiver: reserved chunk 108 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274641.18] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/108 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/108'
+[1272274641.52] iftscp2_receiver: chunk 108: received 5000 bytes
+[1272274641.52] iftscp2_receiver: saved chunk 108
+[1272274641.52] iftscp2_receiver: reserved chunk 116 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274641.52] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/116 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/116'
+[1272274641.86] iftscp2_receiver: chunk 116: received 5000 bytes
+[1272274641.87] iftscp2_receiver: saved chunk 116
+[1272274641.87] iftscp2_receiver: reserved chunk 125 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274641.87] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/125 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/125'
+[1272274642.18] iftscp2_receiver: chunk 125: received 5000 bytes
+[1272274642.18] iftscp2_receiver: saved chunk 125
+[1272274642.18] iftscp2_receiver: reserved chunk 136 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274642.18] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/136 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/136'
+[1272274642.51] iftscp2_receiver: chunk 136: received 5000 bytes
+[1272274642.51] iftscp2_receiver: saved chunk 136
+[1272274642.51] iftscp2_receiver: reserved chunk 145 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274642.51] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/145 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/145'
+[1272274642.86] iftscp2_receiver: chunk 145: received 5000 bytes
+[1272274642.86] iftscp2_receiver: saved chunk 145
+[1272274642.86] iftscp2_receiver: reserved chunk 149 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274642.86] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/149 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/149'
+[1272274643.19] iftscp2_receiver: chunk 149: received 5000 bytes
+[1272274643.19] iftscp2_receiver: saved chunk 149
+[1272274643.19] iftscp2_receiver: reserved chunk 152 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274643.19] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/152 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/152'
+[1272274643.51] iftscp2_receiver: chunk 152: received 5000 bytes
+[1272274643.51] iftscp2_receiver: saved chunk 152
+[1272274643.51] iftscp2_receiver: reserved chunk 164 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274643.51] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/164 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/164'
+[1272274643.83] iftscp2_receiver: chunk 164: received 5000 bytes
+[1272274643.83] iftscp2_receiver: saved chunk 164
+[1272274643.83] iftscp2_receiver: reserved chunk 169 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274643.83] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/169 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/169'
+[1272274644.16] iftscp2_receiver: chunk 169: received 5000 bytes
+[1272274644.16] iftscp2_receiver: saved chunk 169
+[1272274644.16] iftscp2_receiver: reserved chunk 175 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274644.16] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/175 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/175'
+[1272274644.48] iftscp2_receiver: chunk 175: received 5000 bytes
+[1272274644.48] iftscp2_receiver: saved chunk 175
+[1272274644.48] iftscp2_receiver: reserved chunk 178 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274644.48] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/178 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/178'
+[1272274644.82] iftscp2_receiver: chunk 178: received 5000 bytes
+[1272274644.82] iftscp2_receiver: saved chunk 178
+[1272274644.82] iftscp2_receiver: reserved chunk 179 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274644.82] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/179 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/179'
+[1272274644.93] bittorrent2_receiver: received 0 more chunks
+have now received 0 chunks
+give back 0
+[1272274645.15] iftscp2_receiver: chunk 179: received 5000 bytes
+[1272274645.15] iftscp2_receiver: saved chunk 179
+[1272274645.15] iftscp2_receiver: reserved chunk 184 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274645.15] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/184 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/184'
+[1272274645.43] bittorrent2_receiver: received 200 more chunks
+have now received 200 chunks
+give back 0
+[1272274645.5] iftscp2_receiver: chunk 184: received 5000 bytes
+[1272274645.5] iftscp2_receiver: saved chunk 184
+[1272274645.5] iftscp2_receiver: reserved chunk 187 for writing in <iftfile.iftfile instance at 0x8c8d1ac>
+[1272274645.51] iftscp2_receiver: '/usr/bin/scp -P 22 jnelson@cl31.cs.arizona.edu:/tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/187 /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4/187'
+[1272274645.59] bittorrent2_receiver: chunk 0: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 0
+[1272274645.59] bittorrent2_receiver: chunk 1: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 1
+[1272274645.59] bittorrent2_receiver: chunk 2: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 2
+[1272274645.59] bittorrent2_receiver: chunk 3: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 3
+[1272274645.59] bittorrent2_receiver: chunk 4: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 4
+[1272274645.59] bittorrent2_receiver: chunk 5: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 5
+[1272274645.59] bittorrent2_receiver: chunk 6: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 6
+[1272274645.59] bittorrent2_receiver: chunk 7: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 7
+[1272274645.59] bittorrent2_receiver: chunk 8: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 8
+[1272274645.59] bittorrent2_receiver: chunk 9: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 9
+[1272274645.59] bittorrent2_receiver: chunk 10: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 10
+[1272274645.59] bittorrent2_receiver: chunk 11: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 11
+[1272274645.59] bittorrent2_receiver: chunk 12: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 12
+[1272274645.59] bittorrent2_receiver: chunk 13: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 13
+[1272274645.59] bittorrent2_receiver: chunk 14: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 14
+[1272274645.59] bittorrent2_receiver: chunk 15: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 15
+[1272274645.59] bittorrent2_receiver: chunk 16: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 16
+[1272274645.59] bittorrent2_receiver: chunk 17: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 17
+[1272274645.59] bittorrent2_receiver: chunk 18: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 18
+[1272274645.59] bittorrent2_receiver: chunk 19: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 19
+[1272274645.59] bittorrent2_receiver: chunk 20: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 20
+[1272274645.59] bittorrent2_receiver: chunk 21: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 21
+[1272274645.59] bittorrent2_receiver: chunk 22: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 22
+[1272274645.59] bittorrent2_receiver: chunk 23: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 23
+[1272274645.59] bittorrent2_receiver: chunk 24: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 24
+[1272274645.59] bittorrent2_receiver: chunk 25: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 25
+[1272274645.59] bittorrent2_receiver: chunk 26: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 26
+[1272274645.59] bittorrent2_receiver: chunk 27: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 27
+[1272274645.59] bittorrent2_receiver: chunk 28: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 28
+[1272274645.59] bittorrent2_receiver: chunk 29: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 29
+[1272274645.59] bittorrent2_receiver: chunk 30: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 30
+[1272274645.59] bittorrent2_receiver: chunk 31: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 31
+[1272274645.59] bittorrent2_receiver: chunk 32: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 32
+[1272274645.59] bittorrent2_receiver: chunk 33: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 33
+[1272274645.59] bittorrent2_receiver: chunk 34: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 34
+[1272274645.59] bittorrent2_receiver: chunk 35: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 35
+[1272274645.59] bittorrent2_receiver: chunk 36: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 36
+[1272274645.59] bittorrent2_receiver: chunk 37: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 37
+[1272274645.59] bittorrent2_receiver: chunk 38: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 38
+[1272274645.59] bittorrent2_receiver: chunk 39: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 39
+[1272274645.59] bittorrent2_receiver: chunk 40: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 40
+[1272274645.59] bittorrent2_receiver: chunk 41: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 41
+[1272274645.59] bittorrent2_receiver: chunk 42: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 42
+[1272274645.59] bittorrent2_receiver: chunk 43: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 43
+[1272274645.59] bittorrent2_receiver: chunk 44: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 44
+[1272274645.59] bittorrent2_receiver: chunk 45: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 45
+[1272274645.59] bittorrent2_receiver: chunk 46: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 46
+[1272274645.59] bittorrent2_receiver: chunk 47: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 47
+[1272274645.59] bittorrent2_receiver: chunk 48: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 48
+[1272274645.59] bittorrent2_receiver: chunk 49: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 49
+[1272274645.59] bittorrent2_receiver: chunk 50: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 50
+[1272274645.59] bittorrent2_receiver: chunk 51: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 51
+[1272274645.59] bittorrent2_receiver: chunk 52: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 52
+[1272274645.59] bittorrent2_receiver: chunk 53: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 53
+[1272274645.59] bittorrent2_receiver: chunk 54: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 54
+[1272274645.59] bittorrent2_receiver: chunk 55: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 55
+[1272274645.59] bittorrent2_receiver: chunk 56: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 56
+[1272274645.59] bittorrent2_receiver: chunk 57: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 57
+[1272274645.59] bittorrent2_receiver: chunk 58: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 58
+[1272274645.59] bittorrent2_receiver: chunk 59: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 59
+[1272274645.59] bittorrent2_receiver: chunk 60: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 60
+[1272274645.59] bittorrent2_receiver: chunk 61: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 61
+[1272274645.59] bittorrent2_receiver: chunk 62: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 62
+[1272274645.59] bittorrent2_receiver: chunk 63: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 63
+[1272274645.59] bittorrent2_receiver: chunk 64: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 64
+[1272274645.59] bittorrent2_receiver: chunk 65: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 65
+[1272274645.59] bittorrent2_receiver: chunk 66: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 66
+[1272274645.59] bittorrent2_receiver: chunk 67: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 67
+[1272274645.59] bittorrent2_receiver: chunk 68: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 68
+[1272274645.59] bittorrent2_receiver: chunk 69: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 69
+[1272274645.59] bittorrent2_receiver: chunk 70: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 70
+[1272274645.59] bittorrent2_receiver: chunk 71: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 71
+[1272274645.59] bittorrent2_receiver: chunk 72: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 72
+[1272274645.59] bittorrent2_receiver: chunk 73: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 73
+[1272274645.59] bittorrent2_receiver: chunk 74: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 74
+[1272274645.59] bittorrent2_receiver: chunk 75: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 75
+[1272274645.59] bittorrent2_receiver: chunk 76: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 76
+[1272274645.59] bittorrent2_receiver: chunk 77: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 77
+[1272274645.59] bittorrent2_receiver: chunk 78: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 78
+[1272274645.59] bittorrent2_receiver: chunk 79: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 79
+[1272274645.59] bittorrent2_receiver: chunk 80: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 80
+[1272274645.59] bittorrent2_receiver: chunk 81: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 81
+[1272274645.59] bittorrent2_receiver: chunk 82: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 82
+[1272274645.59] bittorrent2_receiver: chunk 83: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 83
+[1272274645.59] bittorrent2_receiver: chunk 84: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 84
+[1272274645.59] bittorrent2_receiver: chunk 85: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 85
+[1272274645.59] bittorrent2_receiver: chunk 86: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 86
+[1272274645.59] bittorrent2_receiver: chunk 87: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 87
+[1272274645.59] bittorrent2_receiver: chunk 88: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 88
+[1272274645.59] bittorrent2_receiver: chunk 89: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 89
+[1272274645.59] bittorrent2_receiver: chunk 90: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 90
+[1272274645.59] bittorrent2_receiver: chunk 91: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 91
+[1272274645.59] bittorrent2_receiver: chunk 92: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 92
+[1272274645.59] bittorrent2_receiver: chunk 93: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 93
+[1272274645.59] bittorrent2_receiver: chunk 94: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 94
+[1272274645.59] bittorrent2_receiver: chunk 95: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 95
+[1272274645.59] bittorrent2_receiver: chunk 96: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 96
+[1272274645.59] bittorrent2_receiver: chunk 97: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 97
+[1272274645.59] bittorrent2_receiver: chunk 98: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 98
+[1272274645.59] bittorrent2_receiver: chunk 99: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 99
+[1272274645.59] bittorrent2_receiver: chunk 100: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 100
+[1272274645.59] bittorrent2_receiver: chunk 101: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 101
+[1272274645.59] bittorrent2_receiver: chunk 102: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 102
+[1272274645.59] bittorrent2_receiver: chunk 103: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 103
+[1272274645.59] bittorrent2_receiver: chunk 104: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 104
+[1272274645.59] bittorrent2_receiver: chunk 105: received 5000 bytes
+[1272274645.59] bittorrent2_receiver: will not write already-received chunk 105
+[1272274645.59] bittorrent2_receiver: chunk 106: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 106
+[1272274645.6] bittorrent2_receiver: chunk 107: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 107
+[1272274645.6] bittorrent2_receiver: chunk 108: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 108
+[1272274645.6] bittorrent2_receiver: chunk 109: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 109
+[1272274645.6] bittorrent2_receiver: chunk 110: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 110
+[1272274645.6] bittorrent2_receiver: chunk 111: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 111
+[1272274645.6] bittorrent2_receiver: chunk 112: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 112
+[1272274645.6] bittorrent2_receiver: chunk 113: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 113
+[1272274645.6] bittorrent2_receiver: chunk 114: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 114
+[1272274645.6] bittorrent2_receiver: chunk 115: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 115
+[1272274645.6] bittorrent2_receiver: chunk 116: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 116
+[1272274645.6] bittorrent2_receiver: chunk 117: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 117
+[1272274645.6] bittorrent2_receiver: chunk 118: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 118
+[1272274645.6] bittorrent2_receiver: chunk 119: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 119
+[1272274645.6] bittorrent2_receiver: chunk 120: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 120
+[1272274645.6] bittorrent2_receiver: chunk 121: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 121
+[1272274645.6] bittorrent2_receiver: chunk 122: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 122
+[1272274645.6] bittorrent2_receiver: chunk 123: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 123
+[1272274645.6] bittorrent2_receiver: chunk 124: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 124
+[1272274645.6] bittorrent2_receiver: chunk 125: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 125
+[1272274645.6] bittorrent2_receiver: chunk 126: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 126
+[1272274645.6] bittorrent2_receiver: chunk 127: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 127
+[1272274645.6] bittorrent2_receiver: chunk 128: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 128
+[1272274645.6] bittorrent2_receiver: chunk 129: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 129
+[1272274645.6] bittorrent2_receiver: chunk 130: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 130
+[1272274645.6] bittorrent2_receiver: chunk 131: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 131
+[1272274645.6] bittorrent2_receiver: chunk 132: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 132
+[1272274645.6] bittorrent2_receiver: chunk 133: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 133
+[1272274645.6] bittorrent2_receiver: chunk 134: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 134
+[1272274645.6] bittorrent2_receiver: chunk 135: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 135
+[1272274645.6] bittorrent2_receiver: chunk 136: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 136
+[1272274645.6] bittorrent2_receiver: chunk 137: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 137
+[1272274645.6] bittorrent2_receiver: chunk 138: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 138
+[1272274645.6] bittorrent2_receiver: chunk 139: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 139
+[1272274645.6] bittorrent2_receiver: chunk 140: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 140
+[1272274645.6] bittorrent2_receiver: chunk 141: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 141
+[1272274645.6] bittorrent2_receiver: chunk 142: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 142
+[1272274645.6] bittorrent2_receiver: chunk 143: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 143
+[1272274645.6] bittorrent2_receiver: chunk 144: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 144
+[1272274645.6] bittorrent2_receiver: chunk 145: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 145
+[1272274645.6] bittorrent2_receiver: chunk 146: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 146
+[1272274645.6] bittorrent2_receiver: chunk 147: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 147
+[1272274645.6] bittorrent2_receiver: chunk 148: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 148
+[1272274645.6] bittorrent2_receiver: chunk 149: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 149
+[1272274645.6] bittorrent2_receiver: chunk 150: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 150
+[1272274645.6] bittorrent2_receiver: chunk 151: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 151
+[1272274645.6] bittorrent2_receiver: chunk 152: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 152
+[1272274645.6] bittorrent2_receiver: chunk 153: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 153
+[1272274645.6] bittorrent2_receiver: chunk 154: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 154
+[1272274645.6] bittorrent2_receiver: chunk 155: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 155
+[1272274645.6] bittorrent2_receiver: chunk 156: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 156
+[1272274645.6] bittorrent2_receiver: chunk 157: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 157
+[1272274645.6] bittorrent2_receiver: chunk 158: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 158
+[1272274645.6] bittorrent2_receiver: chunk 159: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 159
+[1272274645.6] bittorrent2_receiver: chunk 160: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 160
+[1272274645.6] bittorrent2_receiver: chunk 161: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 161
+[1272274645.6] bittorrent2_receiver: chunk 162: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 162
+[1272274645.6] bittorrent2_receiver: chunk 163: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 163
+[1272274645.6] bittorrent2_receiver: chunk 164: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 164
+[1272274645.6] bittorrent2_receiver: chunk 165: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 165
+[1272274645.6] bittorrent2_receiver: chunk 166: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 166
+[1272274645.6] bittorrent2_receiver: chunk 167: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 167
+[1272274645.6] bittorrent2_receiver: chunk 168: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 168
+[1272274645.6] bittorrent2_receiver: chunk 169: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 169
+[1272274645.6] bittorrent2_receiver: chunk 170: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 170
+[1272274645.6] bittorrent2_receiver: chunk 171: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 171
+[1272274645.6] bittorrent2_receiver: chunk 172: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 172
+[1272274645.6] bittorrent2_receiver: chunk 173: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 173
+[1272274645.6] bittorrent2_receiver: chunk 174: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 174
+[1272274645.6] bittorrent2_receiver: chunk 175: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 175
+[1272274645.6] bittorrent2_receiver: chunk 176: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 176
+[1272274645.6] bittorrent2_receiver: chunk 177: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 177
+[1272274645.6] bittorrent2_receiver: chunk 178: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 178
+[1272274645.6] bittorrent2_receiver: chunk 179: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 179
+[1272274645.6] bittorrent2_receiver: chunk 180: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 180
+[1272274645.6] bittorrent2_receiver: chunk 181: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 181
+[1272274645.6] bittorrent2_receiver: chunk 182: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 182
+[1272274645.6] bittorrent2_receiver: chunk 183: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 183
+[1272274645.6] bittorrent2_receiver: chunk 184: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 184
+[1272274645.6] bittorrent2_receiver: chunk 185: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 185
+[1272274645.6] bittorrent2_receiver: chunk 186: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 186
+[1272274645.6] bittorrent2_receiver: chunk 187: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: saved chunk 187
+[1272274645.6] bittorrent2_receiver: chunk 188: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 188
+[1272274645.6] bittorrent2_receiver: chunk 189: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: saved chunk 189
+[1272274645.6] bittorrent2_receiver: chunk 190: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 190
+[1272274645.6] bittorrent2_receiver: chunk 191: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 191
+[1272274645.6] bittorrent2_receiver: chunk 192: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 192
+[1272274645.6] bittorrent2_receiver: chunk 193: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 193
+[1272274645.6] bittorrent2_receiver: chunk 194: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 194
+[1272274645.6] bittorrent2_receiver: chunk 195: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 195
+[1272274645.6] bittorrent2_receiver: chunk 196: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 196
+[1272274645.6] bittorrent2_receiver: chunk 197: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 197
+[1272274645.6] bittorrent2_receiver: chunk 198: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 198
+[1272274645.6] bittorrent2_receiver: chunk 199: received 5000 bytes
+[1272274645.6] bittorrent2_receiver: will not write already-received chunk 199
+[1272274645.6] bittorrent2_receiver: done receiving chunks for /tmp/iftd-experiments/file_1000000
+[1272274645.6] bittorrent2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_1000000 to /tmp/iftd-experiments/file_1000000
+[1272274645.63] Transmission took 8.65981197357 ticks
+[1272274645.63] bittorrent2_receiver: Got PROTO_MSG_END, cleaning up...
+[1272274645.63] bittorrent2_receiver: purging /tmp/iftd-experiments/files/file_1000000.7d24706d7228d63fde8291ceb345fa0c51f38aa4.bt.67170af85e
+[1272274645.64] run_ift_recv: transmission activity has finished
+[1272274645.69] run_ift_recv: file hash is correct
+[1272274645.72] run_ift_recv: finished!
+[1272274645.83] iftscp2_receiver: chunk 187: received 5000 bytes
+[1272274645.83] iftscp2_receiver: could not lock chunk 187 for writing, rc=-102
+[1272274645.83] iftscp2_receiver: done receiving chunks for None
+[1272274645.83] iftscp2_receiver: receiver indicates unsuccessful transmission
+[1272274645.83] Transmission took 8.86865091324 ticks
+[1272274645.83] iftscp2_receiver: Got irrecoverable error -102, dying...
+[1272274658.02] Signal 2 received; cleaning up
+[1272274658.13] iftfile: shutdown complete

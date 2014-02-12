@@ -1,0 +1,110 @@
+[1272332425.82] urllib2 start
+[1272332427.53] urllib2 end, took 1.71735310555
+[1272332427.58] urllib2 start                  
+[1272332429.32] urllib2 end, took 1.74554896355
+[1272332429.33] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.52314400673
+[1272332429.37] urllib2 start                                                                            
+[1272332431.07] urllib2 end, took 1.69966888428                                                          
+[1272332431.11] urllib2 start                                                                            
+[1272332432.81] urllib2 end, took 1.69725894928                                                          
+[1272332432.81] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.47873497009
+[1272332432.85] urllib2 start                                                                            
+[1272332434.59] urllib2 end, took 1.74488711357                                                          
+[1272332434.63] urllib2 start                                                                            
+[1272332436.4] urllib2 end, took 1.76335597038                                                           
+[1272332436.4] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.59169006348 
+[1272332436.45] urllib2 start                                                                            
+[1272332438.16] urllib2 end, took 1.71365118027                                                          
+[1272332438.19] urllib2 start                                                                            
+[1272332439.91] urllib2 end, took 1.72024393082                                                          
+[1272332439.92] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.50560903549
+[1272332439.95] urllib2 start                                                                            
+[1272332441.69] urllib2 end, took 1.73922204971                                                          
+[1272332441.73] urllib2 start                                                                            
+[1272332443.43] urllib2 end, took 1.70750403404                                                          
+[1272332443.43] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.51181507111
+[1272332443.47] urllib2 start                                                                            
+[1272332445.17] urllib2 end, took 1.69662284851                                                          
+[1272332445.22] urllib2 start                                                                            
+[1272332446.91] urllib2 end, took 1.69242095947                                                          
+[1272332446.93] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.4912519455 
+[1272332446.96] urllib2 start                                                                            
+[1272332448.67] urllib2 end, took 1.7124671936                                                           
+[1272332448.71] urllib2 start                                                                            
+[1272332450.41] urllib2 end, took 1.69895505905                                                          
+[1272332450.42] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.49303603172
+[1272332450.45] urllib2 start                                                                            
+[1272332452.2] urllib2 end, took 1.74295711517                                                           
+[1272332452.23] urllib2 start                                                                            
+[1272332453.93] urllib2 end, took 1.70694589615                                                          
+[1272332453.94] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.51663017273
+[1272332453.98] urllib2 start                                                                            
+[1272332455.68] urllib2 end, took 1.70364093781                                                          
+[1272332455.72] urllib2 start                                                                            
+[1272332457.44] urllib2 end, took 1.71612501144                                                          
+[1272332457.44] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.50601005554
+[1272332457.48] urllib2 start                                                                            
+[1272332459.26] urllib2 end, took 1.7859890461                                                           
+[1272332459.31] urllib2 start                                                                            
+[1272332461.01] urllib2 end, took 1.70099496841                                                          
+[1272332461.01] urllib2 http://cl31.cs.arizona.edu:8000/tmp/iftd-experiments/file_100000000 3.56536507607
+[1272332461.11] http2 start
+[1272332462.42] http2 end, took 1.31558609009
+[1272332462.89] http start
+[1272332465.97] http end, took 3.08124995232
+[1272332467.2] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.17686295509
+[1272332467.25] http2 start
+[1272332468.68] http2 end, took 1.4299120903
+[1272332469.14] http start
+[1272332471.94] http end, took 2.79752779007
+[1272332473.16] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.96129608154
+[1272332473.21] http2 start
+[1272332474.62] http2 end, took 1.40760993958
+[1272332475.18] http start
+[1272332478.17] http end, took 2.9849050045
+[1272332479.42] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.25945806503
+[1272332479.47] http2 start
+[1272332480.88] http2 end, took 1.41287589073
+[1272332481.37] http start
+[1272332484.35] http end, took 2.98224878311
+[1272332485.57] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.14251899719
+[1272332485.62] http2 start
+[1272332486.93] http2 end, took 1.31614089012
+[1272332487.53] http start
+[1272332490.61] http end, took 3.08045816422
+[1272332491.85] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.27949786186
+[1272332491.9] http2 start
+[1272332493.22] http2 end, took 1.31953597069
+[1272332493.78] http start
+[1272332496.76] http end, took 2.97898697853
+[1272332497.98] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.12941503525
+[1272332498.03] http2 start
+[1272332499.72] http2 end, took 1.69063591957
+[1272332499.76] http start
+[1272332503.13] http end, took 3.36811804771
+[1272332504.41] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.42968010902
+[1272332504.46] http2 start
+[1272332505.76] http2 end, took 1.30100297928
+[1272332506.09] http start
+[1272332508.77] http end, took 2.68507409096
+[1272332510.02] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.61775803566
+[1272332510.07] http2 start
+[1272332511.39] http2 end, took 1.31421113014
+[1272332511.88] http start
+[1272332514.9] http end, took 3.02098107338
+[1272332516.17] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.1480588913
+[1272332516.22] http2 start
+[1272332517.53] http2 end, took 1.31328701973
+[1272332518.05] http start
+[1272332521.37] http end, took 3.32430815697
+[1272332522.59] arizonatransfer cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 6.41880702972
+[1272332527.73] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.10044407845
+[1272332532.84] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.11059904099
+[1272332538.13] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.29822897911
+[1272332543.32] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.18137216568
+[1272332548.51] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.19114208221
+[1272332553.94] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.43429899216
+[1272332559.17] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.22898888588
+[1272332564.21] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.03462791443
+[1272332569.34] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.13422703743
+[1272332574.85] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 5.51510691643

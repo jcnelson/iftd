@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if ! [ -f /var/run/iftd.pid ]; then
+   rm -f /var/lock/iftd.pid
+   /etc/init.d/iftd restart
+fi

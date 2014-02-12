@@ -1,0 +1,1053 @@
+[1272332522.63] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332522.64] http_receiver: expected file size of 100000000                                                                                          
+[1272332522.64] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332522.64] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332522.65] http2_receiver: expected file size of 100000000                                                                                         
+[1272332522.65] start_proto: started up protocol http2_receiver                                                                                         
+[1272332522.65] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                  
+[1272332522.65] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332522.68] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332522.68] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332522.93] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332522.93] http_receiver: saved chunk 0                                                                                                            
+[1272332522.93] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                  
+[1272332522.93] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332522.98] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332522.99] http2_receiver: saved chunk 1                                                                                                           
+[1272332522.99] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332522.99] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332523.26] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332523.26] http_receiver: saved chunk 2                                                                                                            
+[1272332523.26] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                  
+[1272332523.26] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332523.28] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332523.28] http2_receiver: saved chunk 3                                                                                                           
+[1272332523.28] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332523.28] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332523.61] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332523.61] http_receiver: saved chunk 4                                                                                                            
+[1272332523.61] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                  
+[1272332523.61] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332523.67] http2_receiver: chunk 5: received 5000000 bytes                                                                                         
+[1272332523.68] http2_receiver: saved chunk 5                                                                                                           
+[1272332523.68] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332523.68] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332523.95] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332523.96] http_receiver: saved chunk 6                                                                                                            
+[1272332523.96] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                  
+[1272332523.96] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332523.98] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332523.98] http2_receiver: saved chunk 7                                                                                                           
+[1272332523.98] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332523.98] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332524.31] http_receiver: chunk 8: received 5000000 bytes                                                                                          
+[1272332524.31] http_receiver: saved chunk 8                                                                                                            
+[1272332524.31] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332524.31] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332524.4] http2_receiver: chunk 9: received 5000000 bytes                                                                                          
+[1272332524.4] http2_receiver: saved chunk 9                                                                                                            
+[1272332524.4] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332524.4] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332524.69] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332524.7] http_receiver: saved chunk 10                                                                                                            
+[1272332524.7] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                  
+[1272332524.7] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332524.75] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332524.75] http2_receiver: saved chunk 11                                                                                                          
+[1272332524.75] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                
+[1272332524.75] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332525.03] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332525.03] http_receiver: saved chunk 12                                                                                                           
+[1272332525.04] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332525.04] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332525.06] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332525.06] http2_receiver: saved chunk 13                                                                                                          
+[1272332525.06] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                
+[1272332525.06] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332525.39] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332525.39] http_receiver: saved chunk 14                                                                                                           
+[1272332525.39] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332525.39] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332525.45] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332525.45] http2_receiver: saved chunk 15                                                                                                          
+[1272332525.45] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                
+[1272332525.45] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332525.71] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332525.71] http_receiver: saved chunk 16                                                                                                           
+[1272332525.71] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                 
+[1272332525.71] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332525.76] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332525.77] http2_receiver: saved chunk 17                                                                                                          
+[1272332525.77] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x948d7ac>                                                
+[1272332525.77] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332526.06] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332526.06] http_receiver: saved chunk 18                                                                                                           
+[1272332526.13] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332526.13] http2_receiver: saved chunk 19                                                                                                          
+[1272332526.13] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332526.13] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332526.13] Transmission took 3.48018407822 ticks                                                                                                   
+[1272332526.13] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332526.16] run_ift_recv: transmission activity has finished                                                                                        
+[1272332527.68] run_ift_recv: file hash is correct                                                                                                      
+[1272332527.71] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332527.72] run_ift_recv: finished!                                                                                                                 
+localhost.localdomain - - [26/Apr/2010 18:42:07] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+[1272332527.73] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332527.74] http_receiver: expected file size of 100000000                                                                                          
+[1272332527.74] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332527.77] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332527.77] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332527.77] http2_receiver: expected file size of 100000000                                                                                         
+[1272332527.77] start_proto: started up protocol http2_receiver                                                                                         
+[1272332527.78] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                  
+[1272332527.78] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332527.8] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                  
+[1272332527.8] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                           
+[1272332528.06] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332528.06] http_receiver: saved chunk 0                                                                                                            
+[1272332528.06] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                  
+[1272332528.06] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332528.09] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332528.11] http2_receiver: saved chunk 1                                                                                                           
+[1272332528.11] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332528.12] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332528.41] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332528.41] http_receiver: saved chunk 2                                                                                                            
+[1272332528.41] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                  
+[1272332528.41] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332528.45] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332528.45] http2_receiver: saved chunk 3                                                                                                           
+[1272332528.45] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332528.45] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332528.73] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332528.73] http_receiver: saved chunk 4                                                                                                            
+[1272332528.73] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                  
+[1272332528.73] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332528.77] http2_receiver: chunk 5: received 5000000 bytes                                                                                         
+[1272332528.77] http2_receiver: saved chunk 5                                                                                                           
+[1272332528.77] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332528.81] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332529.09] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332529.1] http_receiver: saved chunk 6                                                                                                             
+[1272332529.1] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                   
+[1272332529.1] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332529.14] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332529.14] http2_receiver: saved chunk 7                                                                                                           
+[1272332529.14] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332529.14] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332529.44] http_receiver: chunk 8: received 5000000 bytes                                                                                          
+[1272332529.44] http_receiver: saved chunk 8                                                                                                            
+[1272332529.44] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332529.44] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332529.49] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332529.49] http2_receiver: saved chunk 9                                                                                                           
+[1272332529.49] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                
+[1272332529.49] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332529.78] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332529.78] http_receiver: saved chunk 10                                                                                                           
+[1272332529.78] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332529.78] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332529.84] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332529.84] http2_receiver: saved chunk 11                                                                                                          
+[1272332529.84] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                
+[1272332529.84] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332530.15] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332530.15] http_receiver: saved chunk 12                                                                                                           
+[1272332530.15] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332530.15] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332530.21] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332530.21] http2_receiver: saved chunk 13                                                                                                          
+[1272332530.21] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                
+[1272332530.21] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332530.49] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332530.49] http_receiver: saved chunk 14                                                                                                           
+[1272332530.54] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332530.54] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332530.57] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332530.57] http2_receiver: saved chunk 15                                                                                                          
+[1272332530.57] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                
+[1272332530.57] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332530.87] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332530.87] http_receiver: saved chunk 16                                                                                                           
+[1272332530.87] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                 
+[1272332530.87] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332530.93] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332530.94] http2_receiver: saved chunk 17                                                                                                          
+[1272332530.94] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x9485a2c>                                                
+[1272332530.94] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332531.2] http_receiver: chunk 18: received 5000000 bytes                                                                                          
+[1272332531.2] http_receiver: saved chunk 18                                                                                                            
+[1272332531.27] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332531.28] http2_receiver: saved chunk 19                                                                                                          
+[1272332531.28] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332531.28] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332531.28] Transmission took 3.50142598152 ticks                                                                                                   
+[1272332531.28] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332531.33] run_ift_recv: transmission activity has finished                                                                                        
+[1272332532.76] run_ift_recv: file hash is correct                                                                                                      
+[1272332532.76] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332532.83] run_ift_recv: finished!                                                                                                                 
+localhost.localdomain - - [26/Apr/2010 18:42:12] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+[1272332532.84] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332532.85] http_receiver: expected file size of 100000000                                                                                          
+[1272332532.85] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332532.88] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332532.88] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332532.89] http2_receiver: expected file size of 100000000                                                                                         
+[1272332532.89] start_proto: started up protocol http2_receiver                                                                                         
+[1272332532.89] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                  
+[1272332532.89] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332532.9] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                  
+[1272332532.9] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                           
+[1272332533.14] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332533.14] http_receiver: saved chunk 0                                                                                                            
+[1272332533.14] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                  
+[1272332533.14] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332533.18] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332533.19] http2_receiver: saved chunk 1                                                                                                           
+[1272332533.2] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                  
+[1272332533.2] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332533.49] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332533.49] http_receiver: saved chunk 2                                                                                                            
+[1272332533.49] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                  
+[1272332533.49] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332533.49] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332533.49] http2_receiver: saved chunk 3                                                                                                           
+[1272332533.49] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332533.5] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332533.79] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332533.83] http_receiver: saved chunk 4                                                                                                            
+[1272332533.83] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                  
+[1272332533.83] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332533.83] http2_receiver: chunk 5: received 5000000 bytes                                                                                         
+[1272332533.83] http2_receiver: saved chunk 5                                                                                                           
+[1272332533.84] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332533.84] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332534.14] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332534.14] http_receiver: saved chunk 6                                                                                                            
+[1272332534.14] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                  
+[1272332534.14] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332534.18] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332534.18] http2_receiver: saved chunk 7                                                                                                           
+[1272332534.18] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332534.18] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332534.47] http_receiver: chunk 8: received 5000000 bytes                                                                                          
+[1272332534.47] http_receiver: saved chunk 8                                                                                                            
+[1272332534.47] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332534.47] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332534.48] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332534.48] http2_receiver: saved chunk 9                                                                                                           
+[1272332534.48] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                
+[1272332534.48] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332534.82] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332534.82] http_receiver: saved chunk 10                                                                                                           
+[1272332534.82] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332534.82] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332534.85] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332534.85] http2_receiver: saved chunk 11                                                                                                          
+[1272332534.85] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                
+[1272332534.85] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332535.18] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332535.18] http_receiver: saved chunk 12                                                                                                           
+[1272332535.18] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332535.18] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332535.22] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332535.22] http2_receiver: saved chunk 13                                                                                                          
+[1272332535.22] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                
+[1272332535.26] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332535.56] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332535.56] http_receiver: saved chunk 14                                                                                                           
+[1272332535.56] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332535.56] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332535.63] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332535.63] http2_receiver: saved chunk 15                                                                                                          
+[1272332535.63] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                
+[1272332535.63] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332535.89] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332535.89] http_receiver: saved chunk 16                                                                                                           
+[1272332535.89] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                 
+[1272332535.89] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332535.98] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332535.98] http2_receiver: saved chunk 17                                                                                                          
+[1272332535.98] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x956a0ac>                                                
+[1272332535.98] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332536.27] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332536.27] http_receiver: saved chunk 18                                                                                                           
+[1272332536.34] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332536.34] http2_receiver: saved chunk 19                                                                                                          
+[1272332536.34] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332536.34] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332536.34] Transmission took 3.45718479156 ticks                                                                                                   
+[1272332536.34] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332536.37] run_ift_recv: transmission activity has finished                                                                                        
+[1272332538.06] run_ift_recv: file hash is correct                                                                                                      
+[1272332538.06] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332538.13] run_ift_recv: finished!                                                                                                                 
+localhost.localdomain - - [26/Apr/2010 18:42:18] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+[1272332538.14] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332538.15] http_receiver: expected file size of 100000000                                                                                          
+[1272332538.15] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332538.18] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332538.18] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332538.18] http2_receiver: expected file size of 100000000                                                                                         
+[1272332538.18] start_proto: started up protocol http2_receiver                                                                                         
+[1272332538.18] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                  
+[1272332538.18] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332538.2] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                  
+[1272332538.21] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332538.46] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332538.47] http_receiver: saved chunk 0                                                                                                            
+[1272332538.47] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                  
+[1272332538.47] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332538.49] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332538.49] http2_receiver: saved chunk 1                                                                                                           
+[1272332538.49] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332538.49] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332538.8] http_receiver: chunk 2: received 5000000 bytes                                                                                           
+[1272332538.8] http_receiver: saved chunk 2                                                                                                             
+[1272332538.8] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                   
+[1272332538.8] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332538.82] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332538.82] http2_receiver: saved chunk 3                                                                                                           
+[1272332538.87] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332538.87] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332539.14] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332539.14] http_receiver: saved chunk 4                                                                                                            
+[1272332539.14] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                  
+[1272332539.14] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332539.18] http2_receiver: chunk 5: received 5000000 bytes                                                                                         
+[1272332539.18] http2_receiver: saved chunk 5                                                                                                           
+[1272332539.18] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332539.18] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332539.52] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332539.52] http_receiver: saved chunk 6                                                                                                            
+[1272332539.52] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                  
+[1272332539.52] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332539.56] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332539.56] http2_receiver: saved chunk 7                                                                                                           
+[1272332539.56] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332539.56] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332539.86] http_receiver: chunk 8: received 5000000 bytes                                                                                          
+[1272332539.86] http_receiver: saved chunk 8                                                                                                            
+[1272332539.86] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332539.86] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332539.88] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332539.88] http2_receiver: saved chunk 9                                                                                                           
+[1272332539.88] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                
+[1272332539.88] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332540.21] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332540.21] http_receiver: saved chunk 10                                                                                                           
+[1272332540.21] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332540.21] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332540.26] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332540.26] http2_receiver: saved chunk 11                                                                                                          
+[1272332540.26] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                
+[1272332540.26] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332540.58] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332540.58] http_receiver: saved chunk 12                                                                                                           
+[1272332540.58] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332540.58] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332540.64] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332540.64] http2_receiver: saved chunk 13                                                                                                          
+[1272332540.64] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                
+[1272332540.64] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332540.96] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332540.96] http_receiver: saved chunk 14                                                                                                           
+[1272332540.96] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332540.96] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332541.01] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332541.01] http2_receiver: saved chunk 15                                                                                                          
+[1272332541.01] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                
+[1272332541.01] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332541.26] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332541.26] http_receiver: saved chunk 16                                                                                                           
+[1272332541.26] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                 
+[1272332541.26] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332541.37] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332541.37] http2_receiver: saved chunk 17                                                                                                          
+[1272332541.37] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x949a6cc>                                                
+[1272332541.37] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332541.65] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332541.65] http_receiver: saved chunk 18                                                                                                           
+[1272332541.72] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332541.72] http2_receiver: saved chunk 19                                                                                                          
+[1272332541.72] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332541.72] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332541.72] Transmission took 3.53643703461 ticks                                                                                                   
+[1272332541.72] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332541.72] run_ift_recv: transmission activity has finished                                                                                        
+[1272332543.25] run_ift_recv: file hash is correct                                                                                                      
+[1272332543.25] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332543.31] run_ift_recv: finished!                                                                                                                 
+localhost.localdomain - - [26/Apr/2010 18:42:23] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+[1272332543.32] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332543.33] http_receiver: expected file size of 100000000                                                                                          
+[1272332543.33] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332543.36] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332543.36] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332543.36] http2_receiver: expected file size of 100000000                                                                                         
+[1272332543.36] start_proto: started up protocol http2_receiver                                                                                         
+[1272332543.37] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332543.37] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332543.39] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x94799ec>                                                 
+[1272332543.39] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332543.66] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332543.66] http_receiver: saved chunk 0                                                                                                            
+[1272332543.66] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332543.66] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332543.69] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332543.71] http2_receiver: saved chunk 1                                                                                                           
+[1272332543.71] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x94799ec>                                                 
+[1272332543.71] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332543.99] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332543.99] http_receiver: saved chunk 2                                                                                                            
+[1272332543.99] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332543.99] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332544.01] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332544.01] http2_receiver: saved chunk 3                                                                                                           
+[1272332544.01] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x94799ec>                                                 
+[1272332544.01] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332544.31] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332544.31] http_receiver: saved chunk 4                                                                                                            
+[1272332544.31] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332544.31] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332544.4] http2_receiver: chunk 5: received 5000000 bytes                                                                                          
+[1272332544.4] http2_receiver: saved chunk 5                                                                                                            
+[1272332544.4] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332544.4] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332544.66] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332544.66] http_receiver: saved chunk 6                                                                                                            
+[1272332544.66] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332544.66] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332544.73] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332544.73] http2_receiver: saved chunk 7                                                                                                           
+[1272332544.73] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x94799ec>                                                 
+[1272332544.73] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332545.0] http_receiver: chunk 8: received 5000000 bytes                                                                                           
+[1272332545.0] http_receiver: saved chunk 8                                                                                                             
+[1272332545.0] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332545.0] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332545.06] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332545.06] http2_receiver: saved chunk 9                                                                                                           
+[1272332545.06] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x94799ec>                                                
+[1272332545.06] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332545.34] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332545.34] http_receiver: saved chunk 10                                                                                                           
+[1272332545.34] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x94799ec>                                                 
+[1272332545.34] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332545.42] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332545.42] http2_receiver: saved chunk 11                                                                                                          
+[1272332545.42] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x94799ec>                                                
+[1272332545.42] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332545.72] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332545.72] http_receiver: saved chunk 12                                                                                                           
+[1272332545.72] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x94799ec>                                                 
+[1272332545.72] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332545.78] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332545.78] http2_receiver: saved chunk 13                                                                                                          
+[1272332545.78] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x94799ec>                                                
+[1272332545.78] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332546.07] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332546.07] http_receiver: saved chunk 14                                                                                                           
+[1272332546.07] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x94799ec>                                                 
+[1272332546.07] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332546.13] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332546.13] http2_receiver: saved chunk 15                                                                                                          
+[1272332546.13] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x94799ec>                                                
+[1272332546.14] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332546.4] http_receiver: chunk 16: received 5000000 bytes                                                                                          
+[1272332546.4] http_receiver: saved chunk 16                                                                                                            
+[1272332546.4] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x94799ec>                                                  
+[1272332546.4] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332546.48] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332546.48] http2_receiver: saved chunk 17                                                                                                          
+[1272332546.48] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x94799ec>                                                
+[1272332546.48] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332546.75] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332546.75] http_receiver: saved chunk 18                                                                                                           
+[1272332546.8] http2_receiver: chunk 19: received 5000000 bytes                                                                                         
+[1272332546.8] http2_receiver: saved chunk 19                                                                                                           
+[1272332546.8] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                           
+[1272332546.8] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000                
+[1272332546.8] Transmission took 3.43273711205 ticks                                                                                                    
+[1272332546.8] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332546.8] run_ift_recv: transmission activity has finished                                                                                         
+[1272332548.44] run_ift_recv: file hash is correct                                                                                                      
+[1272332548.44] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332548.5] Retraining classifier...                                                                                                                 
+[1272332548.5] run_ift_recv: finished!                                                                                                                  
+localhost.localdomain - - [26/Apr/2010 18:42:28] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+[1272332548.52] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332548.52] http_receiver: expected file size of 100000000                                                                                          
+[1272332548.52] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332548.55] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332548.55] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332548.56] http2_receiver: expected file size of 100000000                                                                                         
+[1272332548.56] start_proto: started up protocol http2_receiver                                                                                         
+[1272332548.56] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                  
+[1272332548.56] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332548.58] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332548.59] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332548.82] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332548.82] http_receiver: saved chunk 0                                                                                                            
+[1272332548.82] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                  
+[1272332548.82] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332548.88] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332548.88] http2_receiver: saved chunk 1                                                                                                           
+[1272332548.88] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332548.88] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332549.15] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332549.15] http_receiver: saved chunk 2                                                                                                            
+[1272332549.16] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                  
+[1272332549.16] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332549.19] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332549.19] http2_receiver: saved chunk 3                                                                                                           
+[1272332549.19] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332549.19] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332549.48] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332549.48] http_receiver: saved chunk 4                                                                                                            
+[1272332549.48] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                  
+[1272332549.48] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332549.52] http2_receiver: chunk 5: received 5000000 bytes                                                                                         
+[1272332549.52] http2_receiver: saved chunk 5                                                                                                           
+[1272332549.52] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332549.52] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332549.81] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332549.81] http_receiver: saved chunk 6                                                                                                            
+[1272332549.81] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                  
+[1272332549.81] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332549.88] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332549.88] http2_receiver: saved chunk 7                                                                                                           
+[1272332549.88] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332549.88] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332550.2] http_receiver: chunk 8: received 5000000 bytes                                                                                           
+[1272332550.2] http_receiver: saved chunk 8                                                                                                             
+[1272332550.2] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                  
+[1272332550.2] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332550.27] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332550.27] http2_receiver: saved chunk 9                                                                                                           
+[1272332550.28] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                
+[1272332550.28] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332550.53] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332550.53] http_receiver: saved chunk 10                                                                                                           
+[1272332550.53] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332550.53] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332550.61] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332550.61] http2_receiver: saved chunk 11                                                                                                          
+[1272332550.61] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                
+[1272332550.61] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332550.88] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332550.88] http_receiver: saved chunk 12                                                                                                           
+[1272332550.88] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332550.88] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332550.94] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332550.94] http2_receiver: saved chunk 13                                                                                                          
+[1272332550.94] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                
+[1272332550.94] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332551.25] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332551.25] http_receiver: saved chunk 14                                                                                                           
+[1272332551.25] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332551.25] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332551.32] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332551.32] http2_receiver: saved chunk 15                                                                                                          
+[1272332551.32] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                
+[1272332551.32] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332551.58] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332551.58] http_receiver: saved chunk 16                                                                                                           
+[1272332551.58] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                 
+[1272332551.58] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332551.65] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332551.65] http2_receiver: saved chunk 17                                                                                                          
+[1272332551.65] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x949ab6c>                                                
+[1272332551.65] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332551.95] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332551.95] http_receiver: saved chunk 18                                                                                                           
+[1272332552.01] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332552.01] http2_receiver: saved chunk 19                                                                                                          
+[1272332552.01] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332552.01] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332552.01] Transmission took 3.45388913155 ticks                                                                                                   
+[1272332552.01] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332552.04] run_ift_recv: transmission activity has finished                                                                                        
+[1272332553.86] run_ift_recv: file hash is correct                                                                                                      
+[1272332553.87] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332553.94] run_ift_recv: finished!                                                                                                                 
+localhost.localdomain - - [26/Apr/2010 18:42:33] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+[1272332553.95] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332553.96] http_receiver: expected file size of 100000000                                                                                          
+[1272332553.96] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332553.98] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332553.98] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332553.99] http2_receiver: expected file size of 100000000                                                                                         
+[1272332553.99] start_proto: started up protocol http2_receiver                                                                                         
+[1272332553.99] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x94854ec>                                                  
+[1272332553.99] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332554.02] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332554.02] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332554.26] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332554.26] http_receiver: saved chunk 0                                                                                                            
+[1272332554.26] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x94854ec>                                                  
+[1272332554.26] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332554.34] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332554.34] http2_receiver: saved chunk 1                                                                                                           
+[1272332554.34] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332554.34] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332554.57] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332554.57] http_receiver: saved chunk 2                                                                                                            
+[1272332554.57] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x94854ec>                                                  
+[1272332554.57] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332554.66] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332554.66] http2_receiver: saved chunk 3                                                                                                           
+[1272332554.66] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332554.66] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332554.89] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332554.9] http_receiver: saved chunk 4                                                                                                             
+[1272332554.9] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x94854ec>                                                   
+[1272332554.9] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332555.01] http2_receiver: chunk 5: received 5000000 bytes                                                                                         
+[1272332555.03] http2_receiver: saved chunk 5                                                                                                           
+[1272332555.03] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332555.03] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332555.3] http_receiver: chunk 6: received 5000000 bytes                                                                                           
+[1272332555.3] http_receiver: saved chunk 6                                                                                                             
+[1272332555.3] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x94854ec>                                                   
+[1272332555.3] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332555.44] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332555.46] http2_receiver: saved chunk 7                                                                                                           
+[1272332555.46] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332555.46] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332555.66] http_receiver: chunk 8: received 5000000 bytes                                                                                          
+[1272332555.66] http_receiver: saved chunk 8                                                                                                            
+[1272332555.66] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332555.66] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332555.79] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332555.79] http2_receiver: saved chunk 9                                                                                                           
+[1272332555.81] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x94854ec>                                                
+[1272332555.81] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332555.99] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332555.99] http_receiver: saved chunk 10                                                                                                           
+[1272332555.99] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332555.99] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332556.13] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332556.13] http2_receiver: saved chunk 11                                                                                                          
+[1272332556.13] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x94854ec>                                                
+[1272332556.14] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332556.35] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332556.35] http_receiver: saved chunk 12                                                                                                           
+[1272332556.35] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332556.35] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332556.5] http2_receiver: chunk 13: received 5000000 bytes                                                                                         
+[1272332556.5] http2_receiver: saved chunk 13                                                                                                           
+[1272332556.5] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332556.5] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332556.7] http_receiver: chunk 14: received 5000000 bytes                                                                                          
+[1272332556.7] http_receiver: saved chunk 14                                                                                                            
+[1272332556.7] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x94854ec>                                                  
+[1272332556.7] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332556.84] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332556.84] http2_receiver: saved chunk 15                                                                                                          
+[1272332556.86] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x94854ec>                                                
+[1272332556.86] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332557.05] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332557.05] http_receiver: saved chunk 16                                                                                                           
+[1272332557.05] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x94854ec>                                                 
+[1272332557.05] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332557.18] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332557.18] http2_receiver: saved chunk 17                                                                                                          
+[1272332557.18] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x94854ec>                                                
+[1272332557.18] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332557.43] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332557.43] http_receiver: saved chunk 18                                                                                                           
+[1272332557.51] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332557.51] http2_receiver: saved chunk 19                                                                                                          
+[1272332557.51] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332557.51] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332557.51] Transmission took 3.51678705215 ticks                                                                                                   
+[1272332557.51] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332557.51] run_ift_recv: transmission activity has finished                                                                                        
+[1272332559.09] run_ift_recv: file hash is correct                                                                                                      
+[1272332559.1] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                         
+[1272332559.17] run_ift_recv: finished!                                                                                                                 
+localhost.localdomain - - [26/Apr/2010 18:42:39] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+[1272332559.18] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332559.19] http_receiver: expected file size of 100000000                                                                                          
+[1272332559.19] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332559.21] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332559.21] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332559.22] http2_receiver: expected file size of 100000000                                                                                         
+[1272332559.22] start_proto: started up protocol http2_receiver                                                                                         
+[1272332559.22] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                  
+[1272332559.22] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332559.25] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332559.25] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332559.5] http_receiver: chunk 0: received 5000000 bytes                                                                                           
+[1272332559.5] http_receiver: saved chunk 0                                                                                                             
+[1272332559.5] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                   
+[1272332559.5] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332559.55] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332559.55] http2_receiver: saved chunk 1                                                                                                           
+[1272332559.55] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332559.55] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332559.83] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332559.83] http_receiver: saved chunk 2                                                                                                            
+[1272332559.83] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                  
+[1272332559.83] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332559.88] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332559.88] http2_receiver: saved chunk 3                                                                                                           
+[1272332559.88] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332559.88] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332560.12] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332560.12] http_receiver: saved chunk 4                                                                                                            
+[1272332560.12] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                  
+[1272332560.12] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332560.2] http2_receiver: chunk 5: received 5000000 bytes                                                                                          
+[1272332560.2] http2_receiver: saved chunk 5                                                                                                            
+[1272332560.2] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                  
+[1272332560.2] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332560.48] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332560.48] http_receiver: saved chunk 6                                                                                                            
+[1272332560.48] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                  
+[1272332560.48] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332560.55] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332560.55] http2_receiver: saved chunk 7                                                                                                           
+[1272332560.55] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332560.55] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332560.84] http_receiver: chunk 8: received 5000000 bytes                                                                                          
+[1272332560.84] http_receiver: saved chunk 8                                                                                                            
+[1272332560.84] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332560.84] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332560.91] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332560.91] http2_receiver: saved chunk 9                                                                                                           
+[1272332560.91] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                
+[1272332560.91] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332561.18] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332561.18] http_receiver: saved chunk 10                                                                                                           
+[1272332561.18] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332561.18] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332561.24] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332561.24] http2_receiver: saved chunk 11                                                                                                          
+[1272332561.24] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                
+[1272332561.24] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332561.5] http_receiver: chunk 12: received 5000000 bytes                                                                                          
+[1272332561.5] http_receiver: saved chunk 12                                                                                                            
+[1272332561.51] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332561.51] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332561.58] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332561.58] http2_receiver: saved chunk 13                                                                                                          
+[1272332561.58] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                
+[1272332561.58] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332561.89] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332561.89] http_receiver: saved chunk 14                                                                                                           
+[1272332561.89] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332561.89] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332561.94] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332561.94] http2_receiver: saved chunk 15                                                                                                          
+[1272332561.94] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                
+[1272332561.94] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332562.21] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332562.21] http_receiver: saved chunk 16                                                                                                           
+[1272332562.21] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                 
+[1272332562.21] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332562.29] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332562.29] http2_receiver: saved chunk 17                                                                                                          
+[1272332562.29] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x957d2ec>                                                
+[1272332562.29] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332562.57] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332562.57] http_receiver: saved chunk 18                                                                                                           
+[1272332562.66] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332562.67] http2_receiver: saved chunk 19                                                                                                          
+[1272332562.67] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332562.67] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332562.67] Transmission took 3.44632291794 ticks                                                                                                   
+[1272332562.67] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332562.68] run_ift_recv: transmission activity has finished                                                                                        
+[1272332564.12] run_ift_recv: file hash is correct                                                                                                      
+[1272332564.18] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332564.2] run_ift_recv: finished!                                                                                                                  
+localhost.localdomain - - [26/Apr/2010 18:42:44] "POST /RPC2 HTTP/1.0" 200 -                                                                            
+
+64.21 64.21 + 0.0:
+[1272332564.21] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332564.22] http_receiver: expected file size of 100000000                                                                                          
+[1272332564.22] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332564.25] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332564.25] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332564.25] http2_receiver: expected file size of 100000000                                                                                         
+[1272332564.25] start_proto: started up protocol http2_receiver                                                                                         
+[1272332564.26] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x957df6c>                                                  
+[1272332564.26] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332564.28] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332564.28] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+
+64.41 64.21 + 0.2:
+[1272332564.55] http_receiver: chunk 0: received 5000000 bytes                                                                                          
+[1272332564.56] http_receiver: saved chunk 0                                                                                                            
+[1272332564.56] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x957df6c>                                                  
+[1272332564.56] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332564.59] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332564.59] http2_receiver: saved chunk 1                                                                                                           
+
+64.61 64.21 + 0.4:
+[1272332564.62] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332564.62] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+64.81 64.21 + 0.6:
+[1272332564.92] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332564.92] http_receiver: saved chunk 2                                                                                                            
+[1272332564.92] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x957df6c>                                                  
+[1272332564.92] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332564.96] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332564.96] http2_receiver: saved chunk 3                                                                                                           
+[1272332564.96] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332564.96] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+65.01 64.21 + 0.8:
+(NONE)
+
+65.21 64.21 + 1.0:
+[1272332565.23] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332565.23] http_receiver: saved chunk 4                                                                                                            
+[1272332565.23] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x957df6c>                                                  
+[1272332565.23] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332565.3] http2_receiver: chunk 5: received 5000000 bytes                                                                                          
+[1272332565.31] http2_receiver: saved chunk 5                                                                                                           
+[1272332565.31] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332565.31] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+65.41 64.21 + 1.2:
+(NONE)
+
+65.61 64.21 + 1.4
+[1272332565.62] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332565.62] http_receiver: saved chunk 6                                                                                                            
+[1272332565.65] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x957df6c>                                                  
+[1272332565.65] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332565.68] http2_receiver: chunk 7: received 5000000 bytes                                                                                         
+[1272332565.68] http2_receiver: saved chunk 7                                                                                                           
+[1272332565.68] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332565.68] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+65.81 64.21 + 1.6:
+[1272332565.96] http_receiver: chunk 8: received 5000000 bytes                                                                                          
+[1272332565.96] http_receiver: saved chunk 8                                                                                                            
+[1272332565.96] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332565.96] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+
+66.01 64.21 + 1.8:
+[1272332566.02] http2_receiver: chunk 9: received 5000000 bytes                                                                                         
+[1272332566.02] http2_receiver: saved chunk 9                                                                                                           
+[1272332566.02] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x957df6c>                                                
+[1272332566.02] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+66.21 64.21 + 2.0
+[1272332566.32] http_receiver: chunk 10: received 5000000 bytes                                                                                         
+[1272332566.32] http_receiver: saved chunk 10                                                                                                           
+[1272332566.32] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332566.32] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332566.36] http2_receiver: chunk 11: received 5000000 bytes                                                                                        
+[1272332566.36] http2_receiver: saved chunk 11                                                                                                          
+[1272332566.36] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x957df6c>                                                
+[1272332566.36] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+66.41 64.21 + 2.2:
+(NONE)
+
+66.61 64.21 + 2.4
+[1272332566.64] http_receiver: chunk 12: received 5000000 bytes                                                                                         
+[1272332566.64] http_receiver: saved chunk 12                                                                                                           
+[1272332566.64] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332566.64] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332566.69] http2_receiver: chunk 13: received 5000000 bytes                                                                                        
+[1272332566.69] http2_receiver: saved chunk 13                                                                                                          
+[1272332566.69] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x957df6c>                                                
+[1272332566.69] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+66.81 64.21 + 2.6:
+[1272332566.99] http_receiver: chunk 14: received 5000000 bytes                                                                                         
+[1272332566.99] http_receiver: saved chunk 14                                                                                                           
+[1272332566.99] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332566.99] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+
+67.01 64.21 + 2.8:
+[1272332567.05] http2_receiver: chunk 15: received 5000000 bytes                                                                                        
+[1272332567.06] http2_receiver: saved chunk 15                                                                                                          
+[1272332567.06] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x957df6c>                                                
+[1272332567.06] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+67.21 64.21 + 3.0:
+[1272332567.32] http_receiver: chunk 16: received 5000000 bytes                                                                                         
+[1272332567.32] http_receiver: saved chunk 16                                                                                                           
+[1272332567.32] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x957df6c>                                                 
+[1272332567.32] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332567.38] http2_receiver: chunk 17: received 5000000 bytes                                                                                        
+[1272332567.38] http2_receiver: saved chunk 17                                                                                                          
+[1272332567.38] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x957df6c>                                                
+[1272332567.38] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+
+67.41 64.21 + 3.2:
+(NONE)
+
+67.61 64.21 + 3.4:
+[1272332567.64] http_receiver: chunk 18: received 5000000 bytes                                                                                         
+[1272332567.64] http_receiver: saved chunk 18                                                                                                           
+[1272332567.73] http2_receiver: chunk 19: received 5000000 bytes                                                                                        
+[1272332567.73] http2_receiver: saved chunk 19                                                                                                          
+[1272332567.73] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000                                                          
+[1272332567.73] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000               
+[1272332567.73] Transmission took 3.47287988663 ticks                                                                                                   
+[1272332567.73] http2_receiver: Got PROTO_MSG_END, cleaning up...                                                                                       
+[1272332567.77] run_ift_recv: transmission activity has finished                                                                                        
+
+67.81 64.21 + 3.6
+(NONE)
+
+68.01 64.21 + 3.8
+(NONE)
+
+68.21 64.21 + 4.0
+[1272332569.27] run_ift_recv: file hash is correct                                                                                                      
+[1272332569.27] http_receiver: Got PROTO_MSG_END, cleaning up...                                                                                        
+[1272332569.34] run_ift_recv: finished!                                                                                                                 
+localhost.localdomain - - [26/Apr/2010 18:42:49] "POST /RPC2 HTTP/1.0" 200 -     
+
+
+
+
+                                                                       
+[1272332569.35] begin_ift: no remote IFTD detected, attempting all active receivers to get /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+lolwut?                                                                                                                                                 
+o rly?                                                                                                                                                  
+http_receiver: deterministic chunking activated                                                                                                         
+[1272332569.36] http_receiver: expected file size of 100000000                                                                                          
+[1272332569.36] iftfile: WARNING: will overwrite /tmp/iftd-experiments/file_100000000                                                                   
+[1272332569.38] iftfile: opened /tmp/iftd-experiments/file_100000000 for WRITING, expecting 20 chunks                                                   
+[1272332569.38] start_proto: started up protocol http_receiver                                                                                          
+http2_receiver: deterministic chunking activated                                                                                                        
+[1272332569.39] http2_receiver: expected file size of 100000000                                                                                         
+[1272332569.39] start_proto: started up protocol http2_receiver                                                                                         
+[1272332569.39] http_receiver: reserved chunk 0 for writing in <iftfile.iftfile instance at 0x957d62c>                                                  
+[1272332569.39] http_receiver: request bytes=0-4999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                                 
+[1272332569.42] http2_receiver: reserved chunk 1 for writing in <iftfile.iftfile instance at 0x957d62c>                                                 
+[1272332569.42] http2_receiver: request bytes=5000000-9999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                          
+[1272332569.7] http_receiver: chunk 0: received 5000000 bytes                                                                                           
+[1272332569.7] http_receiver: saved chunk 0                                                                                                             
+[1272332569.72] http_receiver: reserved chunk 2 for writing in <iftfile.iftfile instance at 0x957d62c>                                                  
+[1272332569.72] http_receiver: request bytes=10000000-14999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332569.76] http2_receiver: chunk 1: received 5000000 bytes                                                                                         
+[1272332569.76] http2_receiver: saved chunk 1                                                                                                           
+[1272332569.76] http2_receiver: reserved chunk 3 for writing in <iftfile.iftfile instance at 0x957d62c>                                                 
+[1272332569.76] http2_receiver: request bytes=15000000-19999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332570.06] http_receiver: chunk 2: received 5000000 bytes                                                                                          
+[1272332570.06] http_receiver: saved chunk 2                                                                                                            
+[1272332570.06] http_receiver: reserved chunk 4 for writing in <iftfile.iftfile instance at 0x957d62c>                                                  
+[1272332570.06] http_receiver: request bytes=20000000-24999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332570.11] http2_receiver: chunk 3: received 5000000 bytes                                                                                         
+[1272332570.11] http2_receiver: saved chunk 3                                                                                                           
+[1272332570.11] http2_receiver: reserved chunk 5 for writing in <iftfile.iftfile instance at 0x957d62c>                                                 
+[1272332570.11] http2_receiver: request bytes=25000000-29999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332570.41] http_receiver: chunk 4: received 5000000 bytes                                                                                          
+[1272332570.41] http_receiver: saved chunk 4                                                                                                            
+[1272332570.41] http_receiver: reserved chunk 6 for writing in <iftfile.iftfile instance at 0x957d62c>                                                  
+[1272332570.41] http_receiver: request bytes=30000000-34999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                         
+[1272332570.46] http2_receiver: chunk 5: received 5000000 bytes                                                                                         
+[1272332570.47] http2_receiver: saved chunk 5                                                                                                           
+[1272332570.47] http2_receiver: reserved chunk 7 for writing in <iftfile.iftfile instance at 0x957d62c>                                                 
+[1272332570.47] http2_receiver: request bytes=35000000-39999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu                        
+[1272332570.77] http_receiver: chunk 6: received 5000000 bytes                                                                                          
+[1272332570.77] http_receiver: saved chunk 6
+[1272332570.77] http_receiver: reserved chunk 8 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332570.77] http_receiver: request bytes=40000000-44999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332570.84] http2_receiver: chunk 7: received 5000000 bytes
+[1272332570.84] http2_receiver: saved chunk 7
+[1272332570.84] http2_receiver: reserved chunk 9 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332570.84] http2_receiver: request bytes=45000000-49999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332571.15] http_receiver: chunk 8: received 5000000 bytes
+[1272332571.15] http_receiver: saved chunk 8
+[1272332571.15] http_receiver: reserved chunk 10 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332571.15] http_receiver: request bytes=50000000-54999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332571.21] http2_receiver: chunk 9: received 5000000 bytes
+[1272332571.21] http2_receiver: saved chunk 9
+[1272332571.21] http2_receiver: reserved chunk 11 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332571.21] http2_receiver: request bytes=55000000-59999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332571.5] http_receiver: chunk 10: received 5000000 bytes
+[1272332571.5] http_receiver: saved chunk 10
+[1272332571.5] http_receiver: reserved chunk 12 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332571.5] http_receiver: request bytes=60000000-64999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332571.59] http2_receiver: chunk 11: received 5000000 bytes
+[1272332571.59] http2_receiver: saved chunk 11
+[1272332571.59] http2_receiver: reserved chunk 13 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332571.59] http2_receiver: request bytes=65000000-69999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332571.84] http_receiver: chunk 12: received 5000000 bytes
+[1272332571.84] http_receiver: saved chunk 12
+[1272332571.84] http_receiver: reserved chunk 14 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332571.84] http_receiver: request bytes=70000000-74999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332571.9] http2_receiver: chunk 13: received 5000000 bytes
+[1272332571.9] http2_receiver: saved chunk 13
+[1272332571.9] http2_receiver: reserved chunk 15 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332571.9] http2_receiver: request bytes=75000000-79999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332572.18] http_receiver: chunk 14: received 5000000 bytes
+[1272332572.18] http_receiver: saved chunk 14
+[1272332572.18] http_receiver: reserved chunk 16 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332572.18] http_receiver: request bytes=80000000-84999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332572.27] http2_receiver: chunk 15: received 5000000 bytes
+[1272332572.27] http2_receiver: saved chunk 15
+[1272332572.27] http2_receiver: reserved chunk 17 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332572.28] http2_receiver: request bytes=85000000-89999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332572.52] http_receiver: chunk 16: received 5000000 bytes
+[1272332572.52] http_receiver: saved chunk 16
+[1272332572.55] http_receiver: reserved chunk 18 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332572.55] http_receiver: request bytes=90000000-94999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332572.64] http2_receiver: chunk 17: received 5000000 bytes
+[1272332572.64] http2_receiver: saved chunk 17
+[1272332572.64] http2_receiver: reserved chunk 19 for writing in <iftfile.iftfile instance at 0x957d62c>
+[1272332572.64] http2_receiver: request bytes=95000000-99999999 of /tmp/iftd-experiments/file_100000000 from cl31.cs.arizona.edu
+[1272332572.83] http_receiver: chunk 18: received 5000000 bytes
+[1272332572.83] http_receiver: saved chunk 18
+[1272332572.99] http2_receiver: chunk 19: received 5000000 bytes
+[1272332572.99] http2_receiver: saved chunk 19
+[1272332572.99] http2_receiver: done receiving chunks for /tmp/iftd-experiments/file_100000000
+[1272332573.01] http2_receiver: Successful exit in receiving /tmp/iftd-experiments/file_100000000 to /tmp/iftd-experiments/file_100000000
+[1272332573.01] Transmission took 3.62126517296 ticks
+[1272332573.01] http2_receiver: Got PROTO_MSG_END, cleaning up...
+[1272332573.01] run_ift_recv: transmission activity has finished
+[1272332574.77] run_ift_recv: file hash is correct
+[1272332574.78] http_receiver: Got PROTO_MSG_END, cleaning up...
+[1272332574.85] Retraining classifier...
+[1272332574.85] run_ift_recv: finished!

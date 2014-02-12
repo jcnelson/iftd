@@ -1,0 +1,25 @@
+<iftd>
+
+   <filechunks path="/tmp/iftd1" />
+   <send_files path="/tmp/" />
+   <recv_files path="/tmp/" />
+
+   <xmlrpc port="4000" dir="RPC2"/>
+   <stats retrain_freq="25" classifier="NaiveBayes" />
+
+   <protocol name="iftcache">
+      <sender>
+      </sender>
+      <receiver>
+      </receiver>
+   </protocol>
+
+   <protocol name="http">
+      <sender>
+         <setup type="int"  PROTO_PORTNUM="8001"/>
+      </sender>
+      <receiver>
+        <setup type="int" PROTO_PORTNUM="8000"/>                                                                                                                                                                                                                              
+      </receiver>                                                                                                                                                                                                                                                              
+   </protocol>    
+</iftd>

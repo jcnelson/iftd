@@ -1,0 +1,57 @@
+% Template created by Anil Somayaji
+
+
+%\documentclass{usenixsubmit}
+%\documentclass{report}
+%\documentclass[10pt,twocolumn]{article}
+\documentclass[10pt]{article}
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage[margin=2.5cm]{geometry}
+
+\floatstyle{ruled}
+\newfloat{program}{htp}{lop}
+\floatname{program}{Program}
+
+
+% Limit when latex will allow an unhyphenatable final word to extend over the margin
+\setlength{\emergencystretch}{4em}
+
+%\graphicspath{{/home/jude/raven/tools/iftd/paper/diagrams}}
+
+\title{\Large An Improved Multiprotocol Application Data Transfer Service}
+\author{
+Jude C. Nelson\\
+judecn@gmail.com
+\and
+John H. Hartman\\
+jhh@cs.arizona.edu\\
+}
+\begin{document}
+
+\maketitle
+
+\begin{center} 
+Department of Computer Science \\ 
+University of Arizona \\ 
+Tucson, AZ 85721 
+\end{center}
+
+\input{abstract}
+\input{introduction}
+\input{related-work}
+\input{architecture}
+\input{results}
+\input{discussion}
+\input{conclusion}
+\input{acknowledgments}
+\input{works-cited}
+
+\end{document}
+

@@ -1,0 +1,103 @@
+Sample output from GETting a byte range from an HTTP 1.1 server
+
+
+>>> connection = httplib.HTTPConnection( "www.python.org" )
+>>> connection.request( "GET", "/index.html", None, headers )
+>>> response = connection.getresponse()
+>>> print response.status
+206
+>>> print response.reason
+Partial Content
+>>> print response
+<httplib.HTTPResponse instance at 0x7fb66235d0e0>
+>>> print response.getheader('Range')
+None
+>>> print response.getheader('Content-length')
+501
+>>> print response.getheaders()
+[('content-length', '501'), ('accept-ranges', 'bytes'), ('server', 'Apache/2.2.9 (Debian) DAV/2 SVN/1.5.1 mod_ssl/2.2.9 OpenSSL/0.9.8g mod_wsgi/2.3 Python/2.5.2'), ('last-modified', 'Sun, 30 Aug 2009 18:16:21 GMT'), ('content-range', 'bytes 0-500/17469'), ('etag', '"105800d-443d-4725fea0ca740"'), ('date', 'Mon, 31 Aug 2009 03:46:28 GMT'), ('content-type', 'text/html')]
+>>> print response.read()
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Python Programming Language -- Official Website</title>
+  <meta name="keywords" content="python programming language object oriented web free source" />
+  <meta name="description" content="      Home page for Python, an
+>>> quit()
+
+
+
+
+
+Multi-part GET
+
+>>> connection = httplib.HTTPConnection( "imgur.com/X1Hi1.gif" )
+>>>
+>>> headers = {"Range" : "bytes=0-500,100-1500"}
+>>> connection = httplib.HTTPConnection( "imgur.com" )
+>>>
+>>> connection.request("GET", "/X1Hi1.gif", None, headers )
+>>> response = connection.getresponse()
+>>> print response.getheaders()
+[('content-length', '2086'), ('accept-ranges', 'bytes'), ('expires', 'Thu, 26 Aug 2010 04:20:56 GMT'), ('server', 'imgur image server'), ('last-modified', 'Mon, 13 Jul 2009 18:27:08 GMT'), ('connection', 'close'), ('etag', '"1617402394"'), ('cache-control', 'max-age=31104000'), ('date', 'Mon, 31 Aug 2009 04:20:56 GMT'), ('content-type', 'multipart/byteranges; boundary=fkj49sn38dcn3')]
+>>> print response.read()
+
+--fkj49sn38dcn3
+Content-Range: bytes 0-500/53966
+Content-Type: image/gif
+
+GIF87a`�5�|||����,`�5@���������ڋ�޼���H�扦�ʶ�
+                                            ��L��������
+
+�Ģ��L*g�%���n�K�к�Z�6.���N���.��k���u�� iܞ������▒(8HXhx���������ȶ��&p7w�%��Ig   �):JZjz��������
+����Ք�����iF+<L\l|��������
+                          }�+g���
+                                 jɉ}�   ��˛0`~��������/?O_o��������0��
+                                                                      ▒<�0�
+                                                                           �ݰ�+Z��1�ƍ�;z2�ȑ$N,�2�ʕ,[�|  3�4����3�Ν<{��  4�Pv7�▒=�4�ҥL�:%Y��ԩT�Z��5k˨Z�z�
+6�رU��=�6�ڵl�*4�6�t�ڵ
+��޽|����1/��
+            �▒��Č~
+                  ���Ȕ+[�����;{�
+<��� ?�<�r�Ɨ;=�����ݼ}��         z��ФK�>
+--fkj49sn38dcn3
+Content-Range: bytes 100-1500/53966
+Content-Type: image/gif
+
+�6.���N���.��k���u��    iܞ������▒(8HXhx���������ȶ��&p7w�%��Ig   �):JZjz��������
+����Ք�����iF+<L\l|��������
+                          }�+g���
+                                 jɉ}�   ��˛0`~��������/?O_o��������0��
+                                                                      ▒<�0�
+                                                                           �ݰ�+Z��1�ƍ�;z2�ȑ$N,�2�ʕ,[�|  3�4����3�Ν<{��  4�Pv7�▒=�4�ҥL�:%Y��ԩT�Z��5k˨Z�z�
+6�رU��=�6�ڵl�*4�6�t�ڵ
+��޽|����1/��
+            �▒��Č~
+                  ���Ȕ+[�����;{�
+id�J���N>iW�PNI�ZRV�e����e�^&v��b�yT�d���Nf��f�/��f�r���vޙQ�x��gCz�H.�`�h��q)h����硊.Z!��>���&�H^�(�Ȣu*c�Ƚ(c�6�F��:��Z�<�g>Id��
+�F�FJ���V�i��f�)��v
+j���J*����ꗧ��*���
+듯�J���֊돷�ʫ���
+l��K����l���&�,��6
+                  m��FK���V���f˭}�v
+                                   �{߆K.z㖋nx���.v��
+                                                    ot��K�r�֋�p���ov��
+                                                                      0��L�k�0j'�ph
+                                                                                   7
+                                                                                    1gGLqeW�qy�f��~w
+                                                                                                    �`�L2_#��r]'�[+�
+                                                                                                                    sZ/�Ls|3t3�d7�
+8@N�>���=�'�x<�79Q{GN�}��W�9R�g���7��片.zᤗ�������y��zݰ��촷m��i��{ټ����w-��Yo|��'���7���IG/}��W�������9w�}�������l��)��~������w,���o������7���%,�,▒
+                                                                                                                                                  ▒�"�_
+\`�▒��zA0��� �e�
+                �+�▒,;▒���["a�Jh�j�0��Z!
+k▒��W:�a�z��Z1��▒"[e�#�*�J,�▒�'B�SR�b��h�J�a1���"��/.*�b<�X�3�QS�[����F>�1��j#�7�;�)�z��x;>�M����h��2�cZ$#U��G~Α��%+��Hb�r����:�IYi2��Gg�S�.��L+[ɺW��u����ji���2���%/w��_�.��
+                                                                                                                                                                             1�I�c"�x�\������A3�Л&5�g�kZ/���7�
+--fkj49sn38dcn3--
+
+>>> exit()
+

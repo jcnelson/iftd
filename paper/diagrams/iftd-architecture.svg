@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="43cm" height="25cm" viewBox="69 99 843 482" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <polygon style="fill: #ffffff" points="70,100 910,100 910,130 240,130 240,310 70,310 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="70,100 910,100 910,130 240,130 240,310 70,310 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="70" y="330" width="170" height="120"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="70" y="330" width="170" height="120"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="90" y="220" width="110" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="90" y="220" width="110" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="100" y="230" width="110" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="100" y="230" width="110" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="110" y="240" width="110" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="110" y="240" width="110" height="40"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="565" y="119.425">
+    <tspan x="565" y="119.425">Application XMLRPC API (iftapi.py)</tspan>
+  </text>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="165" y="256.425">
+    <tspan x="165" y="256.425">Job descriptor</tspan>
+    <tspan x="165" y="272.425">(iftfile.iftjob)</tspan>
+  </text>
+  <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="275" y="335">
+    <tspan x="275" y="335"></tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="91" y="340.5" width="110" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="91" y="340.5" width="110" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="101" y="350.5" width="110" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="101" y="350.5" width="110" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="111" y="360.5" width="110" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="111" y="360.5" width="110" height="40"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="166" y="376.925">
+    <tspan x="166" y="376.925">File descriptor</tspan>
+    <tspan x="166" y="392.925">(iftfile.iftfile)</tspan>
+  </text>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="160" y="421.9">
+    <tspan x="160" y="421.9">File I/O Subsystem</tspan>
+    <tspan x="160" y="437.9">(iftfile.py)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="260" y="200" width="390" height="110"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260" y="200" width="390" height="110"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="470" y="301.9">
+    <tspan x="470" y="301.9">Transfer Core (ifttransfer.py)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="270" y="210" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="270" y="210" width="160" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="280" y="220" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="280" y="220" width="160" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="290" y="230" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="290" y="230" width="160" height="40"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="370" y="246.425">
+    <tspan x="370" y="246.425">Sending Transmission</tspan>
+    <tspan x="370" y="262.425">(ifttransfer.SenderData)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="460" y="210" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="460" y="210" width="160" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="470" y="220" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="470" y="220" width="160" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="480" y="230" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="480" y="230" width="160" height="40"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.4176;font-family:sanserif;font-style:normal;font-weight:normal" x="560" y="246.539">
+    <tspan x="560" y="246.539">Receiving Transmission</tspan>
+    <tspan x="560" y="262.061">(ifttransfer.ReceiverData)</tspan>
+  </text>
+  <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="390" y="340">
+    <tspan x="390" y="340"></tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="71.7157" y="467.071" width="67.0711" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="71.7157" y="467.071" width="67.0711" height="50"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="105.251" y="488.496">
+    <tspan x="105.251" y="488.496">Logging</tspan>
+    <tspan x="105.251" y="504.496">(iftlog.py)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="260" y="330" width="390" height="120"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260" y="330" width="390" height="120"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="450" y="431.9">
+    <tspan x="450" y="431.9">Utilities (iftutil.py)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="295" y="340" width="130" height="60"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="295" y="340" width="130" height="60"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="360" y="358.425">
+    <tspan x="360" y="358.425">Sender</tspan>
+    <tspan x="360" y="374.425">Threadpool</tspan>
+    <tspan x="360" y="390.425">(iftutil.iftthreading)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="490" y="340" width="130" height="60"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="490" y="340" width="130" height="60"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="555" y="358.425">
+    <tspan x="555" y="358.425">Receiver</tspan>
+    <tspan x="555" y="374.425">Threadpool</tspan>
+    <tspan x="555" y="390.425">(iftutil.iftthreading)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="670" y="200" width="240" height="110"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="670" y="200" width="240" height="110"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="680" y="210" width="220" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="680" y="210" width="220" height="40"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="790" y="226.238">
+    <tspan x="790" y="226.238">Protocol Classifier</tspan>
+    <tspan x="790" y="242.238">(iftstats.iftNaiveBayesClassifier)</tspan>
+  </text>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="790" y="301.9">
+    <tspan x="790" y="301.9">Statistical Logging (iftstats.py)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="670" y="330" width="240" height="120"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="670" y="330" width="240" height="120"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="790" y="386.425">
+    <tspan x="790" y="386.425">NLTK Statistics and Classifiers</tspan>
+    <tspan x="790" y="402.425">(classifiers.*)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="260" y="150" width="650" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260" y="150" width="650" height="30"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="585" y="169.425">
+    <tspan x="585" y="169.425">Inter-IFTD XMLRPC API (iftapi.py)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="260" y="466.571" width="390" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260" y="466.571" width="390" height="50"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="160" y="467.071" width="80" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="160" y="467.071" width="80" height="50"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7732;font-family:sanserif;font-style:normal;font-weight:normal" x="200" y="488.513">
+    <tspan x="200" y="488.513">Config</tspan>
+    <tspan x="200" y="504.479">(iftdata.py)</tspan>
+  </text>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="455" y="487.996">
+    <tspan x="455" y="487.996">Module loader</tspan>
+    <tspan x="455" y="503.996">(iftloader.py)</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="260" y="540" width="100" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260" y="540" width="100" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="400" y="540" width="110" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="540" width="110" height="40"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="310" y="564.425">
+    <tspan x="310" y="564.425">Protocol</tspan>
+  </text>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="455" y="564.425">
+    <tspan x="455" y="564.425">Protocol</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="550" y="540" width="100" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="550" y="540" width="100" height="40"/>
+  </g>
+  <text style="fill: #000000;text-anchor:middle;font-size:12.7998;font-family:sanserif;font-style:normal;font-weight:normal" x="600" y="564.425">
+    <tspan x="600" y="564.425">Protocol</tspan>
+  </text>
+</svg>

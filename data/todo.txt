@@ -1,0 +1,139 @@
+Todo:
+
+
+(*) bittorrent plugin
+	<> python-libtorrent (python bindings to rasterbar's libtorrent library)
+	<> need Python 2.6 support (Debian only has up to 2.5)
+
+(*) multiple simultaneous protocols
+	<> Zipf assumtion--use the least amount of effort to communicate for best results
+		* sender as terse as possible
+		* receiver capable of receiving using as many different protocols as possible
+	<> iftd sender constantly runs all passive senders
+	<> iftd receiver constantly runs all passive receivers
+	<> user initiates the iftd instance that starts the conversation via the appropriate iftd instance's XMLRPC interface
+		* ex: iftsocket has an active sender and a passive receiver, so the user instructs the sender to start
+		* ex: http and iftraven have active receivers and passive senders, so the user instructs the receiver to start
+		* ex: bittorrent has both an active sender and receiver, so the user instructs the sender and receiver to join the swarm
+			# sender will become a seed
+			# receiver will receive and seed simultaneously
+
+(*) low-level iftd API
+	<???> iftd startup and initialization (library-mode only)
+		* loads file stats, user preferences, file transmission classes, etc.
+
+	<???> iftd start session (daemon-mode only)
+		* user or application (actor) requests new session
+		* iftd forks a helper-thread that listens to the actor
+		* does library initialization for that thread
+		* the following functions unless otherwise indicated will operate on the actor's session and NOT globally
+
+	<???> iftd shutdown (library-mode only)
+		* kill threads, free memory, finish transmission, etc.
+
+	<???> iftd end session
+		* user or application releases session
+		* session may die on timeout
+		* timeout is a global configuration option
+		* session may be saved (global config option)
+
+	<???> set a global configuration key/value pair
+
+	<> given a path to a directory, load all protocol modules in that directory
+		* fails if the path is invalid or if there are no protocols or if some protocols did not initialize
+
+	<> tell iftd which of the loaded protocols can be used for transmission
+
+	<> query a protocol's properties
+	<> query a sender or receiver of a protocol for the information it needs to perform its one-time setup
+		* returns a list of strings that are keys to a dict of properties to be fed into its setup(...) implementation
+
+	<> perform a given protocol's sender's or receiver's one-time setup, given setup properties
+		* ifttransmit.setup(...) implementation is called
+		* may fail if the user does not supply enough information
+
+	<> query a sender or receiver of a protocol for the information it needs to prepare to converse
+		* returns a list of strings that are keys to a dict of properties to be fed into its prepare_(transmit|receive)(...) implementation
+
+	<> perform a given protocol's sender's or receiver's conversation preparation, given file tranmission properties
+		* sender.await_receiver(...) is called
+		* receiver.await_sender(...) is called
+			# only one of these, in implementation, will actually delay
+		* sender.prepare_transmit(...) is called, with resume=False
+		* receier.prepare_receive(...) is called, with resume=False
+		* sender.send_job(...) is called
+		* receiver.recv_job(...) is called
+			# use the XMLRPC interface to initiate the conversation to send the job
+			# (send|recv)_job(...) may fail if there is a protocol error or of the job does not contain enough information
+		* may fail if the user does not supply enough information
+
+	<> tell a pair of iftd instances to transmit a file using a given protocol
+		* fails if the protocol encounters a problem (protocol-specific)
+			# chunks of the file that are received, however, are kept by default
+			# future transmission attempts for that file will pick up where this attempt left off
+		* fails if there is a system error (e.g. file I/O problem, etc)
+		* if the sender is active, then use the XMLRPC interface to tell the sender to start the conversation
+		* if the receiver is active, then use the XMLRPC interface to tell the receiver to start the conversation
+		* iftd instances are identified by their HOSTNAME:PORTNUM
+
+	<> tell a protocol to suspend transmission
+		* call sender.end_transmit(...) with suspend=True
+		* call receiver.end_receive(...) with suspend=True
+			# both iftd instances must be contacted to suspend
+			# both iftd instances should acknowledge suspension
+			# neither sender nor receiver should fail if one does not suspend in time
+
+	<> tell a protocol to resume transmission
+		* call sender.prepare_transmit(...) with resume=True
+		* call receiver.prepare_receive(...) with resume=True
+			# both iftd instances must be contacted
+			# both iftd instances should acknowledge resume
+			# neither sender nor receiver should fail if one does not resume in time
+	
+	<> kill protocol transmission
+		* call sender.kill(...)
+		* call receiver.kill(...)
+		* can (should?) result in a protocol failure
+
+	<???> define file transmssion class
+		* given a mapping from a set of dimensions recognized by the stats analyzer to a set of sets of acceptable ranges of the dimensions
+	
+	<???> assign a protocol to a transmission class
+	
+	<???> assign a protocol ordering to a transmission class
+
+	<???> delete a file transmission class
+	
+	<???> given a file and some connection properties, provide an ordering of transmission classes the file best fits into
+
+	<???> get a protocol ordering from a file and a transmission class
+		
+
+(???) iftd high-level API
+	<> iftd initialization (library-mode)
+	<> iftd shutdown (library-mode)
+	<> iftd begin session (daemon-mode)
+	<> iftd end session (daemon-mode)
+	<> load a set of protocols
+		* iftd searches for them
+	<> give iftd a file description (name, URL, size, hash, chunk size, bandwith thresholds, security level, etc)
+	<> tell iftd to transmit the file (synchronous)
+	
+	
+(*) statistics collection
+	<> iftstats.py stub
+	<> static functions
+	<> receiver does the recording
+	<> Record at least the following on the following dimensions:
+		* how much time transmission took (both including and excluding iftd overhead)
+		* how big the file was
+		* which protocols were used
+		* how much data each protocol sent during the transmission
+		* mean, median, range of bandwidth speeds measured per protocol during the transmission
+		* how "secure" the protocol is (security is subjective--ranges arbitrarily from 0 to 99, and is defined by the protocol itself)
+		* what time (GMT) the transmission took place (start and end time)
+		* user-defined dimensions (implemented by the protocol)
+	<> enter the record of the transmission into a database (mysqlite, perhaps?)
+	<> purge entries older than a globally-configured age (since they are no longer relevant)
+	
+	<???> look through the database and protocols periodically and define transmission classes based on transmission trends

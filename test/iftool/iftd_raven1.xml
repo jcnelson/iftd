@@ -1,0 +1,24 @@
+<iftd>
+
+   <filechunks path="/tmp/iftd1" />
+   <send_files path="/tmp/" />
+   <recv_files path="/tmp/" />
+
+   <xmlrpc port="4000" dir="RPC2"/>
+   <stats retrain_freq="25" classifier="NaiveBayes" />
+
+   <protocol name="raven">
+      <sender>
+         <setup type="str" RAVEN_TRANSFER_PACKAGE_DIR="/home/jude/raven/2.0/python"/>
+      </sender>
+      <receiver>
+         <setup type="str" RAVEN_TRANSFER_PACKAGE_DIR="/home/jude/raven/2.0/python"/>
+         <setup type="str" RAVEN_TRANSFER_PROGRAM_PACKAGE="arizonatransfer_http"/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG1=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG2=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG3=""/>
+         <setup type="str" RAVEN_INIT_TRANSFER_PROGRAM_ARG4=""/>
+      </receiver>
+   </protocol>
+   
+</iftd>

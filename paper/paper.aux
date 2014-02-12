@@ -1,0 +1,101 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\citation{application_layer_protocols}
+\citation{planetlab}
+\citation{stork_paper}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces IFTD Overview}}{3}}
+\newlabel{iftd-overview}{{1}{3}}
+\citation{stork_paper}
+\citation{dot_paper}
+\citation{giFT}
+\citation{stork_paper}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{4}}
+\citation{base_paper}
+\citation{conduits_paper}
+\citation{BitTorrent}
+\citation{slurpie_paper}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Architecture}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}IFTD Transfer Scenario}{6}}
+\citation{xmlrpc_book}
+\newlabel{iftd-job-fields}{{3}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of built-in user-accessible IFTD job attributes, some of which are optional. They are determined by the application, and used by IFTD to carry out data transfers. Additional job attributes may be defined on a per-application and per-protocol basis.}}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Sample IFTD application that retrieves the given file from \texttt  {cl31.cs.arizona.edu/tmp/pkgs} and stores it in \texttt  {/home/alice}.}}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Chunk Handling}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}IFTD Content Negotiation}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Receiver Startup}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Active receiver content negotiation.}}{11}}
+\newlabel{iftd-active-receiver-setup}{{3}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Sender Startup}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Active sender content negotiation.}}{12}}
+\newlabel{iftd-active-sender-setup}{{4}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Lone Receiver}{13}}
+\citation{libtorrent}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Data Transfer Protocol Architecture}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Lifecycle of a sender and receiver protocol within IFTD.}}{15}}
+\newlabel{protocol-lifecycle}{{5}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Protocol One-Time Setup}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Protocol Per-Transfer Setup}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Sending Data}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Receiving Data}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.5}Protocol Shutdown}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}IFTD Data Transfer}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}Sending Data}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}Receiving Data}{20}}
+\citation{python_gil}
+\citation{cappos_security_paper}
+\citation{jigdo}
+\citation{debian}
+\citation{fedora}
+\citation{ubuntu}
+\citation{microsoft_iis_throttling}
+\citation{cisco_vni_study}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Protocol Classification}{21}}
+\citation{naivebayes}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluation}{22}}
+\citation{libtorrent}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Protocol Fault Tolerance}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Number of chunks transferred by each protocol as a function of time. The HTTP protocol is programmed to transfer 65 chunks and fail, while the BitTorrent and scp protocols continue to receive the remaining 135 chunks.}}{23}}
+\newlabel{protocol-fault-toleration}{{6}{23}}
+\citation{cherrypy}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces How many chunks were written versus how many chunks were rejected by the chunk reservation system using the protocols in Figure\nobreakspace  {}6\hbox {}.}}{24}}
+\newlabel{protocol-effective-bandwidth}{{2}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Transfer Overhead}{24}}
+\citation{urllib2_code}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Bandwidth as a function of file size. Because all three pieces of software transfer data across a gigabit LAN, the affect of transfer overhead on each piece of software's bandwidth is noticeable for files less than 10MB in size.}}{25}}
+\newlabel{transfer-overhead}{{7}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Recoverability Performance}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Number of bytes received by each data transfer software as a function of time when a 100 MB file is re-requested after one fourth of it downloads. Although \texttt  {urllib2} and arizonatransfer have higher bandwidths than IFTD, they transfer more data than IFTD since they are not resumable.}}{26}}
+\newlabel{recoverability-performance}{{8}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Protocol Classification}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The IFTD-measured bandwidths of two different HTTP implementations for different file sizes. IFTD chooses \texttt  {http\_slow} for smaller files since it has a higher average bandwidth than \texttt  {http\_delay} for small amounts of data. IFTD chooses \texttt  {http\_delay} over \texttt  {http\_slow} once the files become big enough that transferring it with \texttt  {http\_delay} is faster.}}{28}}
+\newlabel{protocol-classification}{{9}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Handling Protocol Behavior}{29}}
+\citation{naivebayes}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Choosing the Best Protocol}{30}}
+\bibstyle{acm}
+\bibdata{bibdata}
+\bibcite{application_layer_protocols}{1}
+\bibcite{BitTorrent}{2}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{31}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Acknowledgments}{31}}
+\bibcite{stork_paper}{3}
+\bibcite{cappos_security_paper}{4}
+\bibcite{cherrypy}{5}
+\bibcite{cisco_vni_study}{6}
+\bibcite{debian}{7}
+\bibcite{fedora}{8}
+\bibcite{giFT}{9}
+\bibcite{conduits_paper}{10}
+\bibcite{jigdo}{11}
+\bibcite{microsoft_iis_throttling}{12}
+\bibcite{libtorrent}{13}
+\bibcite{planetlab}{14}
+\bibcite{python_gil}{15}
+\bibcite{naivebayes}{16}
+\bibcite{base_paper}{17}
+\bibcite{slurpie_paper}{18}
+\bibcite{xmlrpc_book}{19}
+\bibcite{dot_paper}{20}
+\bibcite{ubuntu}{21}
+\bibcite{urllib2_code}{22}

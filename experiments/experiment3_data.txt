@@ -1,0 +1,215 @@
+files: ['/tmp/iftd-experiments/file_1000', '/tmp/iftd-experiments/file_10000', '/tmp/iftd-experiments/file_100000', '/tmp/iftd-experiments/file_1000000', '/tmp/iftd-experiments/file_10000000', '/tmp/iftd-experiments/file_100000000', '/tmp/iftd-experiments/']
+sizes: ['1000', '10000', '100000', '1000000', '10000000', '100000000', '']
+[1272180260.25] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.0968940258
+[1272180261.38] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.13393497467
+[1272180262.47] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.0892868042
+[1272180263.53] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.05773496628
+[1272180264.59] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.05549693108
+[1272180265.68] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.09431195259
+[1272180266.77] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.09494185448
+[1272180267.85] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.07599282265
+[1272180268.95] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.09728503227
+[1272180270.04] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.0896499157
+[1272180271.13] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.0909922123
+[1272180272.25] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.12090706825
+[1272180273.31] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.05901098251
+[1272180274.39] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.08426499367
+[1272180275.5] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.107681036
+[1272180276.59] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.09315013885
+[1272180277.7] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.10469293594
+[1272180278.83] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.13479304314
+[1272180279.91] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.07554507256
+[1272180281.02] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.10659408569
+[1272180282.1] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.0830578804
+[1272180283.2] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.10466909409
+[1272180284.29] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.08950090408
+[1272180285.41] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.11618900299
+[1272180286.52] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.10841798782
+[1272180287.62] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.10253000259
+[1272180288.72] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.09491801262
+[1272180289.81] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.09057092667
+[1272180290.89] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.0875658989
+[1272180291.99] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000 1.09137296677
+[1272180307.0] 
+[1272180307.0] Protocol rankings
+[1272180307.0] ['http3_receiver', 'http4_receiver']:  0.528273582515
+[1272180307.0] ['http3_receiver', 'unknown']:  0.471726417485
+[1272180307.0] 
+
+[1272180308.1] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.08999300003
+[1272180309.16] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.05912089348
+[1272180310.27] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.1067738533
+[1272180311.35] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.08745503426
+[1272180312.41] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.05732011795
+[1272180313.51] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.10039401054
+[1272180314.59] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.08210110664
+[1272180315.69] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.09932804108
+[1272180316.81] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.11672902107
+[1272180317.88] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.06948900223
+[1272180318.97] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.09098386765
+[1272180320.06] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.08836698532
+[1272180321.15] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.08538198471
+[1272180322.21] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.06295609474
+[1272180323.31] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.10291314125
+[1272180324.43] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.11787295341
+[1272180325.54] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.10891389847
+[1272180326.63] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.09558200836
+[1272180327.7] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.06519079208
+[1272180328.81] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.10729813576
+[1272180329.9] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.09630608559
+[1272180330.96] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.05746388435
+[1272180332.05] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.09338593483
+[1272180333.14] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.08633518219
+[1272180334.24] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.09498310089
+[1272180335.3] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.06839799881
+[1272180336.39] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.08531904221
+[1272180337.5] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.11322617531
+[1272180338.6] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.09825110435
+[1272180339.72] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000 1.11533093452
+[1272180354.73] 
+[1272180354.73] Protocol rankings
+[1272180354.73] ['http3_receiver', 'http4_receiver']:  0.528273582515
+[1272180354.73] ['http3_receiver', 'unknown']:  0.471726417485
+[1272180354.73] 
+
+[1272180365.03] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2851378918
+[1272180375.32] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2913269997
+[1272180385.6] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2815771103
+[1272180395.88] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2756659985
+[1272180406.17] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2940630913
+[1272180416.44] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.270788908
+[1272180426.73] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2907180786
+[1272180437.04] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.3043820858
+[1272180447.33] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2921888828
+[1272180457.63] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2970399857
+[1272180467.91] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2861340046
+[1272180478.19] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2814052105
+[1272180488.47] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2796909809
+[1272180498.74] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2661499977
+[1272180509.01] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2718501091
+[1272180519.31] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2985091209
+[1272180529.61] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.3001980782
+[1272180539.88] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2719290257
+[1272180550.17] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2909178734
+[1272180560.48] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.307115078
+[1272180570.78] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.296492815
+[1272180581.11] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.3310170174
+[1272180591.4] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2968280315
+[1272180601.69] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2896502018
+[1272180611.98] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2854940891
+[1272180622.25] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2744548321
+[1272180632.55] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2905409336
+[1272180642.85] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.3075361252
+[1272180653.14] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2882969379
+[1272180663.43] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000 10.2844080925
+[1272180678.44] 
+[1272180678.44] Protocol rankings
+[1272180678.44] ['http4_receiver', 'http3_receiver']:  1.0
+[1272180678.44] 
+
+[1272180688.86] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.401252985
+[1272180699.22] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.365347147
+[1272180709.63] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.4098861217
+[1272180720.02] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3920769691
+[1272180730.41] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3839261532
+[1272180740.76] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3552820683
+[1272180751.13] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3726189137
+[1272180761.5] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3606879711
+[1272180771.87] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3752729893
+[1272180782.24] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3666968346
+[1272180792.63] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3879218102
+[1272180803.0] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3776779175
+[1272180813.39] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3889451027
+[1272180823.8] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.4084589481
+[1272180834.19] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3847649097
+[1272180844.57] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3839969635
+[1272180854.96] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3907589912
+[1272180865.32] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3588349819
+[1272180875.69] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3667211533
+[1272180886.05] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3633179665
+[1272180896.42] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.369631052
+[1272180906.8] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3784050941
+[1272180917.19] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3942029476
+[1272180927.6] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.4077680111
+[1272180937.98] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3815999031
+[1272180948.34] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3620929718
+[1272180958.7] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3560891151
+[1272180969.13] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.4302351475
+[1272180979.51] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.3772528172
+[1272180989.87] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_1000000 10.362858057
+[1272181004.89] 
+[1272181004.89] Protocol rankings
+[1272181004.89] ['http4_receiver', 'http3_receiver']:  0.747155719582
+[1272181004.89] ['http4_receiver', 'unknown']:  0.252844280418
+[1272181004.89] 
+
+[1272181015.85] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9440009594
+[1272181027.06] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 11.2148599625
+[1272181038.01] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9420588017
+[1272181048.92] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9103088379
+[1272181059.82] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9067578316
+[1272181070.74] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9138169289
+[1272181081.65] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9157850742
+[1272181092.58] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9309589863
+[1272181103.48] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.890337944
+[1272181114.39] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9181368351
+[1272181125.31] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9212830067
+[1272181136.24] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9220950603
+[1272181147.14] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9022209644
+[1272181158.15] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 11.0150699615
+[1272181169.82] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 11.6688690186
+[1272181180.74] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9147210121
+[1272181191.68] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.93891716
+[1272181202.86] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 11.1838648319
+[1272181213.84] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9821009636
+[1272181224.75] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9095818996
+[1272181235.65] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.8953969479
+[1272181246.58] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9307448864
+[1272181257.49] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9134268761
+[1272181268.42] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.922328949
+[1272181279.38] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9642379284
+[1272181290.3] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.922825098
+[1272181301.22] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9179041386
+[1272181312.16] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9386441708
+[1272181323.09] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 10.9308829308
+[1272181334.18] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_10000000 11.0877308846
+[1272181349.2] 
+[1272181349.2] Protocol rankings
+[1272181349.2] ['http4_receiver', 'http3_receiver']:  1.0
+[1272181349.2] 
+
+[1272181365.73] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.5176711082
+[1272181382.41] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.6784021854
+[1272181399.22] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.8080568314
+[1272181415.55] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.3347518444
+[1272181432.41] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.8533980846
+[1272181448.86] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.4503879547
+[1272181466.02] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 17.1617310047
+[1272181482.76] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.7364699841
+[1272181499.43] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.6739721298
+[1272181515.99] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.5579850674
+[1272181532.43] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.4453749657
+[1272181548.87] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.4389410019
+[1272181565.51] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.6372299194
+[1272181581.79] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.2763187885
+[1272181598.45] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.6599071026
+[1272181615.16] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.7113637924
+[1272181631.62] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.4666881561
+[1272181648.15] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.530684948
+[1272181665.19] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 17.0337760448
+[1272181681.78] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.5882670879
+[1272181698.2] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.4197640419
+[1272181714.88] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.680961132
+[1272181731.53] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.657348156
+[1272181748.31] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.7772288322
+[1272181765.39] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 17.0755290985
+[1272181782.18] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.7916431427
+[1272181799.22] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 17.0405819416
+[1272181815.97] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.7494699955
+[1272181832.23] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.2561838627
+[1272181848.47] iftd cl31.cs.arizona.edu/tmp/iftd-experiments/file_100000000 16.2460830212
+[1272181863.49] 
+[1272181863.49] Protocol rankings
+[1272181863.49] ['http4_receiver', 'http3_receiver']:  1.0
+[1272181863.49] 
+

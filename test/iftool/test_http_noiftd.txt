@@ -1,0 +1,17 @@
+job = {
+   JOB_ATTR_DEST_HOST:"localhost",
+   JOB_ATTR_DEST_NAME:"/tmp/iftd-recv/output",
+   JOB_ATTR_SRC_HOST:"i.imgur.com",
+   JOB_ATTR_SRC_NAME:"/X1Hi1.gif",
+   "PROTO_PORTNUM": 80
+};
+
+connect = {
+   "http_sender" : {
+      
+   },
+
+   "http_receiver" : job,
+
+   "iftcache_receiver" : { "IFTCACHE_REMOTE_IFTD_PORT": 4003, "IFTCACHE_REMOTE_RPC_DIR": "/RPC2", "IFTCACHE_USER_TIMEOUT": 60 }
+};

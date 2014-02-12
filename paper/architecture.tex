@@ -1,0 +1,300 @@
+\section{Architecture}
+
+To understand IFTD's architecture, one must first consider what information is available to the sending and receiving hosts before they begin transmitting.  IFTD is constructed around these five observations:
+\begin{enumerate}
+\item For any source/destination host pairing, neither host knows in advance which protocols the other will use to perform a transfer, but both know in advance which protocols are locally available.
+\item A destination host may have performed data transfers similar to the pending one in the past.
+\item A source host can perform measurements on the data in advance of sending it.
+\item It is possible that no host knows everything about the data in advance.
+\item One source host may carry out the data transfer with many destination hosts hosts.  One destination host may carry out the data transfer with many source hosts.
+\end{enumerate}
+
+These observations suggest that data transmission should occur in at least two stages, as with DOT: a content negotiation stage and a data transfer stage.  A given destination host should not only acquire as much information as possible about the data to transfer, but also as much information as possible about the host(s) storing the data.  This would include which protocols to use to receive the data, which source host(s) to contact for which pieces of the data, and how to know whether or not the data are being correctly transferred.  Once a destination host knows these things, it will be better equipped to carry out the data transfer than if it had not made this attempt.  A similar argument can be made about a given source host attempting to perform a data transfer to one or more destination hosts.  Unlike DOT, however, an IFTD-aware application sends IFTD only the information it knows about the data transfer and about the hosts to engage so that IFTD can handle the content negotiation on its behalf.
+
+The information IFTD requires from an application is packaged into an IFTD data structure called a \textit{job}.  A job represents all of the relevant information about a data transfer as a sequence of key/value pairs.  The specific key/value pairs that the application presents are called \textit{job attributes}, and are shared between IFTD instances to negotiate a data transfer.  Key/value pairs that IFTD maintains internally to monitor the transfer are called \textit{job statistics}, and are ultimately used by the classifier to associate classes of data with their best transfer protocols.  The IFTD job attribute keys are summarized in Figure~\ref{iftd-job-fields}.  When instantiated, a job will set default values for these keys.
+
+An application may additionally provide parameters and hints to each protocol through \textit{connection attributes}.  The connection attributes are presented as key/value pairs that map protocol names to additional sets of key/value pairs, which in turn map protocol-specific connection attribute keys to appropriate values.  Although the data are optional, some protocols require that certain connection attributes be specified in order for the protocol to be used.
+
+%\begin{figure*}
+\begin{table*}[ht!]
+\label{iftd-job-fields}
+\begin{tabular}{ | l | p{10cm} |}
+\hline
+\multicolumn{2}{|c|}{IFTD Job Attributes} \\
+\hline
+JOB\_ATTR\_FILE\_TYPE & MIME type of the file to transfer. \\
+JOB\_ATTR\_FILE\_SIZE & Size in bytes of the file to transfer. \\
+JOB\_ATTR\_FILE\_MIN\_SIZE & Minimum allowable size for the file (if size is unknown). \\
+JOB\_ATTR\_FILE\_MAX\_SIZE & Maximum allowable size for the file (if size is unknown). \\
+JOB\_ATTR\_CHUNKSIZE & Fixed length of chunks during transfer. \\
+JOB\_ATTR\_NUM\_CHUNKS & Number of chunks in the file.  This is used to cap the number of chunks to receive if the exact file size is not known. \\
+JOB\_ATTR\_FILE\_HASH & SHA-1 hash of the file. \\
+JOB\_ATTR\_SRC\_NAME & Path to the file on the source host. \\
+JOB\_ATTR\_DEST\_NAME & Path to the file on the destination host. \\
+JOB\_ATTR\_SRC\_HOST & Hostname or IP address of the source host. \\
+JOB\_ATTR\_DEST\_HOST & Hostname or IP address of the destination host. \\
+JOB\_ATTR\_PROTOS & If given, this is a whitelist of protocols that IFTD may use. \\
+JOB\_ATTR\_TRUNCATE & If given, IFTD will truncate chunks that are too long. \\
+JOB\_ATTR\_STRICT\_CHUNKSIZE & If set to True, any chunk with a length not equal to the value of JOB\_ATTR\_CHUNKSIZE will cause the transfer to fail. \\
+JOB\_ATTR\_TRANSFER\_TIMEOUT & Maximum amount of time the transfer may take. \\
+JOB\_ATTR\_DO\_CHUNKING & If set to False, IFTD will send the entire file as one chunk (this is True by default). \\
+JOB\_ATTR\_MIN\_BANDWIDTH & Minimum bandwidth any protocol must maintain while transferring (in Bps); otherwise the protocol is considered failed. \\
+JOB\_ATTR\_MAX\_ATTEMPTS & Maximum number of failures per protocol that IFTD will tolerate during chunk transfer. \\
+JOB\_ATTR\_CHUNK\_TIMEOUT & Maximum amount of time a receiving protocol may spend transferring a chunk. \\
+\hline
+\end{tabular}
+\caption{Summary of built-in user-accessible IFTD job attributes, some of which are optional.  They are determined by the application, and used by IFTD to carry out data transfers.  Additional job attributes may be defined on a per-application and per-protocol basis.}
+\end{table*}
+%\end{figure*}
+
+\subsection{IFTD Transfer Scenario}
+
+To help understand how applications use IFTD, consider this IFTD transfer scenario.  Suppose Alice wishes to retrieve the latest version of the \texttt{nano} software package, and that Bob regularly makes this and other packages available under the \texttt{/tmp/pkgs} directory on his server.  In order for Alice to retrieve the package, she can use one of several programs to communicate with Bob's server (e.g. \texttt{scp}, \texttt{wget}, \texttt{ftp}, etc.).  Bob, however, regularly adds and removes services from his server, so at any given time some of these programs will not work.  Since both Alice and Bob currently have an IFTD instance running on their machines, Alice decides to create and run a small application--a Python script--to retrieve the package using her IFTD instance.  The application does not choose a specific protocol to use, but instead provides IFTD with some information about the data transfer so it can make the choice.
+
+When Alice's local IFTD instance receives her application's transfer request via XMLRPC \cite{xmlrpc_book} for Bob's \texttt{nano} package, it examines each of its available protocols to determine which may be used, given Alice's information.  It determines that she has given enough information to use its \texttt{http\_receiver} or its \texttt{scp\_receiver} protocols to download the package via HTTP or \texttt{scp} respectively.  Alice, through her IFTD instance, sends these protocols, the application's job attributes (including the package's presumed location on Bob's server), and per-protocol connection attributes to inform Bob's IFTD instance that she wishes to receive the file.
+
+When Bob's IFTD receives Alice's IFTD's request, it verifies that the package file exists and is accessable to it.  It examines the protocols available to it and the protocols Alice's IFTD indicated that it can use, and initializes any sending protocols that wait for a receiving protocol to connect--in this scase, \texttt{http\_sender}.  It breaks the package file into a sequence of fixed-sized chunks, writes them to disk in a temporary directory, and informs the \texttt{http\_sender} protocol of their location.  Once \texttt{http\_sender} is ready to receive connections, Bob's IFTD replies to Alice's IFTD that it can use its \texttt{http\_sender} and \texttt{scp\_sender} protocols to send data, and provides the name of the directory in which the chunks reside.  It also gives Alice's IFTD a set of file features to be fed into Alice's IFTD's protocol classifier, as well as the directory it will use to store chunks of the file and the hashes of each chunk.
+
+When Alice's IFTD receives this reply from Bob's IFTD, it creates a feature vector representing the file features and uses it as input to its protocol classifier.  Since other applications on Alice's workstation have invoked IFTD to perform data transfers in the past, the classifier calculates the probability of each available protocol having historically been the best protocol to transfer data with similar features.  With this prior information, the protocol classifier finds that the \texttt{http\_receiver} protocol has had the highest probability of being used to successfully transfer this type of data.
+
+Now that Alice's IFTD knows which protocols Bob's IFTD supports, as well as the best protocol to use, it examines the capabilities of the \texttt{scp\_receiver} and \texttt{http\_receiver} protocols.  Since \texttt{scp\_receiver} can transfer data without needing \texttt{scp\_sender} to be present, Alice's IFTD concludes that Bob's IFTD does not need to use its \texttt{scp\_sender} protocol.  Alice's IFTD informs Bob's IFTD of its intent to use \texttt{http\_receiver} to receive data.  It also gives Bob's IFTD the directory in which the chunks of the package will be received.  Her IFTD does not inform Bob's IFTD that it will also be using \texttt{scp\_receiver}, since it does not want his IFTD to use its corresponding \texttt{scp\_sender}.  Once Bob's IFTD receives this information, it waits until Alice's IFTD finishes receiving data via HTTP and scp, since it has been instructed to not use any of its active senders.
+
+Eventually, Alice's IFTD finishes receiving the file, and sends acknowledgement to Bob's IFTD so it can shut down its sending protocols.  Alice's IFTD finishes re-assembling the file from the chunks it received shortly afterward.  It then records the feature vector it calculates from the file data and observes that the \texttt{http\_receiver} protocol received data faster and more successfully than the \texttt{scp\_receiver} protocol.  Her IFTD refines its classifier's records with the feature vector along with the fact that \texttt{http\_receiver} had the highest bandwidth, so  that in the future her IFTD will be more likely to use the \texttt{http\_receiver} protocol receive data matching the profile of the \texttt{nano} package.
+
+\begin{figure}[ht!]
+%\begin{program}
+\begin{verbatim}
+# Alice's IFTD application
+
+import iftapi
+import sys
+
+# package name is first arg
+package = sys.argv[1]
+
+job_attrs = { 
+  "JOB_ATTR_SRC_NAME"  :  "/tmp/pkgs/" + package,
+  "JOB_ATTR_DEST_NAME" :  "/home/alice/" + package,
+  "JOB_ATTR_SRC_HOST"  :  "cl31.cs.arizona.edu",   # Bob's server
+  "JOB_ATTR_DEST_HOST" :  "localhost"
+  
+   # use large chunks, but not too large
+  "JOB_ATTR_CHUNKSIZE" : 65536,
+}
+
+iftd_xmlrpc = iftapi.make_XMLRPC_client()
+rc = iftd_xmlrpc.begin_ift(
+   job_attrs, # job attribute dict
+   None,      # connection hints
+   False,     # not sending 
+   True,      # receiving 
+   4001,      # Bob's iftd xmlrpc api port 
+   "/RPC2",   # Bob's iftd xmlrpc directory
+   60 )       # timeout after 60 seconds 
+
+sys.exit(rc)
+\end{verbatim}
+%\end{program}
+\caption{Sample IFTD application that retrieves the given file from \texttt{cl31.cs.arizona.edu/tmp/pkgs} and stores it in \texttt{/home/alice}.}
+\end{figure}
+
+It is not always the case, however, that both Alice's and Bob's IFTDs can always communicate with one another or have protocols in common.  Suppose the next day that Alice tried to use her application to download \texttt{vim} from Bob's package directory, but Bob disabled his IFTD's \texttt{http\_sender} and \texttt{scp\_sender} protocols.  Then, even though Alice's IFTD could contact Bob's IFTD, they could not agree on which protocols to use.
+
+Fortunately for Alice, Bob's server also has a running Apache server that serves files from the package directory.  Consequently, when the inter-IFTD content negotiation fails, Alice's IFTD falls back to simply using its \texttt{http\_receiver} protocol to download the \texttt{vim} package from Apache on Bob's server.
+
+The following week, Alice attempts to download the \texttt{ex} package from Bob's server, but Bob had since uninstalled IFTD and Apache but is running an OpenSSH daemon on the server.  Even then, Alice's IFTD still retrieves the \texttt{ex} package from Bob's package directory using her IFTD's \texttt{scp\_receiver} protocol.
+
+Even though all of these package transfer scenarios relied on different protocols and transfer services, Alice never needed to modify her application in these cases.  Her application instead completely relies on IFTD to perform each protocol-specific content negotiation and data transfer, thus hiding from her all of the logic and implementation details for handling these different scenarios.
+
+\subsection{Chunk Handling}
+
+When using one or more resumable protocols or when communicating with a remote IFTD, IFTD sends and receives data in fixed-length chunks.  When sending a file to a remote IFTD, it will read the file given to it by the application, break it up into chunks, and store the chunks within a temporary directory identified by the file's base name and its SHA-1 hash.  The receiving IFTD will create a corresponding temporary chunk directory on its host to store received chunks.  The chunks are named in increasing numerical order based on which byte range of the file they contain, so that given the chunk size and file size, both an IFTD sender and receiver can identify which chunk names correspond to which pieces of the file.  This number is called the \textit{chunk identifier}.  When IFTD finishes sending, it removes the chunks and the temporary directory.  When IFTD finishes receiving, it reassembles the chunks into the original file and purges the temporary directory.
+
+When receiving chunks, IFTD attempts to verify each chunk's integrity and writes each chunk to the appropriate offset within the file being received.  Depending on the receiving application's job attributes, IFTD accepts, ignores, or truncates chunks that are not the correct size, and never re-receives the same chunk twice.  If available, IFTD compares the SHA-1 hash of each chunk to the hash provided by the sender so it knows to re-download the chunk in case of data corruption.  Once each chunk has been written and data transfer is finished, it will verify the hash of the re-constructed file against the file's known hash, if available.
+
+In the event that a local IFTD attempts to receive data from a remote host and cannot communicate with a remote IFTD, it will instead use its protocols to attempt to get the file directly.  If it uses resumable protocols like BitTorrent or HTTP, IFTD attempts to receive the file in fixed-length chunks to allow protocols to receive data concurrently and avoid receiving the same chunks twice.  If no resumable protocols are available, IFTD treats the file as a single chunk and uses a non-resumable protocol to attempt to fetch it.
+
+Breaking each file to transfer into chunks, which themselves are also files, offers IFTD-to-IFTD data transfers three advantages.  Since IFTD protocols may not be resumable, this method allows IFTD to use non-resumable protocols to transfer part of the whole file.  Also, combined with the fact that IFTD will allow each receiving protocol to transfer at most one unique chunk at a time, this method safely allows any protocol to transfer chunks of the original file concurrently.  Additionally, creating chunks allows IFTD to present both the chunk data and the path to the chunk on disk to its sending protocols.  This last advantage is useful in implementing IFTD protocols which depend on 3rd party transmission software such as \texttt{scp} or \texttt{netcat} that may require that the data to send be presented to it exclusively as a byte array or as a file path.
+
+\subsection{IFTD Content Negotiation}
+
+Given observations (4) and (5), the receiving IFTD acquires as much useful information as possible about the file to transfer in order to optimize the transfer process.  For a given IFTD instance, there are three possible ways for this to occur:  the receiving IFTD requests one or more remote IFTD instances to begin transferring data to it, the receiving IFTD instance is contacted by another IFTD instance wishing to send data to it, or the receiving IFTD requests a file from one or more remote hosts on which there are no IFTD instances.  These are the \textit{Receiver Startup}, \textit{Sender Startup}, and \textit{Lone Receiver} scenarios, respectively.
+
+\subsubsection{Receiver Startup}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{diagrams/iftd-active-receiver-setup}
+    \caption{Active receiver content negotiation.}
+    \label{iftd-active-receiver-setup}
+\end{figure}
+
+In this scenario, an application makes a request to the local IFTD instance to receive data from a remote IFTD instance on its behalf, similar to Alice's application in the example.  IFTD begins negotiations by verifying that the path keyed by \texttt{JOB\_ATTR\_DEST\_NAME} is writable.  If so, it sends this path, a list of all of its supported protocols, the application's job attributes, and the application-given protocol connection attributes to the remote IFTD instance.  If the remote IFTD can read the path keyed by \texttt{JOB\_ATTR\_SRC\_NAME}, it first attempts to initialize any protocols that need to wait until a receiver connects, if any are deemed usable.  It creates a record of the pending transfer, and assign it a timeout.  It then breaks the file into chunks and puts them in a temporary directory.  Finally, it sends back a list of protocols supported by both IFTDs, as well as the file size, MIME type, SHA-1 hash of the entire file, SHA-1 hash of each chunk, and the path to the temporary chunk directory it will create.  If the application provided any information about the file that contradicts the remote IFTD's information, the transfer is aborted.  If the timeout passes before content negotiation completes, the transfer is aborted as well.
+
+If the local IFTD instance accepts the information, it will initiate the transfer.  Using the information given to it, it checks that the path keyed by \texttt{JOB\_ATTR\_DEST\_NAME} refers to a writable location.  If so, it makes its temporary chunk directory, initializes a receiver protocol for each protocol both IFTDs have in common (and are applicable), and identifies the best protocol with which to transfer the data.  If not, the transfer is aborted.  
+
+The best protocol for the transfer may not be common to both IFTD instances since the classifier considers all previous transfers in making its decision.  Regardless of whether or not the best protocol can be used, and as long as there is at least one usable protocol and the destination path is acceptable, the local IFTD requests that the remote IFTD start sending data to it since it now knows what to expect and how to receive it.  The request includes the local chunk path, the choice for the best protocol (or a sentinel value indicating that the best protocol is unavailable), and a list of protocols that were successfully initialized and the sender should attempt to use.  As shown in the example of Alice and Bob, the local IFTD does not tell the remote IFTD to start any protocol that will send data without the local IFTD's oversight.
+
+Once the remote IFTD receives this information, it initializes all protocols that do not require a receiver to connect and prepares to send data.  It will create its temporary chunk directory, split the file into chunks and populate its temporary chunk directory with them, initialize the protocols the receiver indicated it should use, and finally acknowledge the local IFTD.  This completes the content negotiation in this scenario.
+
+\subsubsection{Sender Startup}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{diagrams/iftd-active-sender-setup}
+    \caption{Active sender content negotiation.}
+    \label{iftd-active-sender-setup}
+\end{figure}
+
+In this scenario, an application makes a request to the local IFTD instance to send data to the host indicated by the \texttt{JOB\_ATTR\_DEST\_HOST} job attribute.  Using the Alice and Bob example, in this scenario Bob pushes a package to Alice.  To begin the content negotiation, the local IFTD first ensures that the path keyed by \texttt{JOB\_ATTR\_SRC\_NAME} is readable.  If so, the local IFTD determines the prerequisite file metadata the remote receiving IFTD needs in order to begin transferring data--the file's MIME type, SHA-1 hash, size, chunk hashes, and temporary chunk directory, as well as the job attributes from the application and any connection attributes the application provided.  It breaks the file into chunks, and sets up all of the sender protocols that need to wait for a corresponding receiver to connect.  It makes the chunk data available to each of these.  Then, it attempts to send the file metadata to the remote IFTD receiver.  If the remote receiver does not respond, the transfer is aborted, the protocols shut down, and the chunks removed.
+
+When the receiver gets this information, it checks to see that the path keyed by \texttt{JOB\_ATTR\_DEST\_NAME} is writable.  If so, it creates its temporary chunk directory and starts receiving with all protocols it has in common with the sender; if not, the transfer is aborted.  If at least one protocol successfully initializes, the receiver uses the information about the file as input to its protocol classifier.  It will respond to the sending IFTD with the best protocol choice (or a sentinel indicating that the classifier's choice was not a common protocol), the protocols that it successfully initialized, and its chunk directory.
+
+Upon receiving this acknowledgment, the sender initializes its active sending protocols.  This completes the content negotiation in this scenario.
+
+\subsubsection{Lone Receiver}
+
+If the receiving IFTD cannot contact a sending IFTD, it assumes that there is no remote IFTD instance.  Consequently, during data transmission it will only know any information about the data that the application gave it initially, and it may gather information from remote hosts based on the capabilities of the available protocols.  The directory on the remote host containing the file is treated like the sender's temporary chunk directory, and depending on the capabilities of the available protocols, the file itself may be treated as a single chunk if none of the protocols are resumable.  As with the receiver startup scenario, IFTD will only receive the file to a path under the directory it is configured to use to store files it receives.  
+
+To perform the transfer, IFTD attempts to use each of its available receiver protocols until one successfully downloads the file.  If available, IFTD intelligently uses protocols that can perform partial data requests, such as HTTP and BitTorrent, to request different parts of the file to maximize bandwidth.  Once the receiver completes the transfer, it uses any of the (otherwise sender-provided) information it was given by the receiving application to attempt to verify the integrity of the file.
+
+\subsection{Data Transfer Protocol Architecture}
+
+IFTD protocols are implemented as Python objects which inherit functionality from abstract IFTD-provided Python classes that drive the transmission process.  IFTD defines abstract classes for a sender and a receiver, and both are considered to be distinct protocols.  This means that \texttt{http\_sender} is a different protocol from \texttt{http\_receiver}.
+
+IFTD protocols may use any means necessary to exchange data.  For example, the default IFTD source package includes protocols that communicate directly through a TCP socket, use an HTTP server and client to download chunks, run the \texttt{scp} program as a shell subprocess to transfer files, get data from a local \texttt{squid} cache, and join a BitTorrent swarm get chunks using the Rasterbar libtorrent API~\cite{libtorrent}.  IFTD protocols may even invoke IFTD recursively to perform a transfer, or invoke additional multiprotocol transfer frameworks on IFTD's behalf.
+
+IFTD makes a distinction between active and passive protocols as well as sending and receiving protocols.  An \textit{active protocol} is a protocol that drives the data transfer and is responsible for triggering data movement.  For example, IFTD's \texttt{http\_receiver} protocol is an active receiver, since it triggers data transmission from an HTTP server by sending it a GET message.  Conversely, a \textit{passive protocol} is a protocol that waits for its counterpart to initiate the data transfer.  In this example, the HTTP server is a passive sender, since it makes data available to be served but does not actually move the data without receiver intervention.  Both sender and receiver can be active, such as the scp-driven \texttt{scp\_sender} and \texttt{scp\_receiver} protocols, and both sender and receiver can be passive, as with BitTorrent-driven protocols \texttt{bittorrent\_sender} and \texttt{bittorrent\_receiver}.
+
+IFTD additionally identifies protocols based on how well it can use any inherent resumability in the protocol (it's \texttt{chunking capability}).  Protocols like HTTP, which can send and receive given byte ranges of a file, are known to IFTD as \textit{deterministic chunking protocols} (DCPs).  That is, IFTD identifies one or more one or more chunks in the file to transfer, and the protocol transfers only those specific chunks without having to rely on one of the IFTDs to break the file into chunks for it.  Protocols that can still send and receive chunks of a file but do not allow IFTD to choose which chunks are known as \textit{nondeterministic chunking protocols} (NCPs).  This includes protocols such as IFTD's default BitTorrent sender and receiver and raw TCP socket receiver, since the protocol, and by extension IFTD cannot know in advance which chunks will be transferred.  This distinction is important for managing transmission in that consideration of a protocol's chunking capability can be used to avoid duplicate chunk transfers.
+
+Each IFTD protocol has a lifespan of four stages:  its one-time setup stage, its per-transfer setup stage, its data transfer stage, and its clean-up stage.  The last three stages are invoked for each data transfer, and for receivers last two stages occur within a separate thread from the main IFTD thread to help protect the software from a fatal protocol error or timeout.  The flow control of each stage is summarized in Figure~\ref{protocol-lifecycle}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{diagrams/protocol-lifecycle}
+    \caption{Lifecycle of a sender and receiver protocol within IFTD.}
+    \label{protocol-lifecycle}
+\end{figure}
+
+\subsubsection{Protocol One-Time Setup}
+
+Before a protocol can be used, it must be instantiated for the first time when IFTD starts up and then given a chance to perform any protocol-specific one-time configuration.  The \texttt{setup(setup\_attrs)} method is responsible for this and is called by IFTD once the first protocol instance is loaded into memory.  For example, the \texttt{http\_sender} protocol that comes with IFTD will start an HTTP server when its \texttt{setup} method is invoked.  The \texttt{setup\_attrs} argument is a Python dictionary that maps protocol-specific connection attributes to meaningful values, and is constructed from IFTD's configuration file.
+
+Once a protocol object has completed its one-time setup, IFTD will keep a single instance of it in memory and, through virtue of Python's \texttt{copy} module, create a copy of it to use for each subsequent transfer.  This way, protocol instances do not need to be designed to be reusable--once a protocol's copy completes one transfer, the copy is destroyed.
+
+\subsubsection{Protocol Per-Transfer Setup}
+
+The per-transfer setup stage in each protocol is invoked on a copy of a protocol.  This stage is responsible for carrying out that protocol's content negotiation.  The process is divided into three steps:  acting on the application's job, setting up a connection, and preparing to transfer chunks.  For senders, the three methods that carry out these steps are:
+
+\begin{table}[ht!]
+\begin{tabular}{ l }
+\indent \texttt{send\_job(job)} \\
+\indent \texttt{await\_receiver(connection\_attrs, timeout)} \\
+\indent \texttt{prepare\_transmit(job)} \\
+\end{tabular}
+\end{table}
+
+\noindent For receivers, these methods are:
+
+\begin{table}[ht!]
+\begin{tabular}{ l }
+\indent \texttt{recv\_job(job)} \\
+\indent \texttt{await\_sender(connection\_attrs, timeout)} \\
+\indent \texttt{prepare\_receive(job)} \\
+\end{tabular}
+\end{table}
+
+The purpose of the first step is two-fold.  First, it gives the protocol a chance to extract any useful information that the application provided in its job attributes so it can later negotiate with the remote host.  This way, the protocols can raise errors if any of the given data are malformed or missing before further initialization occurs.  Second, this step allows the protocol to add any additional information to the job for other protocols to use, since the job is shared between each protocol and the IFTD transmission logic.  For example, if the job does not provide a file size, the \texttt{http\_receiver} protocol will attempt to contact the remote HTTP server to query the size and store it in the job for other protocols to use.
+
+Once it has its job information, a protocol may need to set up a connection to a remote host before it can prepare to transfer chunks.  This step may be a blocking operation.  For example, the TCP socket receiver protocol uses its \texttt{await\_sender} method to start a server socket and wait for the sender to connect to it before it can begin receiving data.  Both senders and receivers are passed a timeout value that they are expected to honor.  Protocols are not required to implement these methods, however, if this step is not needed.
+
+The final step in protocol-specific content negotiation finishes any remaining per-transfer setup tasks, such as checking the job for any additional information supplied by other protocols.  For example, the \texttt{bittorrent\_sender} protocol uses its \texttt{prepare\_transmit} method to create a torrent file for the data it will begin to share.  Protocols are not required to implement these methods if there are no remaining setup tasks to perform.
+
+\subsubsection{Sending Data}
+
+Once each protocol finishes its negotiation, IFTD begins to use them to transfer data.  In sending protocols, sending data is accomplished by two methods:
+
+\begin{table}[ht!]
+\begin{tabular}{ l }
+\indent \texttt{send\_chunk(chunk, chunk\_id, chunk\_path, remote\_chunk\_path)} \\
+\indent \texttt{send\_finished(status)} \\
+\end{tabular}
+\end{table}
+
+The first method is called repeatedly to send individual chunks, and the second method is called within the protocol to indicate that the protocol can no longer send chunks and should be given a chance to shut down.  The \texttt{chunk} and \texttt{chunk\_id} arguments are a byte array containing the chunk data and the numerical chunk identifier, respectively.  The \texttt{chunk\_path} and \texttt{remote\_chunk\_path} arguments are the path to the chunk on disk to send and the path on the remote host's disk where the chunk is to be sent.  The first method returns the number of bytes sent.  Returning 0 is interpreted to mean that the protocol can no longer send data, but its transfer status should not be marked as a failure.
+
+Depending on whether or not the protocol is a passive sender, \texttt{send\_chunk} may not actually write data over the network.  For example, the \texttt{http\_sender} protocol, since it is passive, accumulates the arguments given to this method over time to determine which chunks on disk it is allowed to serve to the active \texttt{http\_receiver} protocol.  In the case of the \texttt{bittorrent\_sender}, this method does absolutely nothing since the BitTorrent library it uses performs the actual transmission without IFTD's interference.
+
+\subsubsection{Receiving Data}
+
+When a receiving protocol is transferring the application's data, it uses thread given to it by IFTD to continuously attempt to receive chunks.  The methods that control this stage of life are analogous to those of a sending protocol:
+
+\begin{table}[ht!]
+\begin{tabular}{ l }
+\indent \texttt{recv\_chunks(remote\_chunk\_dir, desired\_chunks)} \\
+\indent \texttt{recv\_files(remote\_file\_paths, local\_file\_dir)} \\
+\indent \texttt{add\_chunk( chunk\_id, chunk\_bytes )} \\
+\indent \texttt{add\_file( chunk\_id, chunk\_path )} \\
+\indent \texttt{whole\_file( file\_path )} \\
+\indent \texttt{recv\_finished(status)} \\
+\end{tabular}
+\end{table}
+
+IFTD receiver protocols may receive data either as strings of bytes or as files, depending on whether or not the protocol is inherently resumable.  Resumable protocols are expected to implement the \texttt{recv\_chunks} method, while non-resumable protocols are expected to implement the \texttt{recv\_files} method.  The method IFTD uses to drive transmission is selected and used exclusively for the duration of the transfer once this stage in its lifecycle is entered, based on the protocol's chunking capability.
+
+In \texttt{recv\_chunks}, \texttt{remote\_chunk\_dir} refers to the path to the temporary chunk directory on the sender's disk, and \texttt{desired\_chunks} is a list of chunk names IFTD needs to receive.  If the protocol is resumable, this method will be called repeatedly until the protocol implementation invokes the \texttt{recv\_finished(status)} method to signal to IFTD that it can no longer receive.  It passes the chunks it receives to IFTD via the \texttt{add\_chunk} method.
+
+Analogously, non-resumable protocols use the \texttt{recv\_files} method to receive data as files instead of as byte streams.  The \texttt{remote\_file\_paths} argument is an array that identifies the remote path to each file on the remote sender, as well as which chunk it represents.  \texttt{local\_file\_dir} represents the location on disk to which to write any received files.
+
+Since non-resumable protocols may be used with or without the presence of a remote sending IFTD, there are two methods a non-resumable protocol uses to identify the data it receives to IFTD.  The former--\texttt{add\_file}--is used to identify the location on disk of a chunk of the larger file being received.  These chunks are ultimately read by IFTD when it reassembles the chunks into the whole file.  The latter method--\texttt{whole\_file}--is used to inform IFTD in the event that the protocol receives the file in its entirety.  This method may be used when there is no remote IFTD sender and a non-resumable protocol succeeds in downloading the entire file all at once.
+
+To ensure that multiple receiving protocols do not download the same chunks, IFTD implements a global chunk reservation system as part of its file I/O subsystem.  This allows a protocol to temporarily gain exclusive access to a given chunk.  While a chunk is reserved, no other protocol will intentionally receive it.
+
+If there is a remote IFTD sender available, or the protocol is a DCP, the protocol first queries the reservation system for an unreserved chunk.  The protocol continuously delays and tries again if no chunks are available and the file has not yet been reassembled.  When it succeeds in reserving a chunk, it records how long the reservation lasts (given in \texttt{JOB\_ATTR\_CHUNK\_TIMEOUT}) until another protocol can reserve it.  This way, if the protocol hangs during transmission, another protocol can re-reserve and download the chunk instead.  Once a chunk has been reserved, the protocol proceeds to transfer the chunk to the chunk directory.  
+
+If the protocol is an NCP, it does reserve a chunk in advance since it does not know which chunk will be transferred.  Any attempt to do so would otherwise carry the risk of inadvertently reserving chunks that the NCP will not write, blocking other protocols from reserving them and thus decreasing the effective bandwidth.  Instead, an NCP receives its chunk first, and then attempts to store it in the file if there is not yet any data for the given chunk.
+
+When the transfer completes, the protocol atomically checks to see that there are no data written in the file for this chunk and if not, it writes the data to the file.  Once the chunk has been written, the protocol atomically releases the chunk and marks it as downloaded.  Then, subsequent writes or reservation requests for that chunk will be rejected by the reservation system.  Transmission continues in this manner until all chunks are received, or until one protocol manages to download the entire file all at once.
+
+The chunk reservation system is unused in the event that there is no remote IFTD and that the only protocols available are all non-resumable.  In such a case, using the reservation system adds needless overhead to data transfers since the only way to transfer the file in this scenario is to try each protocol until one performs the whole transfer or they all fail.
+
+In the event that the receiving IFTD does not know the file size, the chunk reservation system will dynamically add more chunks to the file as they are received.  That is, if a protocol receives a chunk that logically occurs $k$ chunks after the last chunk of the file, the chunk reservation system will add mud site:7chan.org$k$ additional chunks to the file that other protocols may reserve.  It will not allow protocols to reserve chunks that are beyond the maximum allowed size of the file.
+
+\subsubsection{Protocol Shutdown}
+
+Because protocols define both a one-time setup and per-transfer setup procedure, they must additionally define a per-transfer shutdown and one-time shutdown procedure.  To shut down a single transfer, IFTD invokes a protocol's \texttt{proto\_clean()} method in order give it a chance to release any global resources held during transmission before the protocol data are freed.  This includes temporary files, pipes, sockets, etc.  To perform a one-time shutdown, IFTD invokes a protocol's \texttt{kill()} method to give it a chance to permanently stop transmission.  This method is called when IFTD itself shuts down.  For example, the default \texttt{bittorrent\_receiver} protocol will leave the BitTorrent swarm when its \texttt{proto\_clean()} method is called, but will shut down the Rasterbar \texttt{libtorrent} library when its \texttt{kill()} method is called.
+
+\subsection{IFTD Data Transfer}
+
+Data transmission in IFTD is driven by singleton entity called the transfer core.  Its purpose is two-fold--it manages and maintains data on all active transmissions, and it separates the content negotiation code (including the XMLRPC API) from the data transmission processing.  The XMLRPC server in IFTD passes the data it acquires during negotiation to the transfer core, so the transfer core can drive the transmission process in a separate thread while the XMLRPC server handles additional application requests and content negotiations.
+
+As a security measure, IFTD maintains two thread pools from which the transfer core acquires worker threads to drive transmissions.  One pool is for sending threads, and the other is for receiving threads.  If a thread pool is full, subsequent requests for threads result in causing the pending transmission to be aborted.  This limits the ability of a malicious user to deny the services of IFTD and its host server from legitimate users, and limits the damange a buggy application can do by requesting too many transfers at once.
+
+\subsubsection{Sending Data}
+
+Regardless of which protocol the receiver deemed the best protocol to use, the transfer core in the sending IFTD makes all chunks available to passive senders.  This is because passive senders do not actually send data across a network until instructed to do so, but instead make it available to their receiver counterparts.  Consequently, there is little if any bandwidth cost associated with sending data with passive sender protocols\footnote[2]{The exception to this are NCP protocols such as BitTorrent, but since in implementation IFTD does not know in advance which, if any, chunks it will send, IFTD naively assumes that it will not send data until a peer requests data from it.}, and sending all chunks through all passive senders allows any active receiver protocol to perform data transfers for the receiving IFTD.
+
+Since active sender protocols attempt to write data across a network, the transfer core selectively uses active sender protocols to send chunks.  In this case, the transfer core sends chunks with an active sender's \texttt{send\_chunk} method until the entire file is sent or the protocol encounters an error.  If there was an error, the transfer core falls back to using a different active sender protocol it has in common with the receiver, and continues to fall back on the remaining active sender protocols until every protocol has failed more times than the application's tolerance for protocol error.  The best protocol, if it is available and is an active sender, is the first protocol attempted.  If the receiver does not give a preferred protocol, the receiver cycles through the active protocols, given each of them a chunk in turn, until the file is sent or each of them has failed more times than the application's tolerance for protocol errors.
+
+\subsubsection{Receiving Data}
+
+When IFTD begins to receive data, it creates a separate thread for each receiving protocol to use.  This is done for two reasons.  First, this way every passive receiver protocol can wait for an active sender concurrently, minimizing the odds that an active sender will send data in vain.  Second, with or without a remote IFTD, letting every active receiver request and save different chunks from one or more source hosts concurrently results faster data transfer rates than receiving from only one protocol at a time in the event that certain protocols maintain higher bandwidth than others.  The global chunk reservation system facilitates this independently of the transfer methods within the protocols' implementations.
+
+In order to determine whether or not a given transfer succeeded, the transfer core monitors the transmission states of all running protocols for that transmission.  If no protocols are running and the file is incomplete, or all protocols have failed, then the transfer itself fails.  If one or more protocols indicate that there are no more chunks to reserve in the event that the file size is known, or all protocols cease transferring without any indication of error in the event that the file size is unknown, then the transfer succeeds since this means that all chunks have arrived.
+
+While each protocol receives data, the transfer core periodically calculates each protocol's bandwidth.  If the bandwidth drops beneath an application-specified minimum bandwidth, the transfer core will stop the protocol.  This is advantageous since the Python global interpreter lock severely limits the ability of multithreaded Python software to achieve true concurrency without resorting to running multiple Python virtual machines or invoking 3rd party libraries and/or blocking operations~\cite{python_gil}.  Additionally, killing slow protocols allows a transfer to fail in a reasonable amount of time in the event that the network between the receiving IFTD and some or all of the source hosts is inadvertently or intentionally congested.
+
+The receiving transfer core additionally monitors the total effective data transferred between all protocols.  If the total amount of data received exceeds the application-specified maximum allowable file size, the transfer fails and all protocols are stopped.  This prevents the scenario where the destination host does not have enough space for a file with an underestimated size, and the scenario where a malicious source host continuously sends data with the intent of filling the destination host's storage to capacity~\cite{cappos_security_paper}.
+
+\subsection{Protocol Classification}
+
+The features of the data that are measured to help IFTD choose the best protocol are the success/failure of the data transfer, the MIME type of the data, the approximate size of the data, and the approximate time of day at which the transfer completed.  These features are chosen based on prior real-world events, and are intuitively likely to affect the best protocol choice.  For example, some of the more popular Linux distributions offer several different ways of downloading their ISO images, such as HTTP, FTP, BitTorrent, and Jigsaw Download~\cite{jigdo}, and cite protocol performance for large files as a consideration in making the choice~\cite{debian,fedora,ubuntu}.  Consequently, IFTD considers approximate file size when choosing the best protocol to transfer data.  The intuition that the MIME type possibly affects the best protocol choice is not without precedent either, since some file servers have the ability to throttle data based on MIME type~\cite{microsoft_iis_throttling}.  The time of day is considered relevant since the number of users are actively transferring data at a given time changes based on when people are likely to use their computers throughout the day~\cite{cisco_vni_study}.
+
+When a protocol transfers a chunk, IFTD will record the protocol's name, the status (success or failure) of the transfer, the start and end times of the transfer, and the number of bytes transferred.  IFTD accumulates this data within the job statistics, so when the transfer completes IFTD will have a record of every chunk transferred.  When a transfer finishes, IFTD ranks the protocols in order from highest bandwidth to lowest bandwidth, as calculated from the per-chunk transfer records created by the protocols.  Then, IFTD calculates a feature vector from the re-assembled file that contains the file's MIME type, the file's approximate size, the approximate time of day the transfer occurred, and whether or not the transfer was successful.  It combines the feature vector with the protocol with the highest bandwidth to produce a labeled feature vector, which it logs into a temporary buffer that, when full, will be used to refine the protocol classifier before being emptied.
+
+IFTD uses a \textit{naive Bayes classifier} to determine the best protocol to transfer data when given its feature vector.  A naive Bayes classifier is a probabilistic classifier that uses Bayes' Theorem to select protocol $b$ that maximizes $p(b|X)$, where $X = (x_0, x_1, ..., x_n)$ is the data feature vector~\cite{naivebayes}.  In other words, the classifier calculates $p(b|X) = p(X|b)p(b) / p(X)$ for all protocols $b$ and selects $b$ with the maximum $p(b|X)$.  It is considered to be naive because it assumes that $x_i$ is independent of $x_j$ whenever $i \neq j$.  Consequently, it calculates $p(X|b)$ as the joint probability $\prod p(x_i|b)$.  It calculates values for $p(x_i|b)$ using the labeled feature vectors IFTD accumulates with each successive transfer.
+
+There is a trade-off between how detailed the feature vector can be and how useful the values of $p(x_i|b)$ are.  As the granularity of the data increases, the number of unique feature vectors increases, and the values of $p(x_i|b)$ cluster near 0 consequently since there are less cases where $x_i$ more than once given $b$.  Conversely, as the granularity decreases, the number of unique feature vectors decreases and the values of $p(x_i|b)$ increase and cluster near 1 as a result since there are more cases where $x_i$ occurs multiple times given $b$.  This is why IFTD records an approximate file size and an approximate time of day instead of their more precise measurements \footnote[3]{In practice, IFTD arbitrarily records the file size as the multiple of $2^{16}$ bytes closest to the actual size, and the time of day as the multiple of 3 hours closest to the actual time.  These values were chosen to keep the number of different $x_i$ values for size and time on the order of 10}.
+
+
